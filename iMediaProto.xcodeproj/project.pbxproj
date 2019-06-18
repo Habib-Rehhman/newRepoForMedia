@@ -7,21 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		006A119722B9045D00237B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A119622B9045D00237B3F /* AppDelegate.swift */; };
-		006A119922B9045D00237B3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A119822B9045D00237B3F /* ViewController.swift */; };
 		006A119C22B9045D00237B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119A22B9045D00237B3F /* Main.storyboard */; };
 		006A119E22B9046000237B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A119D22B9046000237B3F /* Assets.xcassets */; };
 		006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119F22B9046000237B3F /* LaunchScreen.storyboard */; };
+		006A11B122B9064700237B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11A922B9064600237B3F /* AppDelegate.swift */; };
+		006A11B222B9064700237B3F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AA22B9064600237B3F /* StartViewController.swift */; };
+		006A11B322B9064700237B3F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AB22B9064600237B3F /* HomeViewController.swift */; };
+		006A11B422B9064700237B3F /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AC22B9064700237B3F /* PreviewViewController.swift */; };
+		006A11B522B9064700237B3F /* CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AD22B9064700237B3F /* CameraSetup.swift */; };
+		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
+		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		006A119322B9045D00237B3F /* iMediaProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMediaProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		006A119622B9045D00237B3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		006A119822B9045D00237B3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		006A119B22B9045D00237B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		006A119D22B9046000237B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006A11A022B9046000237B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		006A11A222B9046000237B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		006A11A822B9064600237B3F /* iMediaProto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMediaProto-Bridging-Header.h"; sourceTree = "<group>"; };
+		006A11A922B9064600237B3F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		006A11AA22B9064600237B3F /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		006A11AB22B9064600237B3F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		006A11AC22B9064700237B3F /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		006A11AD22B9064700237B3F /* CameraSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSetup.swift; sourceTree = "<group>"; };
+		006A11AE22B9064700237B3F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		006A11AF22B9064700237B3F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		006A11B022B9064700237B3F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +65,18 @@
 		006A119522B9045D00237B3F /* iMediaProto */ = {
 			isa = PBXGroup;
 			children = (
-				006A119622B9045D00237B3F /* AppDelegate.swift */,
-				006A119822B9045D00237B3F /* ViewController.swift */,
+				006A11A922B9064600237B3F /* AppDelegate.swift */,
+				006A11AD22B9064700237B3F /* CameraSetup.swift */,
+				006A11AB22B9064600237B3F /* HomeViewController.swift */,
+				006A11B022B9064700237B3F /* Info.plist */,
+				006A11AF22B9064700237B3F /* LoginViewController.swift */,
+				006A11AC22B9064700237B3F /* PreviewViewController.swift */,
+				006A11AE22B9064700237B3F /* SignUpViewController.swift */,
+				006A11AA22B9064600237B3F /* StartViewController.swift */,
 				006A119A22B9045D00237B3F /* Main.storyboard */,
 				006A119D22B9046000237B3F /* Assets.xcassets */,
 				006A119F22B9046000237B3F /* LaunchScreen.storyboard */,
-				006A11A222B9046000237B3F /* Info.plist */,
+				006A11A822B9064600237B3F /* iMediaProto-Bridging-Header.h */,
 			);
 			path = iMediaProto;
 			sourceTree = "<group>";
@@ -96,6 +113,7 @@
 				TargetAttributes = {
 					006A119222B9045D00237B3F = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -135,8 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006A119922B9045D00237B3F /* ViewController.swift in Sources */,
-				006A119722B9045D00237B3F /* AppDelegate.swift in Sources */,
+				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
+				006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */,
+				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
+				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
+				006A11B522B9064700237B3F /* CameraSetup.swift in Sources */,
+				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
+				006A11B422B9064700237B3F /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SM3Y64WB5;
 				INFOPLIST_FILE = iMediaProto/Info.plist;
@@ -289,8 +313,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ABventures.Snapchat-Camera.imedia.iMediaProto";
+				PRODUCT_BUNDLE_IDENTIFIER = aa.bb.ccc345;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMediaProto/iMediaProto-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SM3Y64WB5;
 				INFOPLIST_FILE = iMediaProto/Info.plist;
@@ -307,8 +334,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ABventures.Snapchat-Camera.imedia.iMediaProto";
+				PRODUCT_BUNDLE_IDENTIFIER = aa.bb.ccc345;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMediaProto/iMediaProto-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
