@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func doneAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "showPreview", sender: self)
+        //self.performSegue(withIdentifier: "showPreview", sender: self)
     }
     @IBAction func cameraToggle(_ sender: Any) {
         cameraSetup.toggleCam()
@@ -60,16 +60,16 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logOutAction(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initial = storyboard.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = initial
+//        let firebaseAuth = Auth.auth()
+//        do {
+//            try firebaseAuth.signOut()
+//        } catch let signOutError as NSError {
+//            print ("Error signing out: %@", signOutError)
+//        }
+//        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initial = storyboard.instantiateInitialViewController()
+//        UIApplication.shared.keyWindow?.rootViewController = initial
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PreviewViewController{

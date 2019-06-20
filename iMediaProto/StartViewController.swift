@@ -13,13 +13,13 @@ class StartViewController: UIViewController {
     var gradient: CAGradientLayer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGradient()
+       // addGradient()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
-        }
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
+//        }
     }
     func addGradient() {
         gradient = CAGradientLayer()

@@ -14,12 +14,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var passwordConfirm: UITextField!
+
    
+    @IBOutlet weak var fullName: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+    
+    @IBOutlet weak var passwordConfirm: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGradient()
+        //addGradient()
         signUpButton.layer.cornerRadius = 10
         email.delegate = self
         password.delegate = self
@@ -36,18 +40,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
         else{
-            Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
-                if error == nil {
-                   self.performSegue(withIdentifier: "signupToHome", sender: self)
-                }
-                else{
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            }
+//            Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
+//                if error == nil {
+//                   self.performSegue(withIdentifier: "signupToHome", sender: self)
+//                }
+//                else{
+//                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+//                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//
+//                    alertController.addAction(defaultAction)
+//                    self.present(alertController, animated: true, completion: nil)
+//                }
+//            }
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002938E522BB611C00433871 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002938E322BB611C00433871 /* ItemCell.xib */; };
+		002938E622BB611C00433871 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002938E422BB611C00433871 /* ItemCell.swift */; };
 		006A119C22B9045D00237B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119A22B9045D00237B3F /* Main.storyboard */; };
 		006A119E22B9046000237B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A119D22B9046000237B3F /* Assets.xcassets */; };
 		006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119F22B9046000237B3F /* LaunchScreen.storyboard */; };
@@ -17,9 +19,12 @@
 		006A11B522B9064700237B3F /* CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AD22B9064700237B3F /* CameraSetup.swift */; };
 		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
 		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
+		008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002938E322BB611C00433871 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		002938E422BB611C00433871 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		006A119322B9045D00237B3F /* iMediaProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMediaProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A119B22B9045D00237B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		006A119D22B9046000237B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 		006A11AE22B9064700237B3F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		006A11AF22B9064700237B3F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		006A11B022B9064700237B3F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002938E222BB60C800433871 /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				002938E422BB611C00433871 /* ItemCell.swift */,
+				002938E322BB611C00433871 /* ItemCell.xib */,
+			);
+			path = ItemCell;
+			sourceTree = "<group>";
+		};
 		006A118A22B9045D00237B3F = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +80,8 @@
 		006A119522B9045D00237B3F /* iMediaProto */ = {
 			isa = PBXGroup;
 			children = (
+				008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */,
+				002938E222BB60C800433871 /* ItemCell */,
 				006A11A922B9064600237B3F /* AppDelegate.swift */,
 				006A11AD22B9064700237B3F /* CameraSetup.swift */,
 				006A11AB22B9064600237B3F /* HomeViewController.swift */,
@@ -140,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002938E522BB611C00433871 /* ItemCell.xib in Resources */,
 				006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */,
 				006A119E22B9046000237B3F /* Assets.xcassets in Resources */,
 				006A119C22B9045D00237B3F /* Main.storyboard in Resources */,
@@ -153,7 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002938E622BB611C00433871 /* ItemCell.swift in Sources */,
 				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
+				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
 				006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */,
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
