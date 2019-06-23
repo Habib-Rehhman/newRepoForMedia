@@ -11,16 +11,20 @@ import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     var gradient:CAGradientLayer?
-    @IBOutlet weak var signUpButton: UIButton!
     
-    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
 
-   
+
+    @IBOutlet weak var passwordConfirm: UITextField!
+    // @IBOutlet weak var password: UITextField!
+    
     @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var email: UITextField!
+   // @IBOutlet weak var fullName: UITextField!
     
     @IBOutlet weak var password: UITextField!
     
-    @IBOutlet weak var passwordConfirm: UITextField!
+   /// @IBOutlet weak var passwordConfirm: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         //addGradient()

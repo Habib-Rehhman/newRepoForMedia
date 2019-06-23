@@ -11,10 +11,13 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     var gradient:CAGradientLayer?
-    @IBOutlet weak var loginButton: UIButton!
-    
-    @IBOutlet weak var email: UITextField!
+   // @IBOutlet weak var loginButton: UIButton!
+
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    //@IBOutlet weak var email: UITextField!
+    //@IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
