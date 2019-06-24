@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  iMediaProto
+
+  Created by Habib on 6/24/19.
+  Copyright © 2019 a. All rights reserved.
+*/
+
+"SignUpFullNameKey" = "الاسم الكامل";
+
+"SignUpEmailKey" = "البريد الإلكتروني";
+
+"SignUpPasswordKey" = "كلمه السر";
+
+"SignUpConfirmPaswordKey" = "تأكيد كلمة المرور";
+
+"SignUpButtonKey" = "سجل";
+
+"SignUpHeaderKey" = "انشاء حساب جديد";
+
+"SignUpAlreadyAccountKey" = "هل لديك حساب؟";
+
+"SignUpInButtonKey" = "تسجيل الدخول";
+
+
+

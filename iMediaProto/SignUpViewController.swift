@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signUpButton: UIButton!
 
-
+    var dataFromLanguageViewController = ""
     @IBOutlet weak var passwordConfirm: UITextField!
     // @IBOutlet weak var password: UITextField!
     
@@ -27,13 +27,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
    /// @IBOutlet weak var passwordConfirm: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        renderLanguage()
         //addGradient()
         signUpButton.layer.cornerRadius = 10
         email.delegate = self
         password.delegate = self
         passwordConfirm.delegate = self
     }
-  
+    
+    func renderLanguage(){
+        
+        fullName.placeholder = "SignUpFullNameKey".localizableString(loc: dataFromLanguageViewController)
+          email.placeholder = "SignUpEmailKey".localizableString(loc: dataFromLanguageViewController)
+          password.placeholder = "SignUpPasswordKey".localizableString(loc: dataFromLanguageViewController)
+          passwordConfirm.placeholder = "SignUpConfirmPaswordKey".localizableString(loc: dataFromLanguageViewController)
+        
+    }
     @IBAction func signUpAction(_ sender: Any) {
         
         if password.text != passwordConfirm.text{
@@ -73,4 +82,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.view.layer.insertSublayer(gradient!, at: 0)
     }
 
+}
+
+extension String{
+    
+    func localizableString(loc: String) -> String {
+    
+        let path = Bundle.main.path(forResource: loc, ofType: "lproj")!
+        let bundle = Bundle(path: path)!
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+    }
 }
