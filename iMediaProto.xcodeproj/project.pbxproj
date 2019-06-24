@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */; };
 		002938E522BB611C00433871 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002938E322BB611C00433871 /* ItemCell.xib */; };
 		002938E622BB611C00433871 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002938E422BB611C00433871 /* ItemCell.swift */; };
 		006A119C22B9045D00237B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119A22B9045D00237B3F /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecovery.swift; sourceTree = "<group>"; };
 		002938E322BB611C00433871 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		002938E422BB611C00433871 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		006A119322B9045D00237B3F /* iMediaProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMediaProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				006A119D22B9046000237B3F /* Assets.xcassets */,
 				006A119F22B9046000237B3F /* LaunchScreen.storyboard */,
 				006A11A822B9064600237B3F /* iMediaProto-Bridging-Header.h */,
+				001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */,
 			);
 			path = iMediaProto;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
 				006A11B522B9064700237B3F /* CameraSetup.swift in Sources */,
+				001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */,
 				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
 				006A11B422B9064700237B3F /* PreviewViewController.swift in Sources */,
 			);
