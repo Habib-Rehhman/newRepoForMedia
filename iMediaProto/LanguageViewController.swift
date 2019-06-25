@@ -4,32 +4,57 @@ import UIKit
 
 class LanguageViewController: UIViewController {
 
-//    @IBOutlet weak var collectionView: UICollectionView!
-//
-//    var estimateWidth = 80.0
-//    var cellMarginSize = 10.0
+
     var buttonName = ""
     override func viewDidLoad() {
+       
         super.viewDidLoad()
+       //  UIView.appearance().semanticContentAttribute = .forceRightToLeft
     }
     
-    //rather then making function for each button, use tags within one function
-    @IBAction func arabicButton(_ sender: UIButton) {
+    @IBAction func langButtonPressed(_ sender: UIButton) {
         
-        buttonName = "ar"
-        performSegue(withIdentifier: "languageSelected", sender: self)
-        
+        switch sender.tag{
+            
+        case 1:
+            buttonName = "ar"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 3:
+            buttonName = "hi"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 4:
+            buttonName = "es"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 5:
+            buttonName = "de"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 6:
+            buttonName = "ru"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 7:
+            buttonName = "zh-Hans"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 8:
+            buttonName = "fa-IR"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        case 9:
+            buttonName = "tr"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+            break
+        default:
+            buttonName = "en"
+            performSegue(withIdentifier: "languageSelected", sender: self)
+        }
     }
-    @IBAction func englishButton(_ sender: UIButton) {
-        
-        buttonName = "en"
-        performSegue(withIdentifier: "languageSelected", sender: self)
-        
-    }
-//    @IBAction func showNextPage(_ sender: Any) {
-//        print("hiiiii")
-//       // self.performSegue(withIdentifier: "langSelected", sender: nil)
-//    }
+
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }

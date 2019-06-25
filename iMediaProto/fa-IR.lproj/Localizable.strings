@@ -1,0 +1,59 @@
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
+
+"SignUpFullNameKey" = "FirstName";
+
+"SignUpEmailKey" = "Email";
+
+"SignUpPasswordKey" = "Password";
+
+"SignUpConfirmPaswordKey" = "Confirm Password";
+
+"SignUpButtonKey" = "Sign Up";
+
+"SignUpHeaderKey" = "persian";
+
+"SignUpAlreadyAccountKey" = "Already have an account?";
+
+"SignUpInButtonKey" = "Sign In";
+
+"LoginHeaderKey" = "";
+
+"LoginEmailKey" ="";
+
+"LoginPasswordKey" ="";
+
+"LoginSignInKey" ="";
+
+"LoginForgotKey" ="";
+
+"LoginCreateAccountKey" ="";
+
+"RecoveryHeaderKey" ="";
+
+"RecoveryInstructionKey" ="";
+
+"RecoveryContinueKey" ="";
+
+"RecoveryHavingTroubleKey" ="";
+
+"RecoveryContactUsKey" ="";
+
+"RecoveryAlertControllerTitleKey" = "";
+
+"RecoveryAlertControllerKey" = "";
+
+"VerifyEmailHeaderKey" ="";
+
+"VerifyEmailInstructionKey" ="";
+
+"VerifyEmailSignInKey" ="";
+
+"VerifyEmailHavingTroubleKey" ="";
+
+"VerifyEmailContactUsKey" ="";

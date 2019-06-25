@@ -15,7 +15,7 @@ class PasswordRecoverController: UIViewController {
 
     @IBAction func continuePressed(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Recover", message: "A link has been sent to this email. Go to your email and follow the instructions", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("alertControllerKey", comment: "Title for Alert Sheet"), message: "A link has been sent to this email. Go to your email and follow the instructions", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: {_ in
             self.performSegue(withIdentifier: "loginScreen", sender: self)
         })

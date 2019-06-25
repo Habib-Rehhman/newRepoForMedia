@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  iMediaProto
-
-  Created by Habib on 6/24/19.
-  Copyright © 2019 a. All rights reserved.
-*/
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
 
 "SignUpFullNameKey" = "FirstName";
 
@@ -22,3 +22,75 @@
 
 "SignUpInButtonKey" = "Sign In";
 
+"LoginHeaderKey" = "Login to your account";
+
+"LoginEmailKey" ="Email";
+
+"LoginPasswordKey" ="Password";
+
+"LoginSignInKey" ="Sign In";
+
+"LoginForgotKey" = "Forgot Password";
+
+"LoginCreateAccountKey" ="Create a new account";
+
+"RecoveryHeaderKey" ="Password Recovery";
+
+"RecoveryInstructionKey" ="Enter your registered email address";
+
+"RecoveryContinueKey" ="Continue";
+
+"RecoveryHavingTroubleKey" ="Having some trouble?";
+
+"RecoveryContactUsKey" ="Contact Us";
+
+"RecoveryAlertControllerTitleKey" = "Recover";
+
+"RecoveryAlertControllerKey" = "A link has been sent to this email. Go to your email and follow the instructions";
+
+"VerifyEmailHeaderKey" ="Verify your email";
+
+"VerifyEmailInstructionKey" ="We have sent a verification link to abc@xyz.com.Please click the link to verify your email address. Once you have verified your email tap below to signin to your account.";
+
+"VerifyEmailSignInKey" ="Sign In";
+
+"VerifyEmailHavingTroubleKey" ="Having some trouble?";
+
+"VerifyEmailContactUsKey" ="Contact Us";
+
+
+
+/*
+ Full Name
+ Email
+ Password
+ Confirm Password
+ Sign Up
+ 
+ Create a new account
+ 
+ Already have an account?
+ 
+ Sign In
+ Forgot Password
+ Login to your account
+ 
+ Password Recovery
+ 
+ Enter your registered email address
+ 
+ Continue
+ 
+ Having some trouble
+ 
+ contact us
+ 
+ recover
+ 
+ 
+ A link has been sent to this email. Go to your email and follow the instructions
+ 
+ verify your email
+ 
+ We have sent a verification link to abc@xyz.com.Please click the link to verify your email address. Once you have verified your email tap below to signin to your account.
+ */

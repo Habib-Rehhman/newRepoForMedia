@@ -1,0 +1,60 @@
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
+
+"SignUpFullNameKey" = "Ad Soyad";
+
+"SignUpEmailKey" = "E-posta";
+
+"SignUpPasswordKey" = "Parola";
+
+"SignUpConfirmPaswordKey" = "Şifreyi Onayla";
+
+"SignUpButtonKey" = "SKaydol";
+
+"SignUpHeaderKey" = "Yeni bir hesap oluştur";
+
+"SignUpAlreadyAccountKey" = "Zaten hesabınız var mı?";
+
+"SignUpInButtonKey" = "Oturum aç";
+
+"LoginHeaderKey" = "hesabınıza giriş yapın";
+
+"LoginEmailKey" = "E-posta";
+
+"LoginPasswordKey" ="Parola";
+
+"LoginSignInKey" ="Oturum aç";
+
+"LoginForgotKey" ="Parolanızı mı unuttunuz";
+
+"LoginCreateAccountKey" ="Yeni bir hesap oluştur";
+
+"RecoveryHeaderKey" ="Şifre kurtarma";
+
+"RecoveryInstructionKey" ="Kayıtlı e-posta adresinizi girin";
+
+"RecoveryContinueKey" ="Devam et";
+
+"RecoveryHavingTroubleKey" ="Bir sorun mu yaşıyorsunuz?";
+
+"RecoveryContactUsKey" = "bizimle iletişime geçin";
+
+"RecoveryAlertControllerTitleKey" = "kurtarmak";
+
+"RecoveryAlertControllerKey" = "Bu e-postaya bir bağlantı gönderildi. E-postanıza gidin ve talimatları izleyin";
+
+"VerifyEmailHeaderKey" = "Eposta adresinizi doğrulayın";
+
+"VerifyEmailInstructionKey" ="Abc@xyz.com. adresine bir doğrulama bağlantısı gönderdik. Lütfen e-posta adresinizi doğrulamak için bağlantıyı tıklayın. E-postanızı doğruladıktan sonra hesabınıza giriş yapmak için aşağıya dokunun";
+
+"VerifyEmailSignInKey" ="Oturum aç";
+
+"VerifyEmailHavingTroubleKey" = "Bir sorun mu yaşıyorsunuz?";
+
+"VerifyEmailContactUsKey" = "bizimle iletişime geçin";
+

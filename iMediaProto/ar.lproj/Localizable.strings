@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  iMediaProto
-
-  Created by Habib on 6/24/19.
-  Copyright © 2019 a. All rights reserved.
-*/
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
 
 "SignUpFullNameKey" = "الاسم الكامل";
 
@@ -21,6 +21,42 @@
 "SignUpAlreadyAccountKey" = "هل لديك حساب؟";
 
 "SignUpInButtonKey" = "تسجيل الدخول";
+
+"LoginHeaderKey" = "تسجيل الدخول إلى حسابك";
+
+"LoginEmailKey" = "البريد الإلكتروني";
+
+"LoginPasswordKey" ="كلمه السر";
+
+"LoginSignInKey" = "تسجيل الدخول";
+
+"LoginForgotKey" = "هل نسيت كلمة المرور";
+
+"LoginCreateAccountKey" = "انشاء حساب جديد";
+
+"RecoveryHeaderKey" = "استعادة كلمة السر";
+
+"RecoveryInstructionKey" = "أدخل عنوان بريدك الإلكتروني المسجل";
+
+"RecoveryContinueKey" = "استمر";
+
+"RecoveryHavingTroubleKey" = "تواجه بعض المشاكل؟";
+
+"RecoveryContactUsKey" = "اتصل بنا";
+
+"RecoveryAlertControllerTitleKey" = "استعادة";
+
+"RecoveryAlertControllerKey" = "تم إرسال رابط إلى هذا البريد الإلكتروني. انتقل إلى بريدك الإلكتروني واتبع التعليمات";
+
+"VerifyEmailHeaderKey" = "قم بتأكيد بريدك الألكتروني";
+
+"VerifyEmailInstructionKey" ="لقد أرسلنا رابط التحقق إلى abc@xyz.com.Please انقر على الرابط للتحقق من عنوان بريدك الإلكتروني. بمجرد التحقق من بريدك الإلكتروني ، انقر أدناه لتسجيل الدخول إلى حسابك";
+
+"VerifyEmailSignInKey" ="تسجيل الدخول";
+
+"VerifyEmailHavingTroubleKey" = "تواجه بعض المشاكل؟";
+
+"VerifyEmailContactUsKey" = "اتصل بنا";
 
 
 

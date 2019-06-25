@@ -1,0 +1,60 @@
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
+
+"SignUpFullNameKey" = "Vollständiger Name";
+
+"SignUpEmailKey" = "Email";
+
+"SignUpPasswordKey" = "Passwort";
+
+"SignUpConfirmPaswordKey" = "Passwort bestätigen";
+
+"SignUpButtonKey" = "Anmelden";
+
+"SignUpHeaderKey" = "Ein neues Konto erstellen";
+
+"SignUpAlreadyAccountKey" = "Hast du schon ein Konto?";
+
+"SignUpInButtonKey" = "Einloggen";
+
+"LoginHeaderKey" = "ins Konto einloggen";
+
+"LoginEmailKey" ="Email";
+
+"LoginPasswordKey" ="Passwort";
+
+"LoginSignInKey" ="Einloggen";
+
+"LoginForgotKey" ="Passwort vergessen";
+
+"LoginCreateAccountKey" ="Ein neues Konto erstellen";
+
+"RecoveryHeaderKey" ="Passwort-Wiederherstellung";
+
+"RecoveryInstructionKey" ="Geben Sie Ihre registrierte E-Mail Adresse ein";
+
+"RecoveryContinueKey" ="Fortsetzen";
+
+"RecoveryHavingTroubleKey" ="Haben Sie Probleme?";
+
+"RecoveryContactUsKey" ="kontaktiere uns";
+
+"RecoveryAlertControllerTitleKey" = "genesen";
+
+"RecoveryAlertControllerKey" = "Ein Link wurde an diese E-Mail gesendet. Gehen Sie zu Ihrer E-Mail und folgen Sie den Anweisungen";
+
+"VerifyEmailHeaderKey" ="Bestätigen Sie Ihre E-Mail";
+
+"VerifyEmailInstructionKey" = "Wir haben einen Bestätigungslink an abc@xyz.com gesendet. Bitte klicken Sie auf den Link, um Ihre E-Mail-Adresse zu bestätigen. Sobald Sie Ihre E-Mail-Adresse bestätigt haben, tippen Sie unten, um sich in Ihrem Konto anzumelden";
+
+"VerifyEmailSignInKey" ="Einloggen";
+
+"VerifyEmailHavingTroubleKey" = "Haben Sie Probleme?";
+
+"VerifyEmailContactUsKey" = "kontaktiere uns";
+

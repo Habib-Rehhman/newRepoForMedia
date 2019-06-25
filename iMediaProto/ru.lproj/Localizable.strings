@@ -1,0 +1,60 @@
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
+
+"SignUpFullNameKey" = "ФИО";
+
+"SignUpEmailKey" = "Эл. адрес";
+
+"SignUpPasswordKey" = "пароль";
+
+"SignUpConfirmPaswordKey" = "Подтвердите Пароль";
+
+"SignUpButtonKey" = "Подписаться";
+
+"SignUpHeaderKey" = "Создать новый аккаунт";
+
+"SignUpAlreadyAccountKey" = "Уже есть аккаунт?";
+
+"SignUpInButtonKey" = "Войти в систему";
+
+"LoginHeaderKey" = "Вход в свой аккаунт";
+
+"LoginEmailKey" = "Эл. адрес";
+
+"LoginPasswordKey" = "пароль";
+
+"LoginSignInKey" = "Войти в систему";
+
+"LoginForgotKey" = "Забыли пароль";
+
+"LoginCreateAccountKey" = "Создать новый аккаунт";
+
+"RecoveryHeaderKey" = "Восстановление пароля";
+
+"RecoveryInstructionKey" = "Ссылка была отправлена ​​на это письмо. Перейдите на свою электронную почту и следуйте инструкциям";
+
+"RecoveryContinueKey" = "Продолжить";
+
+"RecoveryHavingTroubleKey" = "Возникли проблемы";
+
+"RecoveryContactUsKey" = "связаться с нами";
+
+"RecoveryAlertControllerTitleKey" = "оправляться";
+
+"RecoveryAlertControllerKey" = "Мы отправили ссылку для подтверждения на abc@xyz.com. Пожалуйста, нажмите на ссылку, чтобы подтвердить свой адрес электронной почты. Как только вы подтвердите свой адрес электронной почты, нажмите ниже, чтобы войти в свою учетную запись";
+
+"VerifyEmailHeaderKey" = "Подтвердите Ваш электронный адрес";
+
+"VerifyEmailInstructionKey" = "Мы отправили ссылку для подтверждения на abc@xyz.com. Пожалуйста, нажмите на ссылку, чтобы подтвердить свой адрес электронной почты. Как только вы подтвердите свой адрес электронной почты, нажмите ниже, чтобы войти в свою учетную запись";
+
+"VerifyEmailSignInKey" = "Эл. адрес";
+
+"VerifyEmailHavingTroubleKey" = "Войти в систему";
+
+"VerifyEmailContactUsKey" = "связаться с нами";
+

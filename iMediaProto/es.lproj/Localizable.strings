@@ -1,0 +1,60 @@
+/*
+ Localizable.strings
+ iMediaProto
+ 
+ Created by Habib on 6/24/19.
+ Copyright © 2019 a. All rights reserved.
+ */
+
+"SignUpFullNameKey" = "Nombre completo";
+
+"SignUpEmailKey" = "Email";
+
+"SignUpPasswordKey" = "Contraseña";
+
+"SignUpConfirmPaswordKey" = "Confirmar contraseña";
+
+"SignUpButtonKey" = "Regístrate";
+
+"SignUpHeaderKey" = "Crea una cuenta nueva";
+
+"SignUpAlreadyAccountKey" = "Ya tienes una cuenta";
+
+"SignUpInButtonKey" = "Registrarse";
+
+"LoginHeaderKey" = "Ingrese a su cuenta";
+
+"LoginEmailKey" ="Email";
+
+"LoginPasswordKey" ="Contraseña";
+
+"LoginSignInKey" ="Registrarse";
+
+"LoginForgotKey" ="Se te olvidó tu contraseña";
+
+"LoginCreateAccountKey" = "Crea una cuenta nueva";
+
+"RecoveryHeaderKey" = "Recuperación de contraseña";
+
+"RecoveryInstructionKey" = "Ingrese su dirección de correo electrónico registrada";
+
+"RecoveryContinueKey" = "Continuar";
+
+"RecoveryHavingTroubleKey" = "Teniendo algunos problemas";
+
+"RecoveryContactUsKey" = "Contáctenos";
+
+"RecoveryAlertControllerTitleKey" = "recuperar";
+
+"RecoveryAlertControllerKey" = "Se ha enviado un enlace a este correo electrónico. Dirígete a tu correo electrónico y sigue las instrucciones";
+
+"VerifyEmailHeaderKey" = "Verifique su correo electrónico";
+
+"VerifyEmailInstructionKey" = "Hemos enviado un enlace de verificación a abc@xyz.com.. Haga clic en el enlace para verificar su dirección de correo electrónico. Una vez que haya verificado su correo electrónico, toque abajo para iniciar sesión en su cuenta";
+
+"VerifyEmailSignInKey" = "Registrarse";
+
+"VerifyEmailHavingTroubleKey" = "Teniendo algunos problemas";
+
+"VerifyEmailContactUsKey" = "Contáctenos";
+
