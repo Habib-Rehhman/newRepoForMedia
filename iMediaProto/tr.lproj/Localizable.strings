@@ -40,6 +40,8 @@
 
 "RecoveryContinueKey" ="Devam et";
 
+"RecoveryEmailKey" = "Email";
+
 "RecoveryHavingTroubleKey" ="Bir sorun mu yaşıyorsunuz?";
 
 "RecoveryContactUsKey" = "bizimle iletişime geçin";

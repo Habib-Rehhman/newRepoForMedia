@@ -40,6 +40,8 @@
 
 "RecoveryContinueKey" = "Продолжить";
 
+"RecoveryEmailKey" = "Email";
+
 "RecoveryHavingTroubleKey" = "Возникли проблемы";
 
 "RecoveryContactUsKey" = "связаться с нами";

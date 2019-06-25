@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUp: UIButton!
     
     @IBOutlet weak var alreadyAccount: UILabel!
-    var dataFromLanguageViewController = ""
+    //static var dataFromLanguageViewController = ""
     @IBOutlet weak var passwordConfirm: UITextField!
     // @IBOutlet weak var password: UITextField!
     @IBOutlet weak var header: UILabel!
@@ -35,46 +35,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         password.delegate = self
         passwordConfirm.delegate = self
     }
-    func recur(Views: [UIView]){
-    
-        if(Views.count == 0){
-
-            return
-        }
-        if subview is UITextField
-        {
-            
-            (subview as! UITextField).textAlignment = NSTextAlignment.right
-        }
-        
-        
-    }
     func renderLanguage(){
-        
-       // switch dataFromLanguageViewController{
             
-        if(dataFromLanguageViewController ==  "ar" || dataFromLanguageViewController == "hi" || dataFromLanguageViewController ==  "fa-IR"){
-            for subview in self.view.subviews
-            {
-                fullName.textAlignment = NSTextAlignment.right
-                if subview is UITextField
-                {
-                    
-                     (subview as! UITextField).textAlignment = NSTextAlignment.right
-                }
-            }
+        if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName == "hi" || LanguageViewController.buttonName ==  "fa-IR"){
+             rightToLeftAlignment(Views: self.view.subviews)
         }
      
-           signUp.setTitle("SignUpButtonKey".localizableString(loc: dataFromLanguageViewController), for: .normal)
-        sihnIn.setTitle("SignUpInButtonKey".localizableString(loc: dataFromLanguageViewController), for: .normal)
+        signUp.setTitle("SignUpButtonKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
+        sihnIn.setTitle("SignUpInButtonKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
         
-         alreadyAccount.text = "SignUpAlreadyAccountKey".localizableString(loc: dataFromLanguageViewController)
-         header.text = "SignUpHeaderKey".localizableString(loc: dataFromLanguageViewController)
+        alreadyAccount.text = "SignUpAlreadyAccountKey".localizableString(loc: LanguageViewController.buttonName)
+        header.text = "SignUpHeaderKey".localizableString(loc: LanguageViewController.buttonName)
        
-         fullName.placeholder = "SignUpFullNameKey".localizableString(loc: dataFromLanguageViewController)
-          email.placeholder = "SignUpEmailKey".localizableString(loc: dataFromLanguageViewController)
-          password.placeholder = "SignUpPasswordKey".localizableString(loc: dataFromLanguageViewController)
-          passwordConfirm.placeholder = "SignUpConfirmPaswordKey".localizableString(loc: dataFromLanguageViewController)
+        fullName.placeholder = "SignUpFullNameKey".localizableString(loc: LanguageViewController.buttonName)
+        email.placeholder = "SignUpEmailKey".localizableString(loc: LanguageViewController.buttonName)
+        password.placeholder = "SignUpPasswordKey".localizableString(loc: LanguageViewController.buttonName)
+        passwordConfirm.placeholder = "SignUpConfirmPaswordKey".localizableString(loc: LanguageViewController.buttonName)
         
     }
     @IBAction func signUpAction(_ sender: Any) {
@@ -104,5 +80,20 @@ extension String{
         let path = Bundle.main.path(forResource: loc, ofType: "lproj")!
         let bundle = Bundle(path: path)!
         return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
+    }
+}
+
+extension UIViewController{
+    func rightToLeftAlignment(Views: [UIView]){
+        //this for loop also acting as terminating base condition.
+        for v in Views{
+            if (v is UITextField){
+                (v as! UITextField).textAlignment = NSTextAlignment.right
+            }
+            if (v is UITextView){
+                (v as! UITextView).textAlignment = NSTextAlignment.right
+            }
+            rightToLeftAlignment(Views: v.subviews)
+        }
     }
 }

@@ -44,6 +44,8 @@
 
 "RecoveryContactUsKey" ="Contact Us";
 
+"RecoveryEmailKey" = "Email";
+
 "RecoveryAlertControllerTitleKey" = "Recover";
 
 "RecoveryAlertControllerKey" = "A link has been sent to this email. Go to your email and follow the instructions";

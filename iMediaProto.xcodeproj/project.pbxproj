@@ -18,7 +18,6 @@
 		006A11B222B9064700237B3F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AA22B9064600237B3F /* StartViewController.swift */; };
 		006A11B322B9064700237B3F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AB22B9064600237B3F /* HomeViewController.swift */; };
 		006A11B422B9064700237B3F /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AC22B9064700237B3F /* PreviewViewController.swift */; };
-		006A11B522B9064700237B3F /* CameraSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AD22B9064700237B3F /* CameraSetup.swift */; };
 		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
 		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
 		008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */; };
@@ -64,7 +63,6 @@
 		006A11AA22B9064600237B3F /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		006A11AB22B9064600237B3F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		006A11AC22B9064700237B3F /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
-		006A11AD22B9064700237B3F /* CameraSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSetup.swift; sourceTree = "<group>"; };
 		006A11AE22B9064700237B3F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		006A11AF22B9064700237B3F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		006A11B022B9064700237B3F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */,
 				002938E222BB60C800433871 /* ItemCell */,
 				006A11A922B9064600237B3F /* AppDelegate.swift */,
-				006A11AD22B9064700237B3F /* CameraSetup.swift */,
 				006A11AB22B9064600237B3F /* HomeViewController.swift */,
 				006A11B022B9064700237B3F /* Info.plist */,
 				006A11AF22B9064700237B3F /* LoginViewController.swift */,
@@ -218,7 +215,6 @@
 				006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */,
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
-				006A11B522B9064700237B3F /* CameraSetup.swift in Sources */,
 				001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */,
 				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
 				006A11B422B9064700237B3F /* PreviewViewController.swift in Sources */,

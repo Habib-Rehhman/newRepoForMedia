@@ -40,6 +40,8 @@
 
 "RecoveryContinueKey" ="";
 
+"RecoveryEmailKey" = "Email";
+
 "RecoveryHavingTroubleKey" ="";
 
 "RecoveryContactUsKey" ="";

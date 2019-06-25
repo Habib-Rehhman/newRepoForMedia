@@ -10,23 +10,39 @@ import UIKit
 //import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    var gradient:CAGradientLayer?
-   // @IBOutlet weak var loginButton: UIButton!
 
+    @IBOutlet weak var loginCreateAccount: UIButton!
+    @IBOutlet weak var logingForgot: UIButton!
+    @IBOutlet weak var loginHeader: UILabel!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    //@IBOutlet weak var email: UITextField!
-    //@IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addGradient()
-        loginButton.layer.cornerRadius = 10
+        renderLanguage()
         email.delegate = self
         password.delegate = self
     }
 
+    
+    func renderLanguage(){
+        
+        if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName == "hi" || LanguageViewController.buttonName ==  "fa-IR"){
+            rightToLeftAlignment(Views: self.view.subviews)
+        }
+        loginButton.setTitle("LoginSignInKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
+        
+        logingForgot.setTitle("LoginForgotKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
+        loginCreateAccount.setTitle("LoginCreateAccountKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
+        loginHeader.text = "LoginHeaderKey".localizableString(loc: LanguageViewController.buttonName)
+        
+        password.placeholder = "LoginPasswordKey".localizableString(loc: LanguageViewController.buttonName)
+        email.placeholder = "LoginEmailKey".localizableString(loc: LanguageViewController.buttonName)
+        
+    }
+    
+    
     @IBAction func loginAction(_ sender: Any) {
 //      
 //            Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
@@ -49,14 +65,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func addGradient() {
-        gradient = CAGradientLayer()
-        let startColor = UIColor(red: 3/255, green: 196/255, blue: 190/255, alpha: 1)
-        let endColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        gradient?.colors = [startColor.cgColor,endColor.cgColor]
-        gradient?.startPoint = CGPoint(x: 0, y: 0)
-        gradient?.endPoint = CGPoint(x: 0, y:1)
-        gradient?.frame = view.frame
-        self.view.layer.insertSublayer(gradient!, at: 0)
-    }
 }

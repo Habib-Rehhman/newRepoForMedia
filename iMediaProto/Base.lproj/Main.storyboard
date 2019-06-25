@@ -112,6 +112,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7me-hZ-KO3"/>
                     </view>
+                    <connections>
+                        <outlet property="contactUs" destination="2Ar-Cp-mjP" id="hfe-na-lQz"/>
+                        <outlet property="header" destination="u6W-SQ-dz9" id="qdW-7v-6rn"/>
+                        <outlet property="instructionBidy" destination="sN9-ze-oio" id="jg3-sY-4Rq"/>
+                        <outlet property="signIn" destination="Xmi-j5-R9V" id="jiv-1c-8a9"/>
+                        <outlet property="trouble" destination="c6s-nF-aLb" id="NF8-OR-J0D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,6 +347,9 @@
                     <connections>
                         <outlet property="email" destination="TWY-7c-SUi" id="6bx-hc-iAm"/>
                         <outlet property="loginButton" destination="AP2-lZ-5Km" id="58T-a7-v7p"/>
+                        <outlet property="loginCreateAccount" destination="zma-xz-fwa" id="FTR-Fs-P4m"/>
+                        <outlet property="loginHeader" destination="MzT-Yf-JJW" id="cCI-aJ-nfB"/>
+                        <outlet property="logingForgot" destination="mVb-aM-WcY" id="l7V-rU-XLo"/>
                         <outlet property="password" destination="XWe-Q1-8Mm" id="BzQ-kH-M7d"/>
                     </connections>
                 </viewController>
@@ -482,6 +492,12 @@
                         <viewLayoutGuide key="safeArea" id="D1k-8q-ZZq"/>
                     </view>
                     <connections>
+                        <outlet property="continueButtonOutlet" destination="Pf1-H7-ZWL" id="ag8-QY-Jmb"/>
+                        <outlet property="recoveryContactUs" destination="qE1-T7-WiY" id="UZw-lq-FqX"/>
+                        <outlet property="recoveryDescription" destination="fmW-E3-Ihe" id="AM1-VJ-jsK"/>
+                        <outlet property="recoveryEmailField" destination="EAU-Cb-FWX" id="uyT-LK-fVq"/>
+                        <outlet property="recoveryHeader" destination="2pt-YJ-J81" id="Bno-eA-bjc"/>
+                        <outlet property="recoveryTrouble" destination="HhN-wh-dkk" id="SEx-Km-7od"/>
                         <segue destination="1ZE-xB-Wa9" kind="show" identifier="loginScreen" id="jvn-p0-25j"/>
                     </connections>
                 </viewController>
@@ -920,7 +936,7 @@
         <image name="Stop-Motion" width="953" height="501"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GA4-fD-28f"/>
-        <segue reference="0in-Yu-CC0"/>
+        <segue reference="Nfs-ok-PxD"/>
+        <segue reference="dnN-yc-IOZ"/>
     </inferredMetricsTieBreakers>
 </document>
