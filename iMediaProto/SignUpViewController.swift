@@ -35,7 +35,20 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         password.delegate = self
         passwordConfirm.delegate = self
     }
+    func recur(Views: [UIView]){
     
+        if(Views.count == 0){
+
+            return
+        }
+        if subview is UITextField
+        {
+            
+            (subview as! UITextField).textAlignment = NSTextAlignment.right
+        }
+        
+        
+    }
     func renderLanguage(){
         
        // switch dataFromLanguageViewController{
