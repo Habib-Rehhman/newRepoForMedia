@@ -6,57 +6,57 @@
  Copyright © 2019 a. All rights reserved.
  */
 
-"SignUpFullNameKey" = "FirstName";
+"SignUpFullNameKey" = "全名";
 
-"SignUpEmailKey" = "Email";
+"SignUpEmailKey" = "电子邮件";
 
-"SignUpPasswordKey" = "Password";
+"SignUpPasswordKey" = "密码";
 
-"SignUpConfirmPaswordKey" = "Confirm Password";
+"SignUpConfirmPaswordKey" = "确认密码";
 
-"SignUpButtonKey" = "Sign Up";
+"SignUpButtonKey" = "注册";
 
-"SignUpHeaderKey" = "Chinese";
+"SignUpHeaderKey" = "创建一个新账户";
 
-"SignUpAlreadyAccountKey" = "Already have an account?";
+"SignUpAlreadyAccountKey" = "已经有账号？";
 
-"SignUpInButtonKey" = "Sign In";
+"SignUpInButtonKey" = "登入";
 
-"LoginHeaderKey" = "";
+"LoginHeaderKey" = "登录到您的帐户";
 
-"LoginEmailKey" ="";
+"LoginEmailKey" ="电子邮件";
 
-"LoginPasswordKey" ="";
+"LoginPasswordKey" ="密码";
 
-"LoginSignInKey" ="";
+"LoginSignInKey" ="登入";
 
-"LoginForgotKey" ="";
+"LoginForgotKey" ="忘记密码";
 
-"LoginCreateAccountKey" ="";
+"LoginCreateAccountKey" ="创建一个新账户";
 
-"RecoveryHeaderKey" ="";
+"RecoveryHeaderKey" ="找回密码";
 
-"RecoveryInstructionKey" ="";
+"RecoveryInstructionKey" ="输入您的注册电子邮件地址";
 
-"RecoveryContinueKey" ="";
+"RecoveryContinueKey" ="继续";
 
-"RecoveryEmailKey" = "Email";
+"RecoveryEmailKey" = "电子邮件";
 
-"RecoveryHavingTroubleKey" ="";
+"RecoveryHavingTroubleKey" ="有点麻烦";
 
-"RecoveryContactUsKey" ="";
+"RecoveryContactUsKey" ="联系我们";
 
-"RecoveryAlertControllerTitleKey" = "";
+"RecoveryAlertControllerTitleKey" = "恢复";
 
-"RecoveryAlertControllerKey" = "";
+"RecoveryAlertControllerKey" = "已向此电子邮件发送了一个链接。转到您的电子邮件并按照说明操作";
 
-"VerifyEmailHeaderKey" ="";
+"VerifyEmailHeaderKey" ="验证您的电子邮件";
 
-"VerifyEmailInstructionKey" ="";
+"VerifyEmailInstructionKey" ="我们已向abc@xyz.com发送了验证链接。请点击该链接以验证您的电子邮件地址。验证完电子邮件后，请点击下方登录您的帐户";
 
-"VerifyEmailSignInKey" ="";
+"VerifyEmailSignInKey" ="电子邮件";
 
-"VerifyEmailHavingTroubleKey" ="";
+"VerifyEmailHavingTroubleKey" ="有点麻烦";
 
-"VerifyEmailContactUsKey" ="";
+"VerifyEmailContactUsKey" ="联系我们";
 

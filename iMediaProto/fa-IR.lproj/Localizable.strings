@@ -6,56 +6,56 @@
  Copyright © 2019 a. All rights reserved.
  */
 
-"SignUpFullNameKey" = "FirstName";
+"SignUpFullNameKey" = "نام و نام خانوادگی";
 
-"SignUpEmailKey" = "Email";
+"SignUpEmailKey" = "پست الکترونیک";
 
-"SignUpPasswordKey" = "Password";
+"SignUpPasswordKey" = "کلمه عبور";
 
-"SignUpConfirmPaswordKey" = "Confirm Password";
+"SignUpConfirmPaswordKey" = " تایید رمز عبورd";
 
-"SignUpButtonKey" = "Sign Up";
+"SignUpButtonKey" = " ثبت نام";
 
-"SignUpHeaderKey" = "persian";
+"SignUpHeaderKey" = "ایجاد یک حساب کاربری جدید";
 
-"SignUpAlreadyAccountKey" = "Already have an account?";
+"SignUpAlreadyAccountKey" = "در حال حاضر یک حساب کاربری دارید؟";
 
-"SignUpInButtonKey" = "Sign In";
+"SignUpInButtonKey" = "ورود";
 
-"LoginHeaderKey" = "";
+"LoginHeaderKey" = "وارد حساب کاربری خود شوید";
 
-"LoginEmailKey" ="";
+"LoginEmailKey" =" پست الکترونیک";
 
-"LoginPasswordKey" ="";
+"LoginPasswordKey" ="کلمه عبور";
 
-"LoginSignInKey" ="";
+"LoginSignInKey" =" ورود";
 
-"LoginForgotKey" ="";
+"LoginForgotKey" =" رمز عبور را فراموش کرده اید";
 
-"LoginCreateAccountKey" ="";
+"LoginCreateAccountKey" ="ایجاد یک حساب کاربری جدید";
 
-"RecoveryHeaderKey" ="";
+"RecoveryHeaderKey" ="بازیابی رمز عبور";
 
-"RecoveryInstructionKey" ="";
+"RecoveryInstructionKey" ="آدرس ایمیل ثبت شده خود را وارد کنید";
 
-"RecoveryContinueKey" ="";
+"RecoveryContinueKey" ="ادامه هید";
 
-"RecoveryEmailKey" = "Email";
+"RecoveryEmailKey" = " پست الکترونیک";
 
-"RecoveryHavingTroubleKey" ="";
+"RecoveryHavingTroubleKey" ="داشتن برخی از مشکلات";
 
-"RecoveryContactUsKey" ="";
+"RecoveryContactUsKey" ="تماس با ما";
 
-"RecoveryAlertControllerTitleKey" = "";
+"RecoveryAlertControllerTitleKey" = " بهبود می یابد";
 
-"RecoveryAlertControllerKey" = "";
+"RecoveryAlertControllerKey" = "یک پیوند به این ایمیل ارسال شده است. به ایمیل خود بروید و دستورالعمل ها را دنبال کنید";
 
-"VerifyEmailHeaderKey" ="";
+"VerifyEmailHeaderKey" ="ایمیل خود را تایید کنید";
 
-"VerifyEmailInstructionKey" ="";
+"VerifyEmailInstructionKey" ="ا پیوند تأیید را به abc@xyz.com ارسال کرده ایم. لطفا برای تأیید آدرس ایمیل خود، روی لینک کلیک کنید. هنگامی که ایمیل خود را تأیید کرده اید وارد حساب کاربری خود شوید";
 
-"VerifyEmailSignInKey" ="";
+"VerifyEmailSignInKey" =" ورود";
 
-"VerifyEmailHavingTroubleKey" ="";
+"VerifyEmailHavingTroubleKey" ="داشتن برخی از مشکلات";
 
-"VerifyEmailContactUsKey" ="";
+"VerifyEmailContactUsKey" =" تماس با ما";

@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func renderLanguage(){
         
-        if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName == "hi" || LanguageViewController.buttonName ==  "fa-IR"){
+        if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName ==  "fa-IR"){
             rightToLeftAlignment(Views: self.view.subviews)
         }
         loginButton.setTitle("LoginSignInKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)

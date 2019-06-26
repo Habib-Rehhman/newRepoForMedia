@@ -6,57 +6,57 @@
  Copyright © 2019 a. All rights reserved.
  */
 
-"SignUpFullNameKey" = "FirstName";
+"SignUpFullNameKey" = "पूरा नाम";
 
-"SignUpEmailKey" = "Email";
+"SignUpEmailKey" = "ईमेल";
 
-"SignUpPasswordKey" = "Password";
+"SignUpPasswordKey" = "पारण शब्द";
 
-"SignUpConfirmPaswordKey" = "Confirm Password";
+"SignUpConfirmPaswordKey" = "पासवर्ड की पुष्टि कीजिये";
 
-"SignUpButtonKey" = "Sign Up";
+"SignUpButtonKey" = "साइन अप करें";
 
-"SignUpHeaderKey" = "hindi";
+"SignUpHeaderKey" = " एक नया खाता बनाएं";
 
-"SignUpAlreadyAccountKey" = "Already have an account?";
+"SignUpAlreadyAccountKey" = " पहले से ही एक खाता है?";
 
-"SignUpInButtonKey" = "Sign In";
+"SignUpInButtonKey" = "दाखिल करना";
 
-"LoginHeaderKey" = "";
+"LoginHeaderKey" = "अपने खाते में प्रवेश करें";
 
-"LoginEmailKey" ="";
+"LoginEmailKey" ="ईमेल";
 
-"LoginPasswordKey" ="";
+"LoginPasswordKey" ="पारण शब्द";
 
-"LoginSignInKey" ="";
+"LoginSignInKey" ="दाखिल करना";
 
-"LoginForgotKey" ="";
+"LoginForgotKey" ="पासवर्ड भूल गए";
 
-"LoginCreateAccountKey" ="";
+"LoginCreateAccountKey" ="एक नया खाता बनाएं";
 
-"RecoveryHeaderKey" ="";
+"RecoveryHeaderKey" ="पासवर्ड की दोबारा प्राप्ति";
 
-"RecoveryInstructionKey" ="";
+"RecoveryInstructionKey" ="अपना पंजीकृत ईमेल पता दर्ज करें";
 
-"RecoveryContinueKey" ="";
+"RecoveryContinueKey" ="जारी रहना";
 
-"RecoveryEmailKey" = "Email";
+"RecoveryEmailKey" = "ईमेल";
 
-"RecoveryHavingTroubleKey" ="";
+"RecoveryHavingTroubleKey" ="थोड़ी परेशानी हो रही है";
 
-"RecoveryContactUsKey" ="";
+"RecoveryContactUsKey" ="हमसे संपर्क करें";
 
-"RecoveryAlertControllerTitleKey" = "";
+"RecoveryAlertControllerTitleKey" = "की वसूली";
 
-"RecoveryAlertControllerKey" = "";
+"RecoveryAlertControllerKey" = " इस ईमेल पर एक लिंक भेजा गया है। अपने ईमेल पर जाएं और निर्देशों का पालन करें";
 
-"VerifyEmailHeaderKey" ="";
+"VerifyEmailHeaderKey" ="अपना ई मेल सत्यापित करें";
 
-"VerifyEmailInstructionKey" ="";
+"VerifyEmailInstructionKey" ="हमने abc@xyz.com पर एक सत्यापन लिंक भेजा है। कृपया अपना ईमेल पता सत्यापित करने के लिए लिंक पर क्लिक करें एक बार जब आप अपने खाते में साइन इन करने के लिए नीचे अपना ईमेल टैप सत्यापित कर लेते हैं।";
 
-"VerifyEmailSignInKey" ="";
+"VerifyEmailSignInKey" ="दाखिल करना";
 
-"VerifyEmailHavingTroubleKey" ="";
+"VerifyEmailHavingTroubleKey" ="थोड़ी परेशानी हो रही है";
 
-"VerifyEmailContactUsKey" ="";
+"VerifyEmailContactUsKey" ="हमसे संपर्क करें";
 

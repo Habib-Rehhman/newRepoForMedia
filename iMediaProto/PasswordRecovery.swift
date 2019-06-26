@@ -33,14 +33,14 @@ class PasswordRecoverController: UIViewController {
     
     func renderLanguage(){
         
-        if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName == "hi" || LanguageViewController.buttonName ==  "fa-IR"){
+        if(LanguageViewController.buttonName ==  "ar" ||  LanguageViewController.buttonName ==  "fa-IR"){
             rightToLeftAlignment(Views: self.view.subviews)
         }
         continueButtonOutlet.setTitle("RecoveryContinueKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
         
         recoveryContactUs.setTitle("RecoveryContactUsKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
         recoveryHeader.text = "RecoveryHeaderKey".localizableString(loc: LanguageViewController.buttonName)
-        
+        recoveryDescription.text = "RecoveryInstructionKey".localizableString(loc: LanguageViewController.buttonName)
         recoveryTrouble.text = "RecoveryHavingTroubleKey".localizableString(loc: LanguageViewController.buttonName)
         recoveryEmailField.placeholder = "RecoveryEmailKey".localizableString(loc: LanguageViewController.buttonName)
         
