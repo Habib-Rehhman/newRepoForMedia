@@ -42,42 +42,54 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
-
+    func showNetworkFailureAlert(){
+        let alertController = UIAlertController(title: "NetworkAlertTitle".localizableString(loc: LanguageViewController.buttonName), message: "NetworkAlertMessage".localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+ 
     @IBAction func signInPressed(_ sender: UIButton) {
-//
-       let url = URL(string: "https://reqres.in/api/login")! //"http://192.168.1.122/wikibolics/login.php")!
-//
-//
-        let parameters:Parameters = [//"appstore_id":"com.wikibolics.com",
-                                     //"app_id":"com.wikibolics.com",
-                                     //"mac_id":"d4:61:9d:21:ea:f4",
-                                     "email":"eve.holt@reqres.in",//"abc@gmail.com",
-                                     "password":"cityslicka"]//"12345678"]
-//
-//       // print("URL:",url)
-//       // print(parameters)
-//
+      
+      let sv = UIViewController.displaySpinner(onView: self.view)
+       let url = URL(string: networkConstants.baseURL+networkConstants.login)!//"https://reqres.in/api/login")!
+
+        let parameters:Parameters = [
+                                     "app_id":"com.wikibolics.com",
+                                     "appstore_id":"com.wikibolics.com",
+                                     "session":"",
+                                     "mac_id":"d4:61:9d:21:ea:f4",
+                                     "email_address":email.text!,
+                                     "password":password.text!]
+
        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
         
-        
         AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+            UIViewController.removeSpinner(spinner: sv)
             switch response.result {
                 
             case .success(let json):
+                print(json)
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: json)
                     let decoder = JSONDecoder()
-                    let gitData = try decoder.decode(ResponseSuccessful.self, from: jsonData)
-                    print(gitData.token!)
+                    let gitData = try decoder.decode(signinStructure.self, from: jsonData)
+                    if(gitData.message != "login_success"){
+                        
+                        print("login unsuccessful reason:\(gitData.message)")
+                        
+                    }else{
+                        print(gitData.loginName!)
+                    }
                     
                 } catch let err {
-                    print("Err", err)
+                   print(err.localizedDescription)
                 }
                 break
                 
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure:
+                self.showNetworkFailureAlert()
                 break
             }
         })

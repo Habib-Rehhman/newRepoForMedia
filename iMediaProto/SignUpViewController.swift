@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Alamofire
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -35,6 +35,55 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         password.delegate = self
         passwordConfirm.delegate = self
     }
+    
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        let url = URL(string: networkConstants.baseURL+networkConstants.signup)!//"https://reqres.in/api/login")!
+        
+        let parameters:Parameters = [
+            "app_id":"com.wikibolics.com",
+            "appstore_id":"com.wikibolics.com",
+            "language":LanguageViewController.buttonName,
+            "full_name":fullName.text!,
+            "email_address":email.text!,
+            "password":passwordConfirm.text!]
+        
+        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        
+        AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+            UIViewController.removeSpinner(spinner: sv)
+            switch response.result {
+                
+            case .success(let json):
+                print(json)
+                do {
+                    self.performSegue(withIdentifier: "verifySegue", sender: self)
+                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                    let decoder = JSONDecoder()
+                    let gitData = try decoder.decode(signUpStructure.self, from: jsonData)
+                    if(gitData.message != "signup_success"){
+                        
+                        print("login unsuccessful reason:\(gitData.message)")
+                        
+                    }else{
+                        print(gitData.userEmail!)
+                    }
+                    
+                } catch let err {
+                    print("Err", err)
+                }
+                break
+                
+            case .failure(let error):
+                print("errorrrrrrrrrrr")
+                print(error.localizedDescription)
+                break
+            }
+        })
+  
+    }
+    
     func renderLanguage(){
             
         if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName ==  "fa-IR"){
@@ -73,27 +122,4 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
 }
 
-extension String{
-    
-    func localizableString(loc: String) -> String {
-    
-        let path = Bundle.main.path(forResource: loc, ofType: "lproj")!
-        let bundle = Bundle(path: path)!
-        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
-    }
-}
 
-extension UIViewController{
-    func rightToLeftAlignment(Views: [UIView]){
-        //this for loop also acting as terminating base condition.
-        for v in Views{
-            if (v is UITextField){
-                (v as! UITextField).textAlignment = NSTextAlignment.right
-            }
-            if (v is UITextView){
-                (v as! UITextView).textAlignment = NSTextAlignment.right
-            }
-            rightToLeftAlignment(Views: v.subviews)
-        }
-    }
-}

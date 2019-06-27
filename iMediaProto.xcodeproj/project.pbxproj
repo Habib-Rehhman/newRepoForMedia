@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000E0D2022C498FE0080DFC7 /* ModelStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0D1F22C498FE0080DFC7 /* ModelStructures.swift */; };
+		000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0D2122C4C6300080DFC7 /* Extensions.swift */; };
 		001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */; };
 		0023A28622C1F28D007BEB2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0023A28822C1F28D007BEB2D /* Localizable.strings */; };
 		006A119C22B9045D00237B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119A22B9045D00237B3F /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		000E0D1F22C498FE0080DFC7 /* ModelStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStructures.swift; sourceTree = "<group>"; };
+		000E0D2122C4C6300080DFC7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecovery.swift; sourceTree = "<group>"; };
 		0023A27422C1EE1B007BEB2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0023A27522C1EE1C007BEB2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */,
 				0023A28822C1F28D007BEB2D /* Localizable.strings */,
 				000E0D1F22C498FE0080DFC7 /* ModelStructures.swift */,
+				000E0D2122C4C6300080DFC7 /* Extensions.swift */,
 			);
 			path = iMediaProto;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
+				000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */,
 				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
 				006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */,
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,

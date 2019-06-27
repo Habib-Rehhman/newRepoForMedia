@@ -52,6 +52,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="signPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PCX-Hg-op3"/>
                                     <segue destination="1ZE-xB-Wa9" kind="presentation" id="dnN-yc-IOZ"/>
                                 </connections>
                             </button>
@@ -830,7 +831,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="2TA-o1-q7x"/>
+                                    <action selector="signUpPressed:" destination="cXu-p3-exh" eventType="touchUpInside" id="RUc-rX-d95"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCd-lh-dqh" userLabel="bottomView">
@@ -913,6 +914,7 @@
                         <outlet property="passwordConfirm" destination="AO2-nl-vlY" id="LhI-Of-qMB"/>
                         <outlet property="signUp" destination="xBI-DW-rPB" id="Xh1-EI-QvM"/>
                         <outlet property="sihnIn" destination="QVl-eE-e7u" id="F0N-IA-hER"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="verifySegue" id="tzM-Qk-Zvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXN-6j-zlL" userLabel="First Responder" sceneMemberID="firstResponder"/>

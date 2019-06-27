@@ -60,6 +60,10 @@
 
 "VerifyEmailContactUsKey" ="Contact Us";
 
+"NetworkAlertTitle" = "Network Problem!";
+
+"NetworkAlertMessage" = "Check your connection and try again later";
+
 
 
 /*
