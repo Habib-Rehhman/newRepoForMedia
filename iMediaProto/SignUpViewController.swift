@@ -1,10 +1,4 @@
-//
-//  SignUpViewController.swift
-//  Snapchat Camera
-//
-//  Created by ashika shanthi on 2/27/18.
-//  Copyright © 2018 ashika shanthi. All rights reserved.
-//
+
 
 import UIKit
 import Alamofire
@@ -16,14 +10,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUp: UIButton!
     
     @IBOutlet weak var alreadyAccount: UILabel!
-    //static var dataFromLanguageViewController = ""
     @IBOutlet weak var passwordConfirm: UITextField!
-    // @IBOutlet weak var password: UITextField!
     @IBOutlet weak var header: UILabel!
     
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var email: UITextField!
-   // @IBOutlet weak var fullName: UITextField!
     
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
@@ -37,6 +28,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
+        
+        guard  !password.text!.isEmpty else {return}
+        if password.text != passwordConfirm.text{
+            let alertController = UIAlertController(title: "Retype Password", message: "Characters Entered do not match.Enter exactly the same password in both fields", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        
         
         let sv = UIViewController.displaySpinner(onView: self.view)
         let url = URL(string: networkConstants.baseURL+networkConstants.signup)!//"https://reqres.in/api/login")!
@@ -75,9 +78,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
                 break
                 
-            case .failure(let error):
-                print("errorrrrrrrrrrr")
-                print(error.localizedDescription)
+            case .failure:
+                self.showNetworkFailureAlert()
                 break
             }
         })
@@ -102,20 +104,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordConfirm.placeholder = "SignUpConfirmPaswordKey".localizableString(loc: LanguageViewController.buttonName)
         
     }
-    @IBAction func signUpAction(_ sender: Any) {
-        
+    func confirmPassword() {
+        guard  !password.text!.isEmpty else {return}
         if password.text != passwordConfirm.text{
             let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-        }
-        else{
-
+            return
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
