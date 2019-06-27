@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -43,20 +43,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func loginAction(_ sender: Any) {
-//      
-//            Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
-//                if error == nil{
-//                    self.performSegue(withIdentifier: "loginToHome", sender: self)
-//                }
-//                else{
-//                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-//                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                    
-//                    alertController.addAction(defaultAction)
-//                    self.present(alertController, animated: true, completion: nil)
-//                }
-//            }
+
+    @IBAction func signInPressed(_ sender: UIButton) {
+//
+       let url = URL(string: "https://reqres.in/api/login")! //"http://192.168.1.122/wikibolics/login.php")!
+//
+//
+        let parameters:Parameters = [//"appstore_id":"com.wikibolics.com",
+                                     //"app_id":"com.wikibolics.com",
+                                     //"mac_id":"d4:61:9d:21:ea:f4",
+                                     "email":"eve.holt@reqres.in",//"abc@gmail.com",
+                                     "password":"cityslicka"]//"12345678"]
+//
+//       // print("URL:",url)
+//       // print(parameters)
+//
+       let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        
+        
+        AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+            switch response.result {
+                
+            case .success(let json):
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                    let decoder = JSONDecoder()
+                    let gitData = try decoder.decode(ResponseSuccessful.self, from: jsonData)
+                    print(gitData.token!)
+                    
+                } catch let err {
+                    print("Err", err)
+                }
+                break
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                break
+            }
+        })
+        
         
     }
     
