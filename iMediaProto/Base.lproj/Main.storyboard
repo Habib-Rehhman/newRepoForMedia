@@ -940,7 +940,7 @@
         <!--Rotating Navigation Controller-->
         <scene sceneID="Re3-uU-t4i">
             <objects>
-                <navigationController storyboardIdentifier="rotatingNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k80-ZD-73v" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rotatingNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k80-ZD-73v" customClass="RotatingNavigationController" customModule="iMediaProto" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BAX-Zb-2NX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -958,7 +958,7 @@
         <!--Quote of the Day-->
         <scene sceneID="OMm-lS-dGZ">
             <objects>
-                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hi7-bZ-aoa" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hi7-bZ-aoa" customClass="QuoteViewController" customModule="iMediaProto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J3Q-Cx-LoL"/>
                         <viewControllerLayoutGuide type="bottom" id="QkH-Ci-tt9"/>
@@ -1014,7 +1014,7 @@
         <!--Rotating Navigation Controller-->
         <scene sceneID="98m-VK-iYO">
             <objects>
-                <navigationController storyboardIdentifier="TopicsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kO1-Qy-E4u" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TopicsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kO1-Qy-E4u" customClass="RotatingNavigationController" customModule="iMediaProto" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="85J-jH-Teh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1032,7 +1032,7 @@
         <!--Topics-->
         <scene sceneID="SEt-Ab-gPJ">
             <objects>
-                <tableViewController storyboardIdentifier="topicsVC" title="Topics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g93-LP-gOy" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="topicsVC" title="Topics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g93-LP-gOy" customClass="TopicsViewController" customModule="iMediaProto" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopicsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" sectionHeaderHeight="28" sectionFooterHeight="28" id="IYM-MD-ata">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
