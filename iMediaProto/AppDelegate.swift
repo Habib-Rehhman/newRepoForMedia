@@ -1,47 +1,74 @@
 //
 //  AppDelegate.swift
-//  Snapchat Camera
+//  Founding Fathers Quote Book
 //
-//  Created by ashika shanthi on 2/17/18.
-//  Copyright © 2018 ashika shanthi. All rights reserved.
+//  Created by Steve Liddle on 9/7/16.
+//  Copyright © 2016 Steve Liddle. All rights reserved.
 //
 
 import UIKit
-//import Firebase
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+import UserNotifications
 
-    var window: UIWindow?
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions:
-        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       //// FirebaseApp.configure()
+    // MARK: - Constants
+    
+    private struct Storyboard {
+        static let ShowQuoteSegueIdentifier = "ShowQuote"
+    }
+    
+    // MARK: - Properties
+    
+    var window: UIWindow?
+    var wantsToDisplayQuoteOfTheDay = false
+    
+    // MARK: - Class properties
+    
+    static var shared: AppDelegate!
+    
+    // MARK: - Application lifecycle
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: .alert) { _,_ in }
+        AppDelegate.shared = self
+        
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    
+    func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
+        return true
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
+        return true
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    // MARK: - User notification center delegate
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        segueToQuoteOfTheDay()
+        completionHandler()
     }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        segueToQuoteOfTheDay()
+        completionHandler(UNNotificationPresentationOptions())
     }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    // MARK: - Helpers
+    
+    private func segueToQuoteOfTheDay() {
+        wantsToDisplayQuoteOfTheDay = true
+        
+        if let rotatingNavVC = window?.rootViewController as? RotatingNavigationController {
+            rotatingNavVC.dismiss(animated: true)
+            
+            if let quoteVC = rotatingNavVC.viewControllers.first as? QuoteViewController {
+                quoteVC.showQuoteOfTheDay()
+            }
+        }
     }
-
-
 }
-
