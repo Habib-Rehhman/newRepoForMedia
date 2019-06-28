@@ -15,11 +15,11 @@ class QuoteDeck {
     var tagSet: [String] = []
 
     let quotes = [
-        Quote(text: "Do you want to know who you are? Don't ask. Act! Action will delineate and define you.",
+        Quote(text: "",
               tags: [ "Chapter 1"]),
-        Quote(text: "Facts are stubborn things; and whatever may be our wishes, our inclinations, or the dictates of our passions, they cannot alter the state of facts and evidence.",
+        Quote(text: "",
               tags: [ "ملكففححخ"]),
-        Quote(text: "Great is the guilt of an unnecessary war.",
+        Quote(text: "",
               tags: [ "guilt"])
     ]
 

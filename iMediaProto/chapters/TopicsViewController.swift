@@ -11,7 +11,10 @@ import UIKit
 class TopicsViewController : UITableViewController, UIDataSourceModelAssociation {
 
     // MARK: - Constants
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     private struct Storyboard {
         static let TopicCellIdentifier = "TopicCell"
         static let ShowQuoteSegueIdentifier = "ShowQuote"

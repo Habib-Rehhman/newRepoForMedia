@@ -18,7 +18,7 @@ class QuoteViewController : UIViewController {
     }
     
     private struct Storyboard {
-        static let QuoteOfTheDayTitle = "Wikibolics"
+        static let QuoteOfTheDayTitle = ""
         static let ShowTopicsSegueIdentifier = "ShowTopics"
        // static let TodayTitle = "Today"
         static let TopicsTitle = "Topics"
@@ -43,6 +43,7 @@ class QuoteViewController : UIViewController {
         super.viewDidLoad()
 
         configure(updatingCurrentIndex: true)
+        performSegue(withIdentifier: Storyboard.ShowTopicsSegueIdentifier, sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,9 +106,10 @@ class QuoteViewController : UIViewController {
     @IBAction func toggleTopics(_ sender: UIBarButtonItem) {
         if sender.title == Storyboard.TopicsTitle {
             performSegue(withIdentifier: Storyboard.ShowTopicsSegueIdentifier, sender: sender)
-        } else {
-            showQuoteOfTheDay()
         }
+//        } else {
+//            showQuoteOfTheDay()
+//        }
     }
 
     // MARK: - Helpers
