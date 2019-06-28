@@ -32,7 +32,7 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
     // MARK: - Data source model association
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
-        let row = QuoteDeck.sharedInstance.tagSet.index(of: identifier) ?? 0
+        let row = QuoteDeck.sharedInstance.tagSet.firstIndex(of: identifier) ?? 0
         
         return IndexPath(row: row, section: 0)
     }
@@ -51,6 +51,11 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.TopicCellIdentifier)!
 
         cell.textLabel?.text = QuoteDeck.sharedInstance.tagSet[indexPath.row].capitalized
+        
+        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")//.gray
+        
+        cell.layer.borderWidth = CGFloat(15)
+        cell.layer.borderColor = tableView.backgroundColor?.cgColor
 
         return cell
     }
