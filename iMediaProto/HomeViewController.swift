@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         let parameters:Parameters = [
             "app_id":"com.wikibolics.com",
             "appstore_id":"com.wikibolics.com",
-            "session":"1@7c49d127be08d6551b2746d90f4e6735@d4:61:9d:21:ea:f4",
+            "session":"",
              ]
         
         let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]

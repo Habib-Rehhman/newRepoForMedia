@@ -20,6 +20,11 @@
 		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
 		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
 		008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */; };
+		9D20FA3422C639EC00D80E42 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA2F22C639EC00D80E42 /* QuoteViewController.swift */; };
+		9D20FA3522C639EC00D80E42 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA3022C639EC00D80E42 /* TopicsViewController.swift */; };
+		9D20FA3622C639EC00D80E42 /* RotatingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA3122C639EC00D80E42 /* RotatingNavigationController.swift */; };
+		9D20FA3722C639EC00D80E42 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA3222C639EC00D80E42 /* Quote.swift */; };
+		9D20FA3822C639EC00D80E42 /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA3322C639EC00D80E42 /* QuoteDeck.swift */; };
 		CFD2EDFF30EE0580E3816510 /* Pods_iMediaProto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B171EC98ED4EF4608FDA3C2 /* Pods_iMediaProto.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,11 @@
 		1B171EC98ED4EF4608FDA3C2 /* Pods_iMediaProto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMediaProto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1450351C40EA655DD081A /* Pods-iMediaProto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.debug.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.debug.xcconfig"; sourceTree = "<group>"; };
 		713684BDB13589D530C338F1 /* Pods-iMediaProto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.release.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.release.xcconfig"; sourceTree = "<group>"; };
+		9D20FA2F22C639EC00D80E42 /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
+		9D20FA3022C639EC00D80E42 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		9D20FA3122C639EC00D80E42 /* RotatingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingNavigationController.swift; sourceTree = "<group>"; };
+		9D20FA3222C639EC00D80E42 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		9D20FA3322C639EC00D80E42 /* QuoteDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,7 @@
 		006A119522B9045D00237B3F /* iMediaProto */ = {
 			isa = PBXGroup;
 			children = (
+				9D20FA2E22C639DD00D80E42 /* chapters */,
 				008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */,
 				006A11A922B9064600237B3F /* AppDelegate.swift */,
 				006A11AB22B9064600237B3F /* HomeViewController.swift */,
@@ -121,6 +132,18 @@
 				000E0D2122C4C6300080DFC7 /* Extensions.swift */,
 			);
 			path = iMediaProto;
+			sourceTree = "<group>";
+		};
+		9D20FA2E22C639DD00D80E42 /* chapters */ = {
+			isa = PBXGroup;
+			children = (
+				9D20FA3222C639EC00D80E42 /* Quote.swift */,
+				9D20FA3322C639EC00D80E42 /* QuoteDeck.swift */,
+				9D20FA2F22C639EC00D80E42 /* QuoteViewController.swift */,
+				9D20FA3122C639EC00D80E42 /* RotatingNavigationController.swift */,
+				9D20FA3022C639EC00D80E42 /* TopicsViewController.swift */,
+			);
+			path = chapters;
 			sourceTree = "<group>";
 		};
 		B3892F1FEFC9543C5DA3AFB8 /* Frameworks */ = {
@@ -269,11 +292,16 @@
 				000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */,
 				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
 				006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */,
+				9D20FA3522C639EC00D80E42 /* TopicsViewController.swift in Sources */,
+				9D20FA3722C639EC00D80E42 /* Quote.swift in Sources */,
+				9D20FA3622C639EC00D80E42 /* RotatingNavigationController.swift in Sources */,
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
 				000E0D2022C498FE0080DFC7 /* ModelStructures.swift in Sources */,
 				001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */,
 				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
+				9D20FA3422C639EC00D80E42 /* QuoteViewController.swift in Sources */,
+				9D20FA3822C639EC00D80E42 /* QuoteDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
