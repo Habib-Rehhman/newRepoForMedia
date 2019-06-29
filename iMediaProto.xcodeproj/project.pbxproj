@@ -20,6 +20,9 @@
 		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
 		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
 		008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */; };
+		9D201E2222C7B7E800074416 /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D201E2122C7B7E800074416 /* shared.swift */; };
+		9D201E2422C7B89300074416 /* popBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D201E2322C7B89300074416 /* popBase.swift */; };
+		9D201E2822C7BE9600074416 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D201E2722C7BE9600074416 /* PopOverViewController.swift */; };
 		9D20FA3422C639EC00D80E42 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA2F22C639EC00D80E42 /* QuoteViewController.swift */; };
 		9D20FA3522C639EC00D80E42 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA3022C639EC00D80E42 /* TopicsViewController.swift */; };
 		9D20FA3722C639EC00D80E42 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20FA3222C639EC00D80E42 /* Quote.swift */; };
@@ -73,6 +76,9 @@
 		1B171EC98ED4EF4608FDA3C2 /* Pods_iMediaProto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMediaProto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1450351C40EA655DD081A /* Pods-iMediaProto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.debug.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.debug.xcconfig"; sourceTree = "<group>"; };
 		713684BDB13589D530C338F1 /* Pods-iMediaProto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.release.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.release.xcconfig"; sourceTree = "<group>"; };
+		9D201E2122C7B7E800074416 /* shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
+		9D201E2322C7B89300074416 /* popBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popBase.swift; sourceTree = "<group>"; };
+		9D201E2722C7BE9600074416 /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		9D20FA2F22C639EC00D80E42 /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		9D20FA3022C639EC00D80E42 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 		9D20FA3222C639EC00D80E42 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 				006A11AE22B9064700237B3F /* SignUpViewController.swift */,
 				006A11AA22B9064600237B3F /* StartViewController.swift */,
 				006A119A22B9045D00237B3F /* Main.storyboard */,
+				9D201E2122C7B7E800074416 /* shared.swift */,
 				006A119D22B9046000237B3F /* Assets.xcassets */,
 				006A119F22B9046000237B3F /* LaunchScreen.storyboard */,
 				006A11A822B9064600237B3F /* iMediaProto-Bridging-Header.h */,
@@ -128,6 +135,8 @@
 				0023A28822C1F28D007BEB2D /* Localizable.strings */,
 				000E0D1F22C498FE0080DFC7 /* ModelStructures.swift */,
 				000E0D2122C4C6300080DFC7 /* Extensions.swift */,
+				9D201E2322C7B89300074416 /* popBase.swift */,
+				9D201E2722C7BE9600074416 /* PopOverViewController.swift */,
 			);
 			path = iMediaProto;
 			sourceTree = "<group>";
@@ -285,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D201E2822C7BE9600074416 /* PopOverViewController.swift in Sources */,
 				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
 				000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */,
 				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
@@ -293,6 +303,8 @@
 				9D20FA3722C639EC00D80E42 /* Quote.swift in Sources */,
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
+				9D201E2422C7B89300074416 /* popBase.swift in Sources */,
+				9D201E2222C7B7E800074416 /* shared.swift in Sources */,
 				000E0D2022C498FE0080DFC7 /* ModelStructures.swift in Sources */,
 				001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */,
 				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
