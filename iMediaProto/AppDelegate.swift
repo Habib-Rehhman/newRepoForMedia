@@ -49,26 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - User notification center delegate
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        segueToQuoteOfTheDay()
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        segueToQuoteOfTheDay()
         completionHandler(UNNotificationPresentationOptions())
     }
-    
-    // MARK: - Helpers
-    
-    private func segueToQuoteOfTheDay() {
-        wantsToDisplayQuoteOfTheDay = true
-        
-        if let rotatingNavVC = window?.rootViewController as? RotatingNavigationController {
-            rotatingNavVC.dismiss(animated: true)
-            
-            if let quoteVC = rotatingNavVC.viewControllers.first as? QuoteViewController {
-                quoteVC.showQuoteOfTheDay()
-            }
-        }
-    }
+
 }

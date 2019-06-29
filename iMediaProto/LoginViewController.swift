@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var loginCreateAccount: UIButton!
     @IBOutlet weak var logingForgot: UIButton!
     @IBOutlet weak var loginHeader: UILabel!
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         email.delegate = self
         password.delegate = self
     }
-
+    
     
     func renderLanguage(){
         
@@ -42,22 +42,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-
- 
+    
+    
     @IBAction func signInPressed(_ sender: UIButton) {
-      
-      let sv = UIViewController.displaySpinner(onView: self.view)
-       let url = URL(string: networkConstants.baseURL+networkConstants.login)!//"https://reqres.in/api/login")!
-
+        
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        let url = URL(string: networkConstants.baseURL+networkConstants.login)!//"https://reqres.in/api/login")!
+        
         let parameters:Parameters = [
-                                     "app_id":"com.wikibolics.com",
-                                     "appstore_id":"com.wikibolics.com",
-                                     "session":"",
-                                     "mac_id":"d4:61:9d:21:ea:f4",
-                                     "email_address":email.text!,
-                                     "password":password.text!]
-
-       let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+            "app_id":"com.wikibolics.com",
+            "appstore_id":"com.wikibolics.com",
+            "session":"",
+            "mac_id":"d4:61:9d:21:ea:f4",
+            "email_address":email.text!,
+            "password":password.text!]
+        
+        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
         
         AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
             switch response.result {
@@ -82,10 +82,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             "app_id":"com.wikibolics.com",
                             "appstore_id":"com.wikibolics.com",
                             "session":"\(gitData.loginSession!)@d4:61:9d:21:ea:f4"
-                          ]
+                        ]
                         
                         AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
-                            
+                            print("\(gitData.loginSession!)@d4:61:9d:21:ea:f4")
                             switch response.result {
                                 
                             case .success(let json):
@@ -98,12 +98,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                         UIViewController.removeSpinner(spinner: sv)
                                         self.showNetworkFailureAlert()
                                     }else{
+                                         UIViewController.removeSpinner(spinner: sv)
+                                                        self.performSegue(withIdentifier: "showChaptersNow", sender: self)
                                         gitData.chaptersList!.forEach({ (chapter) in
                                             print(chapter.name)
                                             QuoteDeck.sharedInstance.quotes.append( Quote(text: chapter.name,tags: [chapter.part]))
                                         })
-                                        UIViewController.removeSpinner(spinner: sv)
-                                        self.performSegue(withIdentifier: "showChaptersNow", sender: self)
+                                       
+                                        QuoteDeck.sharedInstance.update()
+                                        
+                        
                                     }
                                     
                                 } catch let err {
@@ -112,8 +116,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 break
                                 
                             case .failure(let error):
-                                 UIViewController.removeSpinner(spinner: sv)
-                                 self.showNetworkFailureAlert()
+                                UIViewController.removeSpinner(spinner: sv)
+                                self.showNetworkFailureAlert()
                                 print(error.localizedDescription)
                                 break
                             }
@@ -122,7 +126,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                     
                 } catch let err {
-                   print(err.localizedDescription)
+                    print(err.localizedDescription)
                 }
                 break
                 

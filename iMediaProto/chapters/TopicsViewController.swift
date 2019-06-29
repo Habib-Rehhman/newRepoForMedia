@@ -14,7 +14,6 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
         static let ShowQuoteSegueIdentifier = "ShowQuote"
     }
     
-    // MARK: - Properties
     var selectedTopic: String?
     
     // MARK: - View controller lifecycle
@@ -24,7 +23,6 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
         }
     }
     
-    // MARK: - Data source model association
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
         let row = QuoteDeck.sharedInstance.tagSet.firstIndex(of: identifier) ?? 0
@@ -47,8 +45,8 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
         cell.textLabel?.text = QuoteDeck.sharedInstance.tagSet[indexPath.row].capitalized
         
         tableView.backgroundColor = UIColor(hexString: "#A5DEFF")//.gray
-        
-        cell.layer.borderWidth = CGFloat(15)
+        cell.layer.cornerRadius = 8
+        cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
         
         return cell
@@ -57,6 +55,6 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
-        performSegue(withIdentifier: Storyboard.ShowQuoteSegueIdentifier, sender: self)
+        performSegue(withIdentifier:"showMainText", sender: nil)
     }
 }

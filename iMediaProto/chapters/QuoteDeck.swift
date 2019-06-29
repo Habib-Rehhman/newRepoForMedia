@@ -8,12 +8,12 @@ class QuoteDeck {
     var tagSet: [String] = []
     
     var quotes: [Quote] = [
-        Quote(text: "",
-              tags: [ "Chapter 1"]),
-        Quote(text: "",
-              tags: [ "ملكففححخ"]),
-        Quote(text: "",
-              tags: [ "guilt"])
+//        Quote(text: "one",
+//              tags: [ "Chapter 1"]),
+//        Quote(text: "two",
+//              tags: [ "ملكففححخ"]),
+//        Quote(text: "three",
+//              tags: [ "guilt"])
     ]
     
     
@@ -26,8 +26,8 @@ class QuoteDeck {
     }
     
     // MARK: - Private helpers
-    
-    private func update() {
+
+     func update() {
         for quote in quotes {
             for tag in quote.tags {
                 if !tagSet.contains(tag) {
@@ -35,11 +35,7 @@ class QuoteDeck {
                 }
             }
         }
-        
-        tagSet = tagSet.sorted()
     }
-    
-    // MARK: - Public helpers
     
     func quotesForTag(_ tag: String) -> [Quote] {
         var matchingQuotes: [Quote] = []
