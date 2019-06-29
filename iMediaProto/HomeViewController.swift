@@ -25,49 +25,49 @@ class HomeViewController: UIViewController {
     
     @IBAction func signPressed(_ sender: UIButton) {
         
-        let sv = UIViewController.displaySpinner(onView: self.view)
-        let url = URL(string: networkConstants.baseURL+networkConstants.nextToLogin)!//"https://reqres.in/api/login")!
-        
-        let parameters:Parameters = [
-            "app_id":"com.wikibolics.com",
-            "appstore_id":"com.wikibolics.com",
-            "session":"",
-             ]
-        
-        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
-        
-        AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
-            UIViewController.removeSpinner(spinner: sv)
-            switch response.result {
-                
-            case .success(let json):
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: json)
-                    let decoder = JSONDecoder()
-                    let gitData = try decoder.decode(arrayOfChapters.self, from: jsonData)
-                    if(gitData.message != nil){
-                        
-                        print("login unsuccessful reason:\(gitData.message!)")
-                        
-                    }else{
-                        
-                        gitData.chaptersList!.forEach({ (chapter) in
-                            print(chapter.name)
-                        })
-                        print()
-                    }
-                    
-                } catch let err {
-                    print("Err", err)
-                }
-                break
-                
-            case .failure(let error):
-                print("errorrrrrrrrrrr")
-                print(error.localizedDescription)
-                break
-            }
-        })
+//        let sv = UIViewController.displaySpinner(onView: self.view)
+//        let url = URL(string: networkConstants.baseURL+networkConstants.nextToLogin)!//"https://reqres.in/api/login")!
+//
+//        let parameters:Parameters = [
+//            "app_id":"com.wikibolics.com",
+//            "appstore_id":"com.wikibolics.com",
+//            "session":"",
+//             ]
+//        
+//        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+//
+//        AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+//            UIViewController.removeSpinner(spinner: sv)
+//            switch response.result {
+//
+//            case .success(let json):
+//                do {
+//                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+//                    let decoder = JSONDecoder()
+//                    let gitData = try decoder.decode(arrayOfChapters.self, from: jsonData)
+//                    if(gitData.message != nil){
+//
+//                        print("login unsuccessful reason:\(gitData.message!)")
+//
+//                    }else{
+//
+//                        gitData.chaptersList!.forEach({ (chapter) in
+//                            print(chapter.name)
+//                        })
+//                        print()
+//                    }
+//
+//                } catch let err {
+//                    print("Err", err)
+//                }
+//                break
+//
+//            case .failure(let error):
+//                print("errorrrrrrrrrrr")
+//                print(error.localizedDescription)
+//                break
+//            }
+//        })
         
     }
     func renderLanguage(){

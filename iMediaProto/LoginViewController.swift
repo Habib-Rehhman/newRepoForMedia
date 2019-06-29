@@ -60,7 +60,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
         
         AF.request(url, method:.post, parameters: parameters, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
-            UIViewController.removeSpinner(spinner: sv)
             switch response.result {
                 
             case .success(let json):
@@ -71,10 +70,55 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let gitData = try decoder.decode(signinStructure.self, from: jsonData)
                     if(gitData.message != "login_success"){
                         
+                        UIViewController.removeSpinner(spinner: sv)
+                        self.showWrongCredentialsAlert()
                         print("login unsuccessful reason:\(gitData.message)")
                         
                     }else{
-                        print(gitData.loginName!)
+                        
+                        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.nextToLogin)!//"https://reqres.in/api/login")!
+                        
+                        let parametersChapter:Parameters = [
+                            "app_id":"com.wikibolics.com",
+                            "appstore_id":"com.wikibolics.com",
+                            "session":"\(gitData.loginSession!)@d4:61:9d:21:ea:f4"
+                          ]
+                        
+                        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+                            
+                            switch response.result {
+                                
+                            case .success(let json):
+                                print(json)
+                                do {
+                                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                                    let decoder = JSONDecoder()
+                                    let gitData = try decoder.decode(arrayOfChapters.self, from: jsonData)
+                                    if(gitData.message != nil){
+                                        UIViewController.removeSpinner(spinner: sv)
+                                        self.showNetworkFailureAlert()
+                                    }else{
+                                        gitData.chaptersList!.forEach({ (chapter) in
+                                            print(chapter.name)
+                                            QuoteDeck.sharedInstance.quotes.append( Quote(text: chapter.name,tags: [chapter.part]))
+                                        })
+                                        UIViewController.removeSpinner(spinner: sv)
+                                        self.performSegue(withIdentifier: "showChaptersNow", sender: self)
+                                    }
+                                    
+                                } catch let err {
+                                    print("Err", err)
+                                }
+                                break
+                                
+                            case .failure(let error):
+                                 UIViewController.removeSpinner(spinner: sv)
+                                 self.showNetworkFailureAlert()
+                                print(error.localizedDescription)
+                                break
+                            }
+                            
+                        })
                     }
                     
                 } catch let err {

@@ -1,10 +1,3 @@
-//
-//  QuoteViewController.swift
-//  Founding Fathers Quote Book
-//
-//  Created by Steve Liddle on 9/7/16.
-//  Copyright © 2016 Steve Liddle. All rights reserved.
-//
 
 import UIKit
 
@@ -20,14 +13,14 @@ class QuoteViewController : UIViewController {
     private struct Storyboard {
         static let QuoteOfTheDayTitle = ""
         static let ShowTopicsSegueIdentifier = "ShowTopics"
-       // static let TodayTitle = "Today"
+        // static let TodayTitle = "Today"
         static let TopicsTitle = "Topics"
     }
-
+    
     // MARK: - Outlets
     
     @IBOutlet weak var toggleButton: UIBarButtonItem!
-   // @IBOutlet weak var webView: UIWebView!
+    // @IBOutlet weak var webView: UIWebView!
     
     @IBOutlet weak var textView: UITextView!
     // MARK: - Properties
@@ -41,7 +34,7 @@ class QuoteViewController : UIViewController {
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
-
+        
         configure(updatingCurrentIndex: true)
         performSegue(withIdentifier: Storyboard.ShowTopicsSegueIdentifier, sender: self)
     }
@@ -55,7 +48,7 @@ class QuoteViewController : UIViewController {
             configure(updatingCurrentIndex: true)
         }
     }
-
+    
     // MARK: - State restoration
     
     override func decodeRestorableState(with coder: NSCoder) {
@@ -67,7 +60,7 @@ class QuoteViewController : UIViewController {
         if let savedTopic = coder.decodeObject(forKey: Key.Topic) as? String {
             topic = savedTopic
         }
-
+        
         configure(updatingCurrentIndex: false)
     }
     
@@ -77,14 +70,14 @@ class QuoteViewController : UIViewController {
         coder.encode(currentQuoteIndex, forKey: Key.CurrentQuoteIndex)
         coder.encode(topic, forKey: Key.Topic)
     }
-
+    
     // MARK: - Actions
     
     @IBAction func showQuoteOfTheDay() {
         topic = nil
         configure(updatingCurrentIndex: true)
     }
-
+    
     @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
         if sender.direction == .left {
             currentQuoteIndex -= 1
@@ -99,7 +92,7 @@ class QuoteViewController : UIViewController {
                 currentQuoteIndex = 0
             }
         }
-
+        
         updateUIByToggling()
     }
     
@@ -107,17 +100,16 @@ class QuoteViewController : UIViewController {
         if sender.title == Storyboard.TopicsTitle {
             performSegue(withIdentifier: Storyboard.ShowTopicsSegueIdentifier, sender: sender)
         }
-//        } else {
-//            showQuoteOfTheDay()
-//        }
+        //        } else {
+        //            showQuoteOfTheDay()
+        //        }
     }
-
+    
     // MARK: - Helpers
     
     private func configure(updatingCurrentIndex needsUpdate: Bool) {
         if let selectedTopic = topic {
             //toggleButton.title = Storyboard.TodayTitle
-
             quotes = QuoteDeck.sharedInstance.quotesForTag(selectedTopic)
             
             if needsUpdate {
@@ -125,7 +117,7 @@ class QuoteViewController : UIViewController {
             }
         } else {
             toggleButton.title = Storyboard.TopicsTitle
-
+            
             let formatter = DateFormatter()
             
             formatter.dateFormat = "DDD"
@@ -140,7 +132,7 @@ class QuoteViewController : UIViewController {
         
         updateUI()
     }
-
+    
     private func increment(date: Date, by amount: Int = 1) -> Date {
         var dayComponent = DateComponents()
         
@@ -148,7 +140,7 @@ class QuoteViewController : UIViewController {
         
         return Calendar.current.date(byAdding: dayComponent, to: date)!
     }
-
+    
     private func updateUIByToggling() {
         let quote = quotes[currentQuoteIndex]
         
@@ -156,15 +148,15 @@ class QuoteViewController : UIViewController {
             // See http://bit.ly/2ctUdTI
             
             let fadeTextAnimation = CATransition()
-
+            
             fadeTextAnimation.duration = 0.75
             fadeTextAnimation.type = CATransitionType.fade
             
             navigationController?.navigationBar.layer.add(fadeTextAnimation, forKey: "fadeText")
-            navigationItem.title = "\(topicFilter.capitalized)" 
+            navigationItem.title = "\(topicFilter.capitalized)"
         }
     }
-
+    
     private func updateUI() {
         let quote = quotes[currentQuoteIndex]
         

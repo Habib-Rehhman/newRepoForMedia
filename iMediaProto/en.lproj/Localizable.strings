@@ -64,6 +64,10 @@
 
 "NetworkAlertMessage" = "Check your connection and try again later";
 
+"WrongCredAlertTitle" = "Incorrect Credentials!";
+
+"WrongCredAlertMessage" = "Make sure your email or password is correct and try again";
+
 
 
 /*

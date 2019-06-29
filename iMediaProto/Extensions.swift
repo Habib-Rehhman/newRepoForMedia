@@ -38,6 +38,13 @@ extension UIViewController{
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    func showWrongCredentialsAlert(){
+        let alertController = UIAlertController(title: "WrongCredAlertTitle".localizableString(loc: LanguageViewController.buttonName), message: "WrongCredAlertMessage".localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     class func displaySpinner(onView : UIView) -> UIView {
         let spinnerView = UIView.init(frame: onView.bounds)
