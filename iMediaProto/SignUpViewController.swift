@@ -5,7 +5,7 @@ import Alamofire
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-
+    
     @IBOutlet weak var sihnIn: UIButton!
     @IBOutlet weak var signUp: UIButton!
     
@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         renderLanguage()
         
         email.delegate = self
@@ -79,25 +79,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 break
                 
             case .failure:
-                self.showNetworkFailureAlert()
+                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
                 break
             }
         })
-  
+        
     }
     
     func renderLanguage(){
-            
+        
         if(LanguageViewController.buttonName ==  "ar" || LanguageViewController.buttonName ==  "fa-IR"){
-             rightToLeftAlignment(Views: self.view.subviews)
+            rightToLeftAlignment(Views: self.view.subviews)
         }
-     
+        
         signUp.setTitle("SignUpButtonKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
         sihnIn.setTitle("SignUpInButtonKey".localizableString(loc: LanguageViewController.buttonName), for: .normal)
         
         alreadyAccount.text = "SignUpAlreadyAccountKey".localizableString(loc: LanguageViewController.buttonName)
         header.text = "SignUpHeaderKey".localizableString(loc: LanguageViewController.buttonName)
-       
+        
         fullName.placeholder = "SignUpFullNameKey".localizableString(loc: LanguageViewController.buttonName)
         email.placeholder = "SignUpEmailKey".localizableString(loc: LanguageViewController.buttonName)
         password.placeholder = "SignUpPasswordKey".localizableString(loc: LanguageViewController.buttonName)
@@ -119,7 +119,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
+    
 }
 
 

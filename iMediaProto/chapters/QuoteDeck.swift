@@ -2,7 +2,7 @@
 import Foundation
 
 class QuoteDeck {
-    //hiiiiiiiiiiiiiiiii
+    
     // MARK: - Properties
     
     var tagSet: [String] = []
@@ -32,8 +32,8 @@ class QuoteDeck {
     }
     
     // MARK: - Private helpers
-    
-    func update() {
+
+     func update() {
         for quote in quotes {
             for tag in quote.tags {
                 if !tagSet.contains(tag) {

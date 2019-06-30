@@ -19,7 +19,6 @@ extension String{
 
 extension UIViewController{
     func rightToLeftAlignment(Views: [UIView]){
-        //this for loop also acting as terminating base condition.
         for v in Views{
             if (v is UITextField){
                 (v as! UITextField).textAlignment = NSTextAlignment.right
@@ -31,20 +30,20 @@ extension UIViewController{
         }
     }
     
-    func showNetworkFailureAlert(){
-        let alertController = UIAlertController(title: "NetworkAlertTitle".localizableString(loc: LanguageViewController.buttonName), message: "NetworkAlertMessage".localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
+    func showOkAlert(tit: String, msg: String){
+        let alertController = UIAlertController(title: tit.localizableString(loc: LanguageViewController.buttonName), message: msg.localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    func showWrongCredentialsAlert(){
-        let alertController = UIAlertController(title: "WrongCredAlertTitle".localizableString(loc: LanguageViewController.buttonName), message: "WrongCredAlertMessage".localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        
-        alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
+    //    func showWrongCredentialsAlert(){
+    //        let alertController = UIAlertController(title: "WrongCredAlertTitle".localizableString(loc: LanguageViewController.buttonName), message: "WrongCredAlertMessage".localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
+    //        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    //
+    //        alertController.addAction(defaultAction)
+    //        self.present(alertController, animated: true, completion: nil)
+    //    }
     
     class func displaySpinner(onView : UIView) -> UIView {
         let spinnerView = UIView.init(frame: onView.bounds)
@@ -88,3 +87,6 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+
+

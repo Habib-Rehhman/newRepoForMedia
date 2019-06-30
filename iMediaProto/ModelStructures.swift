@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct signinStructure: Codable {
-
+    
     let loginStatus: Bool?
     let message: String
     let loginSession: String?
@@ -18,7 +18,7 @@ struct signinStructure: Codable {
     let loginLanguage: String?
     
     private enum CodingKeys: String, CodingKey {
-
+        
         case loginStatus = "login_status"
         case message
         case loginName = "login_name"
@@ -52,6 +52,7 @@ struct networkConstants{
     static let login = "login.php"
     static let signup = "signup.php"
     static let nextToLogin = "chapters.php"
+    static let lessons = "lessons.php"
 }
 
 struct chapter: Codable{
@@ -65,4 +66,23 @@ struct arrayOfChapters: Codable{
     
     let message: String?
     let chaptersList: [chapter]?
+}
+
+struct lesson: Codable{
+    
+    let id: String
+    let subLessons: String
+    let name: String
+    
+    private enum CodingKeys: String, CodingKey {
+        
+        case id
+        case subLessons = "sub_lesson"
+        case name
+    }
+}
+
+struct arrayOfLessons: Codable{
+    let message: String?
+    let lessonsList: [lesson]?
 }

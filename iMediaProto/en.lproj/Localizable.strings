@@ -68,8 +68,11 @@
 
 "WrongCredAlertMessage" = "Make sure your email or password is correct and try again";
 
+"EmptyLessonsListTitle" = "No Lesson";
+"EmptyLessonsListMessage" = "There is no Content to show for this selection";
+
 
 
 /*
-
+ 
  */

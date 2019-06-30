@@ -10,7 +10,7 @@
 import UIKit
 
 class PasswordRecoverController: UIViewController {
-
+    
     @IBOutlet weak var continueButtonOutlet: UIButton!
     @IBOutlet weak var recoveryHeader: UILabel!
     
@@ -21,13 +21,7 @@ class PasswordRecoverController: UIViewController {
     
     @IBAction func continuePressed(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "RecoveryAlertControllerTitleKey".localizableString(loc: LanguageViewController.buttonName), message: "RecoveryAlertControllerKey".localizableString(loc: LanguageViewController.buttonName), preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: {_ in
-            self.performSegue(withIdentifier: "loginScreen", sender: self)
-        })
-        
-        alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
+        showOkAlert(tit: "RecoveryAlertControllerTitleKey", msg: "RecoveryAlertControllerKey")
     }
     
     
@@ -45,7 +39,7 @@ class PasswordRecoverController: UIViewController {
         recoveryEmailField.placeholder = "RecoveryEmailKey".localizableString(loc: LanguageViewController.buttonName)
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         renderLanguage()

@@ -3,12 +3,16 @@
 import UIKit
 
 class LanguageViewController: UIViewController {
-
-
+    
+    
     static var buttonName = ""
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background.png")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
     }
     
     @IBAction func langButtonPressed(_ sender: UIButton) {
@@ -25,7 +29,7 @@ class LanguageViewController: UIViewController {
             break
         case 4:
             LanguageViewController.buttonName = "es"
-           performSegue(withIdentifier: "languageSelected", sender: self)
+            performSegue(withIdentifier: "languageSelected", sender: self)
             break
         case 5:
             LanguageViewController.buttonName = "de"
@@ -33,7 +37,7 @@ class LanguageViewController: UIViewController {
             break
         case 6:
             LanguageViewController.buttonName = "ru"
-           performSegue(withIdentifier: "languageSelected", sender: self)
+            performSegue(withIdentifier: "languageSelected", sender: self)
             break
         case 7:
             LanguageViewController.buttonName = "zh-Hans"
@@ -52,10 +56,10 @@ class LanguageViewController: UIViewController {
             performSegue(withIdentifier: "languageSelected", sender: self)
         }
     }
-
-
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-
+    
 }
