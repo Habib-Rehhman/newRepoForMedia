@@ -15,14 +15,14 @@ class MenuViewController: UIViewController, GuillotineMenu {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         dismissButton = {
             let button = UIButton(frame: .zero)
             button.setImage(UIImage(named: "ic_menu"), for: .normal)
             button.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
             return button
         }()
-        
+
         titleLabel = {
             let label = UILabel()
             label.numberOfLines = 1;
