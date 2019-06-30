@@ -13,7 +13,7 @@ import Alamofire
 class lesonsViewController : UITableViewController, UIDataSourceModelAssociation {
     
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
-    @IBOutlet fileprivate var barButton: UIButton!
+    @IBOutlet fileprivate var barButton: UIBarButtonItem!
     // MARK: - Constants
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
         static let ShowQuoteSegueIdentifier = "ShowQuote"
     }
     
-    @IBAction func showMenuAction(_ sender: UIButton) {
+    @IBAction func showMenuAction(_ sender: UIBarButtonItem) {
         
         let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
         menuViewController.modalPresentationStyle = .custom
@@ -34,7 +34,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
         presentationAnimator.supportView = navigationController!.navigationBar
-        presentationAnimator.presentButton = sender
+        //presentationAnimator.presentButton = sender
         present(menuViewController, animated: true, completion: nil)
     }
     var selectedTopic: String?

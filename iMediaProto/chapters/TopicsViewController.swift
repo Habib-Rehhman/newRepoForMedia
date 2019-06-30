@@ -5,8 +5,9 @@ import Alamofire
 
 class TopicsViewController : UITableViewController, UIDataSourceModelAssociation {
     
-     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
-    @IBOutlet fileprivate var barButton: UIButton!
+    @IBOutlet fileprivate var barButton: UIBarButtonItem!
+    fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
+   // @IBOutlet fileprivate var barButton: UIButton!
     // MARK: - Constants
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,16 +17,16 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
         static let TopicCellIdentifier = "TopicCell"
         static let ShowQuoteSegueIdentifier = "ShowQuote"
     }
-    
-    @IBAction func showMenuAction(_ sender: UIButton) {
-        
+
+    @IBAction func showMenuAction(_ sender: UIBarButtonItem) {
+        print("thisssssss")
         let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
         menuViewController.modalPresentationStyle = .custom
         menuViewController.transitioningDelegate = self
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
         presentationAnimator.supportView = navigationController!.navigationBar
-        presentationAnimator.presentButton = sender
+       // presentationAnimator.presentButton = sender
         present(menuViewController, animated: true, completion: nil)
     }
     var selectedTopic: String?
@@ -68,65 +69,65 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
-        
-        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.lessons)!//"https://reqres.in/api/login")!
-        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
-        let parametersChapter:Parameters = [
-            "app_id":"com.wikibolics.com",
-            "appstore_id":"com.wikibolics.com",
-            "chapter": "\(indexPath.row+1)",
-            "session":"2@7e2f7cb7e5bc8c26261f89956b5a4cbd@EC:8C:9A:F3:55:4F"
-        ]
-        let sv = UIViewController.displaySpinner(onView: self.view)
-        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
-            switch response.result {
-                
-            case .success(let json):
-                print(json)
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: json)
-                    let decoder = JSONDecoder()
-                    let gitData = try decoder.decode(arrayOfLessons.self, from: jsonData)
-                    if(gitData.message != nil){
-                        UIViewController.removeSpinner(spinner: sv)
-                        switch gitData.message!{
-                            
-                        case "lessons_list_empty":
-                        print("this lesson contains nothing")
-                       // self.navigationController?.popViewController(animated: true)
-                        self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
-                        
-                            break
-                        default:
-                            print("this is default")
-                        }
-                    
-                    }else{
-                      
-                        UIViewController.removeSpinner(spinner: sv)
-                        gitData.lessonsList!.forEach({ (lesn) in
-                             lesonsViewController.lessons.append(lesn)
-                        })
-                          self.performSegue(withIdentifier:"showLessons", sender: nil)
-                      //  QuoteDeck.sharedInstance.quotes[indexPath.row].text =
-                    }
-                    
-                } catch let err {
-                    print("Err", err)
-                }
-                break
-                
-            case .failure(let error):
-                UIViewController.removeSpinner(spinner: sv)
-                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
-                print(error.localizedDescription)
-                break
-            }
-            
-        })
-        
-       
+//        selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
+//
+//        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.lessons)!//"https://reqres.in/api/login")!
+//        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+//        let parametersChapter:Parameters = [
+//            "app_id":"com.wikibolics.com",
+//            "appstore_id":"com.wikibolics.com",
+//            "chapter": "\(indexPath.row+1)",
+//            "session":"2@7e2f7cb7e5bc8c26261f89956b5a4cbd@EC:8C:9A:F3:55:4F"
+//        ]
+//        let sv = UIViewController.displaySpinner(onView: self.view)
+//        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+//            switch response.result {
+//
+//            case .success(let json):
+//                print(json)
+//                do {
+//                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+//                    let decoder = JSONDecoder()
+//                    let gitData = try decoder.decode(arrayOfLessons.self, from: jsonData)
+//                    if(gitData.message != nil){
+//                        UIViewController.removeSpinner(spinner: sv)
+//                        switch gitData.message!{
+//
+//                        case "lessons_list_empty":
+//                        print("this lesson contains nothing")
+//                       // self.navigationController?.popViewController(animated: true)
+//                        self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
+//
+//                            break
+//                        default:
+//                            print("this is default")
+//                        }
+//
+//                    }else{
+//
+//                        UIViewController.removeSpinner(spinner: sv)
+//                        gitData.lessonsList!.forEach({ (lesn) in
+//                             lesonsViewController.lessons.append(lesn)
+//                        })
+//                          self.performSegue(withIdentifier:"showLessons", sender: nil)
+//                      //  QuoteDeck.sharedInstance.quotes[indexPath.row].text =
+//                    }
+//
+//                } catch let err {
+//                    print("Err", err)
+//                }
+//                break
+//
+//            case .failure(let error):
+//                UIViewController.removeSpinner(spinner: sv)
+//                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
+//                print(error.localizedDescription)
+//                break
+//            }
+//
+//        })
+//
+         self.performSegue(withIdentifier:"showLessons", sender: nil)
 }
 }
 
