@@ -2,7 +2,7 @@
 import Foundation
 
 class QuoteDeck {
-    //hiiiiiiiii
+    //hiiiiiiiiiii
     // MARK: - Properties
     
     var tagSet: [String] = []
