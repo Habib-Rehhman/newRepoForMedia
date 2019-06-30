@@ -20,7 +20,6 @@ class QuoteDeck {
               tags: [ "chapter 5"]),
         Quote(text: "Six",
               tags: [ "chapter 6"])
-
     ]
     
     
@@ -33,8 +32,8 @@ class QuoteDeck {
     }
     
     // MARK: - Private helpers
-
-     func update() {
+    
+    func update() {
         for quote in quotes {
             for tag in quote.tags {
                 if !tagSet.contains(tag) {
