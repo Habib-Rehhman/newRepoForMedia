@@ -1,9 +1,9 @@
 //
-//  GuillotineTransitionAnimation.swift
 //  GuillotineMenu
+//  iMediaProto
 //
-//  Created by Maksym Lazebnyi on 3/24/15.
-//  Copyright (c) 2015 Yalantis. All rights reserved.
+//  Created by Habib on 7/1/19.
+//  Copyright © 2019 a. All rights reserved.
 //
 
 import UIKit

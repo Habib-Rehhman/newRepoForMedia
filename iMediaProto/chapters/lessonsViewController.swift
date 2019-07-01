@@ -40,15 +40,15 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
     var selectedTopic: String?
     
     // MARK: - View controller lifecycle
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? QuoteViewController {
-            destinationVC.topic = selectedTopic
-        }
-    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if let destinationVC = segue.destination as? QuoteViewController {
+    //            destinationVC.topic = selectedTopic
+    //        }
+    //    }
     
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
-       // let row = lesonsViewController.lessons.//firstIndex(of: identifier) ?? 0
+        // let row = lesonsViewController.lessons.//firstIndex(of: identifier) ?? 0
         index += 1
         return IndexPath(row: index, section: 0)
     }
@@ -59,6 +59,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
         return lesonsViewController.lessons.count
     }
     
@@ -67,7 +68,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
         
         cell.textLabel?.text = lesonsViewController.lessons[indexPath.row].name
         
-        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")//.gray
+        //.gray
         cell.layer.cornerRadius = 5
         cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
@@ -78,15 +79,18 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //
-//        selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
+//        print("lessonObject:  \(lesonsViewController.lessons[indexPath.row+1])\n size: \(lesonsViewController.lessons.count)")
+//        SubLessonsVC.sublessons.removeAll()
+//        // selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
 //
-//        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.lessons)!//"https://reqres.in/api/login")!
+//        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.sublessons)!//"https://reqres.in/api/login")!
 //        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
 //        let parametersChapter:Parameters = [
 //            "app_id":"com.wikibolics.com",
 //            "appstore_id":"com.wikibolics.com",
-//            "chapter": "\(indexPath.row+1)",
-//            "session":"1@03bed5d5798bb277d9f6884ba6a6c784@EC:8C:9A:F3:55:4F"
+//            "lesson": "\(lesonsViewController.lessons[indexPath.row+1].id)",
+//            "sub_lesson": "\(lesonsViewController.lessons[indexPath.row+1].subLessons)",
+//            "session":networkConstants.session
 //        ]
 //        let sv = UIViewController.displaySpinner(onView: self.view)
 //        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
@@ -97,27 +101,28 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
 //                do {
 //                    let jsonData = try JSONSerialization.data(withJSONObject: json)
 //                    let decoder = JSONDecoder()
-//                    let gitData = try decoder.decode(arrayOfLessons.self, from: jsonData)
+//                    let gitData = try decoder.decode(arrayOfSubLessons.self, from: jsonData)
 //                    if(gitData.message != nil){
 //                        UIViewController.removeSpinner(spinner: sv)
 //                        switch gitData.message!{
 //
 //                        case "lessons_list_empty":
-//                            print("this lesson contains nothing")
+//                            print("this sublesson contain")
 //                            self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
 //
 //                            break
 //                        default:
-//                            print("this is default")
+//                            // self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
+//                            print("no point in making this request")
 //                        }
 //
 //                    }else{
 //
 //                        UIViewController.removeSpinner(spinner: sv)
-//                        gitData.lessonsList!.forEach({ (lesn) in
-//                          print("nothind")
+//                        gitData.sublessonsList!.forEach({ (lesn) in
+//                            SubLessonsVC.sublessons.append(lesn)
 //                        })
-//                       //  self.performSegue(withIdentifier:"showLessons", sender: nil)
+//                        self.performSegue(withIdentifier:"showSubLessons", sender: nil)
 //                        //  QuoteDeck.sharedInstance.quotes[indexPath.row].text =
 //                    }
 //
@@ -136,7 +141,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
 //        })
 //
 //
-        self.performSegue(withIdentifier:"showMainText", sender: nil)
+           self.performSegue(withIdentifier:"showSubLessons", sender: nil)
     }
 }
 

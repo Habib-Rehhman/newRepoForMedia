@@ -1,6 +1,5 @@
 //
 //  Extensions.swift
-//  iMediaProto
 //
 //  Created by Habib on 6/27/19.
 //  Copyright © 2019 a. All rights reserved.

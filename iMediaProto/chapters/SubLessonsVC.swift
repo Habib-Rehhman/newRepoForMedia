@@ -1,66 +1,76 @@
-
 //
+//  lessonsViewController.swift
+//  iMediaProto
+//
+//  Created by Habib on 6/30/19.
+//  Copyright © 2019 a. All rights reserved.
+//
+
+
 import UIKit
 import Alamofire
 
-class TopicsViewController : UITableViewController, UIDataSourceModelAssociation {
+class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
     
-    @IBOutlet fileprivate var barButton: UIBarButtonItem!
     fileprivate lazy var presentationAnimator = GuillotineTransitionAnimation()
-    
+    @IBOutlet fileprivate var barButton: UIBarButtonItem!
     // MARK: - Constants
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    private var index = -1;
+    static var sublessons: [sublesson] = []
     private struct Storyboard {
         static let TopicCellIdentifier = "TopicCell"
         static let ShowQuoteSegueIdentifier = "ShowQuote"
     }
     
     @IBAction func showMenuAction(_ sender: UIBarButtonItem) {
+        
         let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
         menuViewController.modalPresentationStyle = .custom
         menuViewController.transitioningDelegate = self
         
         presentationAnimator.animationDelegate = menuViewController as? GuillotineAnimationDelegate
         presentationAnimator.supportView = navigationController!.navigationBar
-        // presentationAnimator.presentButton = sender
+        //presentationAnimator.presentButton = sender
         present(menuViewController, animated: true, completion: nil)
     }
-    var selectedTopic: String?
+    //var selectedTopic: String?
     
     // MARK: - View controller lifecycle
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? QuoteViewController {
-            destinationVC.topic = selectedTopic
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destinationVC = segue.destination as? QuoteViewController {
+//            destinationVC.topic = selectedTopic
+//        }
+//    }
     
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
-        let row = QuoteDeck.sharedInstance.tagSet.firstIndex(of: identifier) ?? 0
-        
-        return IndexPath(row: row, section: 0)
+        // let row = lesonsViewController.lessons.//firstIndex(of: identifier) ?? 0
+        index += 1
+        return IndexPath(row: index, section: 0)
     }
     
     func modelIdentifierForElement(at idx: IndexPath, in view: UIView) -> String? {
-        return QuoteDeck.sharedInstance.tagSet[idx.row]
+        return SubLessonsVC.sublessons[idx.row].name
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
-        return QuoteDeck.sharedInstance.tagSet.count
+        print("count::\(SubLessonsVC.sublessons.count)")
+        return SubLessonsVC.sublessons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.TopicCellIdentifier)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "lessonCell")!
         
-        cell.textLabel?.text = QuoteDeck.sharedInstance.tagSet[indexPath.row].capitalized
+        cell.textLabel?.text = SubLessonsVC.sublessons[indexPath.row].name
         
         //.gray
-        cell.layer.cornerRadius = 8
+        cell.layer.cornerRadius = 5
         cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
         
@@ -69,15 +79,18 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+////
+//        print("lessonObject:  \(SubLessonsVC.sublessons[indexPath.row+1])\n size: \(SubLessonsVC.sublessons.count)")
+
+        // selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
 //
-//        selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
-//        lesonsViewController.lessons.removeAll()
-//        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.lessons)!//"https://reqres.in/api/login")!
+//        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.content)!
 //        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
 //        let parametersChapter:Parameters = [
 //            "app_id":"com.wikibolics.com",
 //            "appstore_id":"com.wikibolics.com",
-//            "chapter": "\(indexPath.row+1)",
+//            "lesson": "35",//"\(lesonsViewController.lessons[indexPath.row+1].id)",
+//            "sub_lesson": "0",//"\(SubLessonsVC.sublessons[indexPath.row+1].id)",
 //            "session":networkConstants.session
 //        ]
 //        let sv = UIViewController.displaySpinner(onView: self.view)
@@ -89,28 +102,28 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
 //                do {
 //                    let jsonData = try JSONSerialization.data(withJSONObject: json)
 //                    let decoder = JSONDecoder()
-//                    let gitData = try decoder.decode(arrayOfLessons.self, from: jsonData)
+//                    let gitData = try decoder.decode(arrayOfSubLessons.self, from: jsonData)
 //                    if(gitData.message != nil){
 //                        UIViewController.removeSpinner(spinner: sv)
 //                        switch gitData.message!{
 //
-//                        case "lessons_list_empty":
-//                            print("this lesson contains nothing")
-//                            // self.navigationController?.popViewController(animated: true)
+//                        case "content_empty":
+//                            print("this sublesson contain")
 //                            self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
 //
 //                            break
 //                        default:
-//                            print("this is default")
+//                            // self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
+//                            print("no point in making this request")
 //                        }
 //
 //                    }else{
 //
 //                        UIViewController.removeSpinner(spinner: sv)
-//                        gitData.lessonsList!.forEach({ (lesn) in
-//                            lesonsViewController.lessons.append(lesn)
+//                        gitData.sublessonsList!.forEach({ (lesn) in
+//                            SubLessonsVC.sublessons.append(lesn)
 //                        })
-//                        self.performSegue(withIdentifier:"showLessons", sender: nil)
+//                        //  self.performSegue(withIdentifier:"showLessons", sender: nil)
 //                        //  QuoteDeck.sharedInstance.quotes[indexPath.row].text =
 //                    }
 //
@@ -127,12 +140,13 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
 //            }
 //
 //        })
-        
-         self.performSegue(withIdentifier:"showLessons", sender: nil)
+
+
+          self.performSegue(withIdentifier:"showLessonContent", sender: nil)
     }
 }
 
-extension TopicsViewController: UIViewControllerTransitioningDelegate {
+extension SubLessonsVC: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         presentationAnimator.mode = .presentation
@@ -144,3 +158,4 @@ extension TopicsViewController: UIViewControllerTransitioningDelegate {
         return presentationAnimator
     }
 }
+

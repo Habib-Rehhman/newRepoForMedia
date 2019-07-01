@@ -16,9 +16,7 @@ class QuoteViewController : UIViewController {
         static let TopicsTitle = "Topics"
     }
     
-    // MARK: - Outlets
     
-    @IBOutlet weak var toggleButton: UIBarButtonItem!
     // @IBOutlet weak var webView: UIWebView!
     
     @IBOutlet weak var textView: UITextView!
@@ -32,32 +30,15 @@ class QuoteViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configure(updatingCurrentIndex: true)
-
     }
     
     // MARK: - Helpers
     
-    private func configure(updatingCurrentIndex needsUpdate: Bool) {
-        if let selectedTopic = topic {
-            quotes = QuoteDeck.sharedInstance.quotesForTag(selectedTopic)
-            
-            if needsUpdate {
-                currentQuoteIndex = 0
-            }
-        } else {
-            toggleButton.title = Storyboard.TopicsTitle
-            quotes = QuoteDeck.sharedInstance.quotes
-        }
-        
-        updateUI()
-    }
-
+    
     private func updateUIByToggling() {
         
         if let topicFilter = topic {
-     
+            
             
             let fadeTextAnimation = CATransition()
             
@@ -73,7 +54,7 @@ class QuoteViewController : UIViewController {
         let quote = quotes[currentQuoteIndex]
         
         if let topicFilter = topic {
-            title = "\(topicFilter.capitalized)"//" (\(currentQuoteIndex + 1) of \(quotes.count))"
+            title = "\(topicFilter.capitalized)"
         } else {
             title = Storyboard.QuoteOfTheDayTitle
         }

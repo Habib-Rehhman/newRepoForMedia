@@ -1,9 +1,7 @@
 //
 //  StartViewController.swift
-//  Snapchat Camera
-//
-//  Created by ashika shanthi on 2/27/18.
-//  Copyright © 2018 ashika shanthi. All rights reserved.
+//  Created by Habib on 7/1/19.
+//  Copyright © 2019 a. All rights reserved.
 //
 
 import UIKit

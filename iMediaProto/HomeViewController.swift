@@ -1,9 +1,7 @@
 //
 //  HomeViewController.swift
-//  Snapchat Camera
-//
-//  Created by ashika shanthi on 2/17/18.
-//  Copyright © 2018 ashika shanthi. All rights reserved.
+//  Created by Habib on 7/1/19.
+//  Copyright © 2019 a. All rights reserved.
 //
 
 import UIKit
@@ -32,7 +30,7 @@ class HomeViewController: UIViewController {
         //        let parameters:Parameters = [
         //            "app_id":"com.wikibolics.com",
         //            "appstore_id":"com.wikibolics.com",
-        //            "session":"",
+        //            "session":networkConstants.session
         //             ]
         //
         //        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]

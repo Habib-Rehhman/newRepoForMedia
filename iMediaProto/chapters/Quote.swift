@@ -1,9 +1,9 @@
 //
-//  Quotes.swift
-//  Founding Fathers Quote Book
+//  Quote.swift
+//  iMediaProto
 //
-//  Created by Steve Liddle on 9/9/16.
-//  Copyright © 2016 Steve Liddle. All rights reserved.
+//  Created by Habib on 7/1/19.
+//  Copyright © 2019 a. All rights reserved.
 //
 
 import UIKit

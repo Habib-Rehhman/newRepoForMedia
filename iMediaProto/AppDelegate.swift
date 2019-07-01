@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Founding Fathers Quote Book
+//  
 //
-//  Created by Steve Liddle on 9/7/16.
-//  Copyright © 2016 Steve Liddle. All rights reserved.
+//  Created by Habib on 7/1/19.
+//  Copyright © 2019 a. All rights reserved.
 //
 
 import UIKit

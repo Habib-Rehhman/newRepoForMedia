@@ -20,6 +20,7 @@
 		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
 		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
 		008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */; };
+		9D1B3C0A22CA6DCA0038ECF6 /* FirstBtnC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B3C0922CA6DCA0038ECF6 /* FirstBtnC.swift */; };
 		9D201E2222C7B7E800074416 /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D201E2122C7B7E800074416 /* shared.swift */; };
 		9D35AEC122C9029A00B108BD /* lessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AEC022C9029A00B108BD /* lessonsViewController.swift */; };
 		9D35AEC622C902CA00B108BD /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AEC222C902CA00B108BD /* QuoteViewController.swift */; };
@@ -29,6 +30,7 @@
 		9D35AECE22C902FB00B108BD /* ic_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D35AECB22C902FB00B108BD /* ic_menu@3x.png */; };
 		9D35AECF22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */; };
 		9D35AED022C902FB00B108BD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AECD22C902FB00B108BD /* MenuViewController.swift */; };
+		9DA039B122CA501200F78DFB /* SubLessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA039B022CA501200F78DFB /* SubLessonsVC.swift */; };
 		CFD2EDFF30EE0580E3816510 /* Pods_iMediaProto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B171EC98ED4EF4608FDA3C2 /* Pods_iMediaProto.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,7 @@
 		1B171EC98ED4EF4608FDA3C2 /* Pods_iMediaProto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMediaProto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1450351C40EA655DD081A /* Pods-iMediaProto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.debug.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.debug.xcconfig"; sourceTree = "<group>"; };
 		713684BDB13589D530C338F1 /* Pods-iMediaProto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.release.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.release.xcconfig"; sourceTree = "<group>"; };
+		9D1B3C0922CA6DCA0038ECF6 /* FirstBtnC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBtnC.swift; sourceTree = "<group>"; };
 		9D201E2122C7B7E800074416 /* shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
 		9D35AEC022C9029A00B108BD /* lessonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lessonsViewController.swift; sourceTree = "<group>"; };
 		9D35AEC222C902CA00B108BD /* QuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		9D35AECB22C902FB00B108BD /* ic_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu@3x.png"; sourceTree = "<group>"; };
 		9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
 		9D35AECD22C902FB00B108BD /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9DA039B022CA501200F78DFB /* SubLessonsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubLessonsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		9D20FA2E22C639DD00D80E42 /* chapters */ = {
 			isa = PBXGroup;
 			children = (
+				9DA039B022CA501200F78DFB /* SubLessonsVC.swift */,
 				9D35AEC522C902CA00B108BD /* Quote.swift */,
 				9D35AEC422C902CA00B108BD /* QuoteDeck.swift */,
 				9D35AEC222C902CA00B108BD /* QuoteViewController.swift */,
@@ -162,6 +167,7 @@
 				9D35AECB22C902FB00B108BD /* ic_menu@3x.png */,
 				9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */,
 				9D35AECD22C902FB00B108BD /* MenuViewController.swift */,
+				9D1B3C0922CA6DCA0038ECF6 /* FirstBtnC.swift */,
 			);
 			path = GuillotineMenu;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D35AECF22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift in Sources */,
+				9DA039B122CA501200F78DFB /* SubLessonsVC.swift in Sources */,
 				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
 				000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */,
 				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
@@ -318,6 +325,7 @@
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
 				9D35AEC722C902CA00B108BD /* TopicsViewController.swift in Sources */,
+				9D1B3C0A22CA6DCA0038ECF6 /* FirstBtnC.swift in Sources */,
 				9D201E2222C7B7E800074416 /* shared.swift in Sources */,
 				9D35AEC922C902CA00B108BD /* Quote.swift in Sources */,
 				000E0D2022C498FE0080DFC7 /* ModelStructures.swift in Sources */,

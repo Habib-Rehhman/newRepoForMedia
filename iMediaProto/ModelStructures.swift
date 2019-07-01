@@ -53,6 +53,9 @@ struct networkConstants{
     static let signup = "signup.php"
     static let nextToLogin = "chapters.php"
     static let lessons = "lessons.php"
+    static let sublessons = "sub_lessons.php"
+    static let content = "content.php"
+    static var session = "1@3775db3158cdbce4fbd1865e0ab6ac9f@00"
 }
 
 struct chapter: Codable{
@@ -85,4 +88,15 @@ struct lesson: Codable{
 struct arrayOfLessons: Codable{
     let message: String?
     let lessonsList: [lesson]?
+}
+
+struct sublesson: Codable{
+    
+    let id: String
+    let name: String
+}
+
+struct arrayOfSubLessons: Codable{
+    let message: String?
+    let sublessonsList: [sublesson]?
 }
