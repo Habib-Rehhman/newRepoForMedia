@@ -6,7 +6,7 @@
 //  Copyright © 2019 a. All rights reserved.
 //
 
-
+import WebKit
 import UIKit
 import Alamofire
 
@@ -59,15 +59,17 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
-        print("count::\(SubLessonsVC.sublessons.count)")
-        return SubLessonsVC.sublessons.count
+//        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
+//        print("count::\(SubLessonsVC.sublessons.count)")
+//        return SubLessonsVC.sublessons.count
+        
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lessonCell")!
         
-        cell.textLabel?.text = SubLessonsVC.sublessons[indexPath.row].name
+        cell.textLabel?.text = "hiii"//SubLessonsVC.sublessons[indexPath.row].name
         
         //.gray
         cell.layer.cornerRadius = 5
@@ -76,14 +78,19 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
         
         return cell
     }
+    var content: String = ""
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? WebVC {
+            destinationVC.html = content
+        }
+    }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 ////
 //        print("lessonObject:  \(SubLessonsVC.sublessons[indexPath.row+1])\n size: \(SubLessonsVC.sublessons.count)")
 
-        // selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
-//
+
 //        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.content)!
 //        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
 //        let parametersChapter:Parameters = [
@@ -102,7 +109,7 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
 //                do {
 //                    let jsonData = try JSONSerialization.data(withJSONObject: json)
 //                    let decoder = JSONDecoder()
-//                    let gitData = try decoder.decode(arrayOfSubLessons.self, from: jsonData)
+//                    let gitData = try decoder.decode(contentStruct.self, from: jsonData)
 //                    if(gitData.message != nil){
 //                        UIViewController.removeSpinner(spinner: sv)
 //                        switch gitData.message!{
@@ -119,12 +126,11 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
 //
 //                    }else{
 //
-//                        UIViewController.removeSpinner(spinner: sv)
-//                        gitData.sublessonsList!.forEach({ (lesn) in
-//                            SubLessonsVC.sublessons.append(lesn)
-//                        })
-//                        //  self.performSegue(withIdentifier:"showLessons", sender: nil)
-//                        //  QuoteDeck.sharedInstance.quotes[indexPath.row].text =
+//                       // UIViewController.removeSpinner(spinner: sv)
+//                        print(gitData.content!)
+//                        self.content = gitData.content!
+//                      //  let sv = UIViewController.displaySpinner(onView: self.view)
+//                      //  gitData.images! start from here
 //                    }
 //
 //                } catch let err {
@@ -140,9 +146,9 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
 //            }
 //
 //        })
+//
 
-
-          self.performSegue(withIdentifier:"showLessonContent", sender: nil)
+          self.performSegue(withIdentifier:"showWebView", sender: nil)
     }
 }
 
@@ -159,3 +165,13 @@ extension SubLessonsVC: UIViewControllerTransitioningDelegate {
     }
 }
 
+//extension WebViewController: SwiftWebVCDelegate {
+//
+//    func didStartLoading() {
+//        print("Started loading.")
+//    }
+//
+//    func didFinishLoading(success: Bool) {
+//        print("Finished loading. Success: \(success).")
+//    }
+//}

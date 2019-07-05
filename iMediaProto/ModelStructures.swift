@@ -100,3 +100,14 @@ struct arrayOfSubLessons: Codable{
     let message: String?
     let sublessonsList: [sublesson]?
 }
+
+struct contentStruct: Codable{
+    let message: String?
+    let content: String?
+    let images: [URL]?
+}
+
+//struct arrayOfcontentStruct: Codable{
+//    let message: String?
+//    let sublessonsList: [sublesson]?
+//}

@@ -69,6 +69,7 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
 //
 //        selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
 //        lesonsViewController.lessons.removeAll()
@@ -127,7 +128,7 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
 //            }
 //
 //        })
-        
+//
          self.performSegue(withIdentifier:"showLessons", sender: nil)
     }
 }

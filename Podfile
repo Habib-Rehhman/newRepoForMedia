@@ -6,5 +6,7 @@ target 'iMediaProto' do
   use_frameworks!
 
 pod 'Alamofire', '~> 5.0.0-beta.5'
+ #pod "CollieGallery"
+  pod 'Kingfisher', '~> 5.0'
 
 end

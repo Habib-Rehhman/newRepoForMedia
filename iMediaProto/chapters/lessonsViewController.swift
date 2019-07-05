@@ -59,14 +59,15 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
-        return lesonsViewController.lessons.count
+//        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
+//        return lesonsViewController.lessons.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lessonCell")!
         
-        cell.textLabel?.text = lesonsViewController.lessons[indexPath.row].name
+        cell.textLabel?.text = "hiiiii" //lesonsViewController.lessons[indexPath.row].name
         
         //.gray
         cell.layer.cornerRadius = 5
@@ -140,7 +141,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
 //
 //        })
 //
-//
+
            self.performSegue(withIdentifier:"showSubLessons", sender: nil)
     }
 }
