@@ -28,6 +28,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
     
     @IBAction func showMenuAction(_ sender: UIBarButtonItem) {
         
+        //let sb = Storyboard(
         let menuViewController = storyboard!.instantiateViewController(withIdentifier: "MenuViewController")
         menuViewController.modalPresentationStyle = .custom
         menuViewController.transitioningDelegate = self

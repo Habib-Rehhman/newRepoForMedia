@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum menuItems{
+    case Profile
+    
+}
+
 class MenuViewController: UIViewController, GuillotineMenu {
     
     @IBOutlet weak var fifthBtn: UIButton!

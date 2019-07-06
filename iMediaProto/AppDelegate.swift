@@ -28,9 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     static var shared: AppDelegate!
     
     // MARK: - Application lifecycle
-    func height()-> Int{
-        return Int(UIScreen.main.bounds.height)
-    }
+//    func height(){
+//        switch(Int(UIScreen.main.bounds.height)){
+//            
+//        }
+//    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self

@@ -11,6 +11,8 @@
 		000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0D2122C4C6300080DFC7 /* Extensions.swift */; };
 		001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */; };
 		0023A28622C1F28D007BEB2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0023A28822C1F28D007BEB2D /* Localizable.strings */; };
+		002E413522D0A0F6009B4809 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002E413422D0A0F6009B4809 /* Auth.storyboard */; };
+		002E413722D0A9B5009B4809 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002E413622D0A9B5009B4809 /* Chapters.storyboard */; };
 		006A119C22B9045D00237B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119A22B9045D00237B3F /* Main.storyboard */; };
 		006A119E22B9046000237B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A119D22B9046000237B3F /* Assets.xcassets */; };
 		006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119F22B9046000237B3F /* LaunchScreen.storyboard */; };
@@ -87,6 +89,8 @@
 		0023A29122C1F91D007BEB2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0023A29222C1F91D007BEB2D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0023A29322C24305007BEB2D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		002E413422D0A0F6009B4809 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		002E413622D0A9B5009B4809 /* Chapters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapters.storyboard; sourceTree = "<group>"; };
 		006A119322B9045D00237B3F /* iMediaProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMediaProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A119B22B9045D00237B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		006A119D22B9046000237B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +154,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002E413222D09CFA009B4809 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				006A119A22B9045D00237B3F /* Main.storyboard */,
+				006A119F22B9046000237B3F /* LaunchScreen.storyboard */,
+				002E413422D0A0F6009B4809 /* Auth.storyboard */,
+				002E413622D0A9B5009B4809 /* Chapters.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		006A118A22B9045D00237B3F = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +186,7 @@
 		006A119522B9045D00237B3F /* iMediaProto */ = {
 			isa = PBXGroup;
 			children = (
+				002E413222D09CFA009B4809 /* UI */,
 				008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */,
 				9D6F91CC22CF75D800DE4242 /* Gallery */,
 				9D35AECA22C902FB00B108BD /* GuillotineMenu */,
@@ -181,10 +197,8 @@
 				006A11AF22B9064700237B3F /* LoginViewController.swift */,
 				006A11AE22B9064700237B3F /* SignUpViewController.swift */,
 				006A11AA22B9064600237B3F /* StartViewController.swift */,
-				006A119A22B9045D00237B3F /* Main.storyboard */,
 				9D201E2122C7B7E800074416 /* shared.swift */,
 				006A119D22B9046000237B3F /* Assets.xcassets */,
-				006A119F22B9046000237B3F /* LaunchScreen.storyboard */,
 				006A11A822B9064600237B3F /* iMediaProto-Bridging-Header.h */,
 				001BCF6322C0DEF300419E00 /* PasswordRecovery.swift */,
 				0023A28822C1F28D007BEB2D /* Localizable.strings */,
@@ -341,8 +355,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002E413522D0A0F6009B4809 /* Auth.storyboard in Resources */,
 				0023A28622C1F28D007BEB2D /* Localizable.strings in Resources */,
 				006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */,
+				002E413722D0A9B5009B4809 /* Chapters.storyboard in Resources */,
 				006A119E22B9046000237B3F /* Assets.xcassets in Resources */,
 				006A119C22B9045D00237B3F /* Main.storyboard in Resources */,
 				9D35AECE22C902FB00B108BD /* ic_menu@3x.png in Resources */,

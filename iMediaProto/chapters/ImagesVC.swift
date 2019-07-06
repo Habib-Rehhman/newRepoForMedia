@@ -27,12 +27,31 @@ class ImagesVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         options.enableSave = false
+        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        _ = screenSize.height
+        
+        // Do any additional setup after loading the view, typically from a nib
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView!.dataSource = self
+        collectionView!.delegate = self
+        collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+        collectionView!.backgroundColor = UIColor.green
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+       collectionView!.collectionViewLayout = layout
     }
     
 
 }
 
-extension ImagesVC: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ImagesVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return jsonURLs.count
     }
@@ -41,6 +60,13 @@ extension ImagesVC: UICollectionViewDataSource, UICollectionViewDelegate {
        let gallery = CollieGallery(pictures: pictures, options: options)
         gallery.presentInViewController(self)
        // gallery.scrollToIndex(indexPath.row)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let leftAndRightPaddings: CGFloat = 60.0
+        let numberOfItemsPerRow: CGFloat = 3.0
+        
+        let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+        return CGSize(width: width, height: width)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
