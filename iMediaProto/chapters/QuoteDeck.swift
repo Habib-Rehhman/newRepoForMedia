@@ -7,20 +7,20 @@ class QuoteDeck {
     
     var tagSet: [String] = []
     
-    var quotes: [Quote] = [
-        Quote(text: "one",
-              tags: [ "Chapter 1"]),
-        Quote(text: "two",
-              tags: [ "ملكففححخ"]),
-        Quote(text: "three",
-              tags: [ "chapter 3"]),
-        Quote(text: "Four",
-              tags: [ "Chapter 4"]),
-        Quote(text: "Five",
-              tags: [ "chapter 5"]),
-        Quote(text: "Six",
-              tags: [ "chapter 6"])
-    ]
+    var quotes: [Quote] = []
+//        Quote(text: "one",
+//              tags: [ "Chapter 1"]),
+//        Quote(text: "two",
+//              tags: [ "ملكففححخ"]),
+//        Quote(text: "three",
+//              tags: [ "chapter 3"]),
+//        Quote(text: "Four",
+//              tags: [ "Chapter 4"]),
+//        Quote(text: "Five",
+//              tags: [ "chapter 5"]),
+//        Quote(text: "Six",
+//              tags: [ "chapter 6"])
+    
     
     
     // MARK: - Singleton pattern

@@ -19,7 +19,7 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
         super.viewDidLoad()
         
     }
-    private var index = -1;
+    private var index = 0;
     static var sublessons: [sublesson] = []
     private struct Storyboard {
         static let TopicCellIdentifier = "TopicCell"
@@ -49,7 +49,7 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
         // let row = lesonsViewController.lessons.//firstIndex(of: identifier) ?? 0
-        index += 1
+       // index += 1
         return IndexPath(row: index, section: 0)
     }
     
@@ -59,19 +59,15 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
-//        print("count::\(SubLessonsVC.sublessons.count)")
-//        return SubLessonsVC.sublessons.count
-        
-        return 1
+        tableView.backgroundColor = UIColor(hexString: "#A5DEFF")
+        print("count::\(SubLessonsVC.sublessons.count)")
+        return SubLessonsVC.sublessons.count
+
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lessonCell")!
         
-        cell.textLabel?.text = "hiii"//SubLessonsVC.sublessons[indexPath.row].name
-        
-        //.gray
+        cell.textLabel?.text = SubLessonsVC.sublessons[indexPath.row].name
         cell.layer.cornerRadius = 5
         cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
@@ -87,70 +83,153 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-////
-//        print("lessonObject:  \(SubLessonsVC.sublessons[indexPath.row+1])\n size: \(SubLessonsVC.sublessons.count)")
 
-
-//        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.content)!
-//        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
-//        let parametersChapter:Parameters = [
-//            "app_id":"com.wikibolics.com",
-//            "appstore_id":"com.wikibolics.com",
-//            "lesson": "35",//"\(lesonsViewController.lessons[indexPath.row+1].id)",
-//            "sub_lesson": "0",//"\(SubLessonsVC.sublessons[indexPath.row+1].id)",
-//            "session":networkConstants.session
-//        ]
-//        let sv = UIViewController.displaySpinner(onView: self.view)
-//        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
-//            switch response.result {
-//
-//            case .success(let json):
-//                print(json)
-//                do {
-//                    let jsonData = try JSONSerialization.data(withJSONObject: json)
-//                    let decoder = JSONDecoder()
-//                    let gitData = try decoder.decode(contentStruct.self, from: jsonData)
-//                    if(gitData.message != nil){
-//                        UIViewController.removeSpinner(spinner: sv)
-//                        switch gitData.message!{
-//
-//                        case "content_empty":
-//                            print("this sublesson contain")
-//                            self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
-//
-//                            break
-//                        default:
-//                            // self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
-//                            print("no point in making this request")
-//                        }
-//
-//                    }else{
-//
-//                       // UIViewController.removeSpinner(spinner: sv)
-//                        print(gitData.content!)
-//                        self.content = gitData.content!
-//                      //  let sv = UIViewController.displaySpinner(onView: self.view)
-//                      //  gitData.images! start from here
-//                    }
-//
-//                } catch let err {
-//                    print("Err", err)
-//                }
-//                break
-//
-//            case .failure(let error):
-//                UIViewController.removeSpinner(spinner: sv)
-//                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
-//                print(error.localizedDescription)
-//                break
-//            }
-//
-//        })
-//
-
-          self.performSegue(withIdentifier:"showWebView", sender: nil)
+        print("Sub_lessonObject:  \(SubLessonsVC.sublessons[indexPath.row])\n size: \(SubLessonsVC.sublessons.count)")
+        var s = ""
+        if(SubLessonsVC.sublessons[indexPath.row].id == "0"){
+            s = networkConstants.baseURL+networkConstants.content
+            subLessonWasZero(theUrl: s,lesn: "\(lesonsViewController.lessons[indexPath.row].id)", subLsn:"\(SubLessonsVC.sublessons[indexPath.row].id)")
+            //lesn: "35",subLsn:  "0")
+        }else{
+             s = networkConstants.baseURL+networkConstants.sublessons
+           subLessonWasOne(theUrl: s, lesn: "\(lesonsViewController.lessons[indexPath.row].id)", subLsn:"\(SubLessonsVC.sublessons[indexPath.row].id)")
+        }
     }
+    
+    
+    func subLessonWasZero(theUrl: String, lesn: String, subLsn: String){
+        
+        let urlChapter = URL(string: theUrl)!
+        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        let parametersChapter:Parameters = [
+            "app_id":"com.wikibolics.com",
+            "appstore_id":"com.wikibolics.com",
+            "lesson": lesn,
+            "sub_lesson": subLsn,
+            "session":networkConstants.session
+        ]
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+            switch response.result {
+            case .success(let json):
+                print(json)
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                    let decoder = JSONDecoder()
+                    let gitData = try decoder.decode(contentStruct.self, from: jsonData)
+                    
+                    if(gitData.message != nil){
+                        UIViewController.removeSpinner(spinner: sv)
+                        switch gitData.message!{
+                            
+                        case "content_empty":
+                            print("this sublesson contain")
+                            self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
+                            break
+                        default:
+                            print("no point in making this request")
+                        }
+                        
+                    }else if gitData.content == nil{
+                        print("Empty Respons   \(gitData)")
+                        UIViewController.removeSpinner(spinner: sv)
+                    }
+                    else{
+                        print(gitData.content!)
+                        ImagesVC.jsonURLs.removeAll()
+                        self.content = gitData.content!
+                         print(gitData.images!)
+                        gitData.images?.forEach({u in
+                            ImagesVC.jsonURLs.append(u.image!)
+                        })
+                        UIViewController.removeSpinner(spinner: sv)
+                        self.performSegue(withIdentifier:"showWebView", sender: nil)
+                    }
+                    
+                } catch let err {
+                    print("Err", err)
+                }
+                break
+                
+            case .failure(let error):
+                UIViewController.removeSpinner(spinner: sv)
+                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
+                print(error.localizedDescription)
+                break
+            }
+            
+        })
+        
+        
+        //  self.performSegue(withIdentifier:"showWebView", sender: nil)
+    }
+        
+    
+    func subLessonWasOne(theUrl: String, lesn: String, subLsn: String){
+        
+        let urlChapter = URL(string: theUrl)!
+        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        let parametersChapter:Parameters = [
+            "app_id":"com.wikibolics.com",
+            "appstore_id":"com.wikibolics.com",
+            "lesson": lesn,
+            "sub_lesson": subLsn,
+            "session":networkConstants.session
+        ]
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+            switch response.result {
+                
+            case .success(let json):
+                print(json)
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                    let decoder = JSONDecoder()
+                    let gitData = try decoder.decode(contentStruct.self, from: jsonData)
+                    
+                    if(gitData.message != nil){
+                        UIViewController.removeSpinner(spinner: sv)
+                        switch gitData.message!{
+                            
+                        case "content_empty":
+                            print("this sublesson contain")
+                            self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
+                            break
+                        default:
+                            print("no point in making this request")
+                        }
+                        
+                    }else if gitData.content == nil{
+                        print("Empty Respons   \(gitData)")
+                        UIViewController.removeSpinner(spinner: sv)
+                    }
+                    else{
+                        print(gitData.content!)
+                        self.content = gitData.content!
+                         print(gitData.images!)
+                        gitData.images?.forEach({u in
+                            ImagesVC.jsonURLs.append(u.image!)
+                        })
+                        UIViewController.removeSpinner(spinner: sv)
+                        self.performSegue(withIdentifier:"showWebView", sender: nil)
+                    }
+                    
+                } catch let err {
+                    print("Err", err)
+                }
+                break
+                
+            case .failure(let error):
+                UIViewController.removeSpinner(spinner: sv)
+                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
+                print(error.localizedDescription)
+                break
+            }
+            
+        })
 }
+        
+    }
 
 extension SubLessonsVC: UIViewControllerTransitioningDelegate {
     
@@ -164,14 +243,3 @@ extension SubLessonsVC: UIViewControllerTransitioningDelegate {
         return presentationAnimator
     }
 }
-
-//extension WebViewController: SwiftWebVCDelegate {
-//
-//    func didStartLoading() {
-//        print("Started loading.")
-//    }
-//
-//    func didFinishLoading(success: Bool) {
-//        print("Finished loading. Success: \(success).")
-//    }
-//}

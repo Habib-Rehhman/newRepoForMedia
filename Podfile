@@ -8,5 +8,6 @@ target 'iMediaProto' do
 pod 'Alamofire', '~> 5.0.0-beta.5'
  #pod "CollieGallery"
   pod 'Kingfisher', '~> 5.0'
+pod 'PMAlertController'
 
 end

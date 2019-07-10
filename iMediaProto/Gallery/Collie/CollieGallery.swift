@@ -407,8 +407,6 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
                 imagesCleared += 1
             }
         }
-        
-        print("\(imagesCleared) images cleared.")
     }
     
     fileprivate func updateContentOffset() {
@@ -677,3 +675,41 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         sourceViewController.present(self, animated: type.animated, completion: nil)
     }
 }
+
+
+
+
+//fileprivate func setupActionButton() {
+//    if let actionButton = self.actionButton {
+//        actionButton.removeFromSuperview()
+//    }
+//
+//    let avaiableSize = getInitialAvaiableSize()
+//    let closeButtonFrame = getActionButtonFrame(avaiableSize)
+//
+//    let actionButton = UIButton(frame: closeButtonFrame)
+//    if let customImageName = options.customOptionsImageName,
+//        let image = UIImage(named: customImageName) {
+//        closeButton.setImage(image, for: UIControl.State())
+//    } else {
+//        actionButton.setTitle("•••", for: UIControl.State())
+//        actionButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 15)
+//        actionButton.setTitleColor(theme.closeButtonColor, for: UIControl.State())
+//    }
+//
+//    actionButton.addTarget(self, action: #selector(actionButtonTouched), for: .touchUpInside)
+//
+//
+//    var shouldBeHidden = false
+//
+//    if self.actionButton != nil {
+//        shouldBeHidden = self.actionButton!.isHidden
+//    }
+//
+//    actionButton.isHidden = shouldBeHidden
+//
+//
+//    self.actionButton = actionButton
+//
+//    view.addSubview(actionButton)
+//}

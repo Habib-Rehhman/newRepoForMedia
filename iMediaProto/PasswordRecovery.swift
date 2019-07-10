@@ -20,8 +20,13 @@ class PasswordRecoverController: UIViewController {
     @IBOutlet weak var recoveryDescription: UITextView!
     
     @IBAction func continuePressed(_ sender: Any) {
-        
-        showOkAlert(tit: "RecoveryAlertControllerTitleKey", msg: "RecoveryAlertControllerKey")
+        let a = UIAlertController(title: "RecoveryAlertControllerTitleKey".localizedLowercase, message: "RecoveryAlertControllerKey".localizedLowercase, preferredStyle: .alert)
+        let act = UIAlertAction(title: "ok", style: .default, handler: {_ in
+            // self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+        })
+       a.addAction(act)
+        self.present(a, animated: true, completion: nil)
     }
     
     

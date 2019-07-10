@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.0-beta.6)
   - Kingfisher (5.6.0)
+  - PMAlertController (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
   - Kingfisher (~> 5.0)
+  - PMAlertController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Kingfisher
+    - PMAlertController
 
 SPEC CHECKSUMS:
   Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
 
-PODFILE CHECKSUM: 7ac3ea139fa5e499c1edde37deedd457931f396b
+PODFILE CHECKSUM: fb00c10f43becae53ac7bdf5b4048d6ad2f9a390
 
 COCOAPODS: 1.7.2

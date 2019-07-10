@@ -46,18 +46,21 @@ struct signUpStructure: Codable{
     }
 }
 
-struct networkConstants{
-    
-    static let baseURL = "http://192.168.1.122/wikibolics/"
-    static let login = "login.php"
-    static let signup = "signup.php"
-    static let nextToLogin = "chapters.php"
-    static let lessons = "lessons.php"
-    static let sublessons = "sub_lessons.php"
-    static let content = "content.php"
-    static var session = "1@3775db3158cdbce4fbd1865e0ab6ac9f@00"
-}
 
+struct change_Password: Codable{
+    
+    let message: String
+}
+//
+//struct generalResponseHandling {
+//    let isSuccessful: Bool?
+//    let failureReason: String?
+//
+//    init(success: Bool?, failure: String?) {
+//        isSuccessful = success
+//        failureReason = failure
+//    }
+//}
 struct chapter: Codable{
     
     let id: String
@@ -100,14 +103,23 @@ struct arrayOfSubLessons: Codable{
     let message: String?
     let sublessonsList: [sublesson]?
 }
-
+struct imagesStruct: Codable{
+    
+    let image: URL?
+    let labTesting: String?
+    let fakeOriginal: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        
+        case image
+        case labTesting = "lab_testing"
+        case fakeOriginal = "fake_original"
+    }
+    
+}
 struct contentStruct: Codable{
     let message: String?
     let content: String?
-    let images: [URL]?
+    let images: [imagesStruct]?
 }
 
-//struct arrayOfcontentStruct: Codable{
-//    let message: String?
-//    let sublessonsList: [sublesson]?
-//}

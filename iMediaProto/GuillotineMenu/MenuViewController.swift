@@ -24,7 +24,6 @@ class MenuViewController: UIViewController, GuillotineMenu {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(hexString: "#A5DEFF").withAlphaComponent(0.7)
         changeBottomBorder(sender: firstBtn)
         changeBottomBorder(sender: secBtn)
         changeBottomBorder(sender: thrdBtn)
@@ -78,7 +77,30 @@ class MenuViewController: UIViewController, GuillotineMenu {
     }
     
     @IBAction func menuButtonTapped(_ sender: UIButton) {
-         self.performSegue(withIdentifier: "bnbn", sender: sender)
+        switch (sender.tag){
+            
+        case 1:
+            let a = UIAlertController(title: "Privacy Policy", message: "policy Contentjkewfgjkaweh,dewhjfg wefgdhjwe,df,wevhjf,yewJCHVE,WJYFVEHWMVFJH,WEDFQEJHVQEWJHFV,Whdfj3fdevwBweFWEMHFVQEJMWHGFGQJEWVFEJWQMDFEJWVD,HVCEWM RXJYEMFEWHMFVJHEWFGJQWY,RFVQEWHFVQWMJQHFVEWJ,YFQWER,MQEYWJFQUYEWFVWEYDVEMYJRFQ4EFJV DFYFREJFV   YGFYFUMFDY3UJDFTUYDUTDMU3DVUKY2DFU2FDTJD32J23YB3UYR3UYRJEWMDFQJYFUQ23JFR2JEDF   2UY3RFKYEFWD    Y23RRFUY23FRJY  MF  U23RJ23U6G2Q3UYJR23U23TYURQTJERFUU32E   HFJF2JRFKU3TFQ32RKUF23KURFQ23URF23URF32TR policy Contentjkewfgjkaweh,dewhjfg wefgdhjwe,df,wevhjf,yewJCHVE,WJYFVEHWMVFJH,WEDFQEJHVQEWJHFV,Whdfj3fdevwBweFWEMHFVQEJMWHGFGQJEWVFEJWQMDFEJWVD,HVCEWM RXJYEMFEWHMFVJHEWFGJQWY,RFVQEWHFVQWMJQHFVEWJ,YFQWER,MQEYWJFQUYEWFVWEYDVEMYJRFQ4EFJV DFYFREJFV   YGFYFUMFDY3UJDFTUYDUTDMU3DVUKY2DFU2FDTJD32J23YB3UYR3UYRJEWMDFQJYFUQ23JFR2JEDF   2UY3RFKYEFWD    Y23RRFUY23FRJY  MF  U23RJ23U6G2Q3UYJR23U23TYURQTJERFUU32E   HFJF2JRFKU3TFQ32RKUF23KURFQ23URF23URF32TR policy Contentjkewfgjkaweh,dewhjfg wefgdhjwe,df,wevhjf,yewJCHVE,WJYFVEHWMVFJH,WEDFQEJHVQEWJHFV,Whdfj3fdevwBweFWEMHFVQEJMWHGFGQJEWVFEJWQMDFEJWVD,HVCEWM RXJYEMFEWHMFVJHEWFGJQWY,RFVQEWHFVQWMJQHFVEWJ,YFQWER,MQEYWJFQUYEWFVWEYDVEMYJRFQ4EFJV DFYFREJFV   YGFYFUMFDY3UJDFTUYDUTDMU3DVUKY2DFU2FDTJD32J23YB3UYR3UYRJEWMDFQJYFUQ23JFR2JEDF   2UY3RFKYEFWD    Y23RRFUY23FRJY  MF  U23RJ23U6G2Q3UYJR23U23TYURQTJERFUU32E   HFJF2JRFKU3TFQ32RKUF23KURFQ23URF23URF32TR policy Contentjkewfgjkaweh,dewhjfg wefgdhjwe,df,wevhjf,yewJCHVE,WJYFVEHWMVFJH,WEDFQEJHVQEWJHFV,Whdfj3fdevwBweFWEMHFVQEJMWHGFGQJEWVFEJWQMDFEJWVD,HVCEWM RXJYEMFEWHMFVJHEWFGJQWY,RFVQEWHFVQWMJQHFVEWJ,YFQWER,MQEYWJFQUYEWFVWEYDVEMYJRFQ4EFJV DFYFREJFV   YGFYFUMFDY3UJDFTUYDUTDMU3DVUKY2DFU2FDTJD32J23YB3UYR3UYRJEWMDFQJYFUQ23JFR2JEDF   2UY3RFKYEFWD    Y23RRFUY23FRJY  MF  U23RJ23U6G2Q3UYJR23U23TYURQTJERFUU32E   HFJF2JRFKU3TFQ32RKUF23KURFQ23URF23URF32TR", preferredStyle: .actionSheet)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            a.addAction(defaultAction)
+            self.present(a, animated: true, completion: nil)
+            break
+        case 2:
+            
+            break
+        case 3:
+            
+            break
+        case 4:
+            UserDefaults.standard.set(false, forKey: "ISUSERLOGGEDIN")
+            performSegue(withIdentifier: "loggingOut", sender: nil)
+            break
+        default:
+            print("nothing")
+            
+        }
+        self.performSegue(withIdentifier: "bnbn", sender: sender)
     }
     
     @IBAction func closeMenu(_ sender: UIButton) {

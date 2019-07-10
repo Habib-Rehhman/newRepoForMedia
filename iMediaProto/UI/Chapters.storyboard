@@ -182,6 +182,7 @@
                     <connections>
                         <outlet property="barButton" destination="sig-4X-1Gw" id="pRz-Ge-Lig"/>
                         <segue destination="FqB-CI-HjU" kind="show" identifier="showSubLessons" id="cFf-uG-dHh"/>
+                        <segue destination="53a-C0-L9c" kind="show" identifier="webVCcalledBylesonsVC" id="B21-0H-RxP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOr-vP-l4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,4 +303,7 @@
     <resources>
         <image name="ic_menu" width="10" height="14.666666984558105"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="B21-0H-RxP"/>
+    </inferredMetricsTieBreakers>
 </document>
