@@ -20,9 +20,8 @@ class PasswordRecoverController: UIViewController {
     @IBOutlet weak var recoveryDescription: UITextView!
     
     @IBAction func continuePressed(_ sender: Any) {
-        let a = UIAlertController(title: "RecoveryAlertControllerTitleKey".localizedLowercase, message: "RecoveryAlertControllerKey".localizedLowercase, preferredStyle: .alert)
+        let a = UIAlertController(title: "RecoveryAlertControllerTitleKey", message: "RecoveryAlertControllerKey".localizedLowercase, preferredStyle: .alert)
         let act = UIAlertAction(title: "ok", style: .default, handler: {_ in
-            // self.dismiss(animated: true, completion: nil)
             self.navigationController?.popViewController(animated: true)
         })
        a.addAction(act)
@@ -44,12 +43,17 @@ class PasswordRecoverController: UIViewController {
         recoveryEmailField.placeholder = "RecoveryEmailKey".localizableString(loc: LanguageViewController.buttonName)
         
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //navigationController?.setNavigationBarHidden(true, animated: true)
         renderLanguage()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+
 }
+
+
+//
+//override func viewWillDisappear(_ animated: Bool) {
+//    super.viewWillDisappear(true)
+//    navigationController?.setNavigationBarHidden(false, animated: false)
+//}

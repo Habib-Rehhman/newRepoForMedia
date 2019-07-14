@@ -1,31 +1,11 @@
-//
-//  CollieGallery.swift
-//
-//  Copyright (c) 2016 Guilherme Munhoz <g.araujo.munhoz@gmail.com>
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
+
 
 import UIKit
-
+import Kingfisher
 /// Class used to display the gallery
 open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryViewDelegate {
     
+
     // MARK: - Private properties
     fileprivate let transitionManager = CollieGalleryTransitionManager()
     fileprivate var theme = CollieGalleryTheme.dark
@@ -33,7 +13,6 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
     fileprivate var pictureViews: [CollieGalleryView] = []
     fileprivate var isShowingLandscapeView: Bool {
         let orientation = UIApplication.shared.statusBarOrientation
-        
         switch (orientation) {
         case UIInterfaceOrientation.landscapeLeft, UIInterfaceOrientation.landscapeRight:
             return true
@@ -43,7 +22,7 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
     }
     fileprivate var isShowingActionControls: Bool {
         get {
-            return !closeButton.isHidden
+            return !captionView.isHidden
         }
     }
     fileprivate var activityController: UIActivityViewController!
@@ -73,7 +52,8 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
     open var closeButton: UIButton!
     
     /// The action button
-    open var actionButton: UIButton?
+    
+    open var stack: UIStackView?
     
     /// The view used to show the progress
     open var progressTrackView: UIView?
@@ -91,7 +71,7 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         }
     }
     
-    // MARK: - Initializers
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -101,16 +81,6 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
     }
     
     
-    /**
-     
-        Default gallery initializer
-
-        - Parameters:
-            - pictures: The pictures to display in the gallery
-            - options: An optional object with the customization options
-            - theme: An optional theme to customize the gallery appearance
-
-    */
     public convenience init(pictures: [CollieGalleryPicture],
                             options: CollieGalleryOptions? = nil,
                             theme: CollieGalleryTheme? = nil)
@@ -121,12 +91,11 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         self.options = (options != nil) ? options! : CollieGalleryOptions.sharedOptions
         self.theme = (theme != nil) ? theme! : CollieGalleryTheme.defaultTheme
     }
-    
-    
     // MARK: - UIViewController functions
     open override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+       
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -190,12 +159,7 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         
         setupScrollView()
         setupPictures()
-        setupCloseButton()
-        
-        if options.enableSave {
-            setupActionButton()
-        }
-        
+        addNavBarImage()
         setupCaptionView()
 
         if options.showProgress {
@@ -203,6 +167,7 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         }
         
         loadImagesNextToIndex(currentPageIndex)
+        
         
     }
     
@@ -244,74 +209,52 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         }
     }
     
-    fileprivate func setupCloseButton() {
-        if self.closeButton != nil {
-            self.closeButton.removeFromSuperview()
-       }
-        
-        let avaiableSize = getInitialAvaiableSize()
-        let closeButtonFrame = getCloseButtonFrame(avaiableSize)
-        
-        
-        let closeButton = UIButton(frame: closeButtonFrame)
-        if let customImageName = options.customCloseImageName,
-            let image = UIImage(named: customImageName) {
-            closeButton.setImage(image, for: UIControl.State())
-        } else {
-            closeButton.setTitle("+", for: UIControl.State())
-            closeButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Medium", size: 30)
-            closeButton.setTitleColor(theme.closeButtonColor, for: UIControl.State())
-            closeButton.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat.pi / 4))
-        }
-        closeButton.addTarget(self, action: #selector(closeButtonTouched), for: .touchUpInside)
-        
-        var shouldBeHidden = false
-        
-        if self.closeButton != nil {
-            shouldBeHidden = closeButton.isHidden
-        }
-        
-        closeButton.isHidden = shouldBeHidden
-        
-        
-        self.closeButton = closeButton
-        
-        view.addSubview(self.closeButton)
-    }
-    
-    fileprivate func setupActionButton() {
-        if let actionButton = self.actionButton {
-            actionButton.removeFromSuperview()
-        }
-        
-       // let avaiableSize = getInitialAvaiableSize()
-        //let closeButtonFrame = getActionButtonFrame(avaiableSize)
-        
-       // let actionButton = UIButton(frame: closeButtonFrame)
-        if let customImageName = options.customOptionsImageName,
-            let image = UIImage(named: customImageName) {
-            closeButton.setImage(image, for: UIControl.State())
-        } else {
-            //actionButton.setTitle("•••", for: UIControl.State())
-           // actionButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 15)
-           // actionButton.setTitleColor(theme.closeButtonColor, for: UIControl.State())
-        }
-        
-       // actionButton.addTarget(self, action: #selector(actionButtonTouched), for: .touchUpInside)
-        
-        
-      //  var shouldBeHidden = false
-        
-//        if self.actionButton != nil {
-//            shouldBeHidden = self.actionButton!.isHidden
+//    fileprivate func setupCloseButton() {
+//        if self.closeButton != nil {
+//            self.closeButton.removeFromSuperview()
+//       }
+//
+//        let avaiableSize = getInitialAvaiableSize()
+//        let closeButtonFrame = getCloseButtonFrame(avaiableSize)
+//
+//
+//        let closeButton = UIButton(frame: closeButtonFrame)
+//        if let customImageName = options.customCloseImageName,
+//            let image = UIImage(named: customImageName) {
+//            closeButton.setImage(image, for: UIControl.State())
+//        } else {
+//            closeButton.setTitle("+", for: UIControl.State())
+//            closeButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Medium", size: 30)
+//            closeButton.setTitleColor(theme.closeButtonColor, for: UIControl.State())
+//            closeButton.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat.pi / 4))
 //        }
+//        closeButton.addTarget(self, action: #selector(closeButtonTouched), for: .touchUpInside)
+//        var shouldBeHidden = false
+//        if self.closeButton != nil {
+//            shouldBeHidden = closeButton.isHidden
+//        }
+//        closeButton.isHidden = shouldBeHidden
+//        self.closeButton = closeButton
+//
+//        view.addSubview(self.closeButton)
+//    }
+    
+    fileprivate func addNavBarImage() {
         
-        //actionButton.isHidden = shouldBeHidden
+        let lab = UIBarButtonItem(title: "labTest", style: .plain, target: self, action: #selector(button1Touched))
+        lab.tintColor = UIColor(hexString: "#6AA9FF")
+        let fake = UIBarButtonItem(title: "fake&original", style: .plain, target: self, action: #selector(button2Touched))
+        fake.tintColor = UIColor(hexString: "#6AA9FF")
+        // navigationItem.setRightBarButton(lab, animated: true)
+        navigationItem.setRightBarButtonItems([lab, fake], animated: true)
         
-        
-       // self.actionButton = actionButton
-        
-       // view.addSubview(actionButton)
+        let backButtonImage = UIImage(named: "back")?.withRenderingMode(.alwaysTemplate)
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.tintColor = UIColor(hexString: "#6AA9FF")//UIColor(hexString: "#A5DEFF")
+        backButton.setTitle(" ", for: .normal)
+        backButton.addTarget(self, action: #selector(closeButtonTouched), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     fileprivate func setupProgressIndicator() {
@@ -361,18 +304,17 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
             progressTrackView.frame = getProgressViewFrame(avaiableSize)
         }
         
-        var popOverPresentationRect = getActionButtonFrame(view.frame.size)
+        var popOverPresentationRect = getStackFrame(view.frame.size)
         popOverPresentationRect.origin.x += popOverPresentationRect.size.width
         
         activityController?.popoverPresentationController?.sourceView = view
         activityController?.popoverPresentationController?.sourceRect = popOverPresentationRect
-        
-        setupCloseButton()
-        setupActionButton()
+        addNavBarImage()
         
         updateContentOffset()
         
         updateCaptionText()
+
     }
     
     fileprivate func loadImagesNextToIndex(_ index: Int) {
@@ -407,6 +349,8 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
                 imagesCleared += 1
             }
         }
+        
+        print("\(imagesCleared) images cleared.")
     }
     
     fileprivate func updateContentOffset() {
@@ -451,16 +395,13 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
     }
     
     fileprivate func showControls() {
-        closeButton.isHidden = false
-        actionButton?.isHidden = false
+        navigationController?.isNavigationBarHidden = false
         progressTrackView?.isHidden = false
         captionView.isHidden = captionView.titleLabel.text == nil && captionView.captionLabel.text == nil
         
         UIView.animate(withDuration: 0.2, delay: 0.0,
                        options: UIView.AnimationOptions(),
                                    animations: { [weak self] in
-                                                    self?.closeButton.alpha = 1.0
-                                                    self?.actionButton?.alpha = 1.0
                                                     self?.progressTrackView?.alpha = 1.0
                                                     self?.captionView.alpha = 1.0
                                    }, completion: nil)
@@ -470,14 +411,13 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         UIView.animate(withDuration: 0.2, delay: 0.0,
                        options: UIView.AnimationOptions(),
                                    animations: { [weak self] in
-                                        self?.closeButton.alpha = 0.0
-                                        self?.actionButton?.alpha = 0.0
+                                   
                                         self?.progressTrackView?.alpha = 0.0
                                         self?.captionView.alpha = 0.0
                                    },
                                    completion: { [weak self] _ in
-                                        self?.closeButton.isHidden = true
-                                        self?.actionButton?.isHidden = true
+                              
+                                    self?.navigationController?.isNavigationBarHidden = true
                                         self?.progressTrackView?.isHidden = true
                                         self?.captionView.isHidden = true
                                    })
@@ -495,13 +435,29 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         return CGRect(x: 0, y: 0, width: 0, height: progressFrame.size.height)
     }
     
-    fileprivate func getCloseButtonFrame(_ avaiableSize: CGSize) -> CGRect {
-        return CGRect(x: 0, y: 0, width: 50, height: 50)
+    fileprivate func getStackFrame(_ avaiableSize: CGSize) -> CGRect {
+//        if isShowingLandscapeView{
+//             return CGRect(x:  avaiableSize.width - 65, y:  65, width: 80, height: 230)
+//        }else{
+//
+//             return CGRect(x: 60, y: avaiableSize.height - 65, width: 230, height: 40)
+//        }
+        if UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft {
+            return CGRect(x:  avaiableSize.width - 100, y:  65, width: 80, height: 230)
+        }
+        else if UIDevice.current.orientation == UIDeviceOrientation.landscapeRight{
+            return CGRect(x:5, y:  65, width: 80, height: 230)
+        }
+        else if UIDevice.current.orientation == UIDeviceOrientation.portraitUpsideDown{
+             return CGRect(x: 20, y: 35, width: 230, height: 40)
+        }
+//        else if UIDevice.current.orientation == UIDeviceOrientation.portrait
+        else{
+            return CGRect(x: 60, y: avaiableSize.height - 65, width: 230, height: 40)
+        }
+
     }
-    
-    fileprivate func getActionButtonFrame(_ avaiableSize: CGSize) -> CGRect {
-        return CGRect(x: avaiableSize.width - 50, y: 0, width: 50, height: 50)
-    }
+
     
     fileprivate func getCustomButtonFrame(_ avaiableSize: CGSize, forIndex index: Int) -> CGRect {
         let position = index + 2
@@ -537,21 +493,31 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
 
         }
     }
-    
-    
+    var uimg : UIImage?
+
     // MARK: - Internal functions
     @objc internal func closeButtonTouched(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        ModalService.dismiss(self, exitTo: .right, duration: 0.2)
     }
+    //
+    @objc func button1Touched(_ sender: UIBarButtonItem) {
+      //  self.view.addSubview(pictures[currentPageIndex].labTest!)
+        uimg = pictures[currentPageIndex].labTest!.image
+        let resultController = UIStoryboard(name: "Chapters", bundle: nil).instantiateViewController(withIdentifier: "PhotoViewController") as? ZoomedPhotoViewController
+        let a = UIStoryboardSegue(identifier:"zooming", source: self, destination: resultController!)
+      //  a.perform()
+        self.performSegue(withIdentifier: a.identifier!, sender: nil)
+        
+   // ModalService.present(<#T##modalViewController: UIViewController##UIViewController#>, presenter: <#T##UIViewController#>)
+   }
     
-    @objc internal func actionButtonTouched(_ sender: AnyObject) {
+
+    @objc internal func button2Touched(_ sender: UIButton) {
         
-        if let customHandleBlock = options.customOptionsBlock {
-            customHandleBlock()
-            return
-        }
+        print("b2 presses")
         
-        showShareActivity()
+        //        showShareActivity()
     }
     
     internal func showShareActivity() {
@@ -562,7 +528,7 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
             
             activityController.excludedActivityTypes = options.excludedActions
             
-            var popOverPresentationRect = getActionButtonFrame(view.frame.size)
+            var popOverPresentationRect = getStackFrame(view.frame.size)
             popOverPresentationRect.origin.x += popOverPresentationRect.size.width
             
             activityController.popoverPresentationController?.sourceView = view
@@ -634,16 +600,7 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
     
     
     // MARK: - Public functions
-    
-    /**
-     
-        Scrolls the gallery to an index
-
-        - Parameters:
-            - index: The index to scroll
-            - animated: Indicates if it should be animated or not
-
-    */
+ 
     open func scrollToIndex(_ index: Int, animated: Bool = true) {
         currentPageIndex = index
         loadImagesNextToIndex(currentPageIndex)
@@ -671,45 +628,14 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         
         modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         transitioningDelegate = transitionManager
-        
-        sourceViewController.present(self, animated: type.animated, completion: nil)
+        let aObjNavi = UINavigationController(rootViewController: self)
+        ModalService.present(aObjNavi, presenter: sourceViewController, enterFrom: .right)
+        //sourceViewController.present(aObjNavi, animated: true)
+        addNavBarImage()
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.backgroundColor = .white //UIColor(hexString: "#A5DEFF")
+     
+
     }
 }
 
-
-
-
-//fileprivate func setupActionButton() {
-//    if let actionButton = self.actionButton {
-//        actionButton.removeFromSuperview()
-//    }
-//
-//    let avaiableSize = getInitialAvaiableSize()
-//    let closeButtonFrame = getActionButtonFrame(avaiableSize)
-//
-//    let actionButton = UIButton(frame: closeButtonFrame)
-//    if let customImageName = options.customOptionsImageName,
-//        let image = UIImage(named: customImageName) {
-//        closeButton.setImage(image, for: UIControl.State())
-//    } else {
-//        actionButton.setTitle("•••", for: UIControl.State())
-//        actionButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 15)
-//        actionButton.setTitleColor(theme.closeButtonColor, for: UIControl.State())
-//    }
-//
-//    actionButton.addTarget(self, action: #selector(actionButtonTouched), for: .touchUpInside)
-//
-//
-//    var shouldBeHidden = false
-//
-//    if self.actionButton != nil {
-//        shouldBeHidden = self.actionButton!.isHidden
-//    }
-//
-//    actionButton.isHidden = shouldBeHidden
-//
-//
-//    self.actionButton = actionButton
-//
-//    view.addSubview(actionButton)
-//}

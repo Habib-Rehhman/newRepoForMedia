@@ -68,7 +68,7 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lessonCell")!
         
         cell.textLabel?.text = SubLessonsVC.sublessons[indexPath.row].name
-        cell.layer.cornerRadius = 5
+        cell.layer.cornerRadius = 30
         cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
         
@@ -136,11 +136,10 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
                     }
                     else{
                         print(gitData.content!)
-                        ImagesVC.jsonURLs.removeAll()
+                        ImagesVC.newStruct.removeAll()
                         self.content = gitData.content!
-                         print(gitData.images!)
                         gitData.images?.forEach({u in
-                            ImagesVC.jsonURLs.append(u.image!)
+                            ImagesVC.newStruct.append(u)
                         })
                         UIViewController.removeSpinner(spinner: sv)
                         self.performSegue(withIdentifier:"showWebView", sender: nil)
@@ -208,7 +207,7 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
                         self.content = gitData.content!
                          print(gitData.images!)
                         gitData.images?.forEach({u in
-                            ImagesVC.jsonURLs.append(u.image!)
+                            ImagesVC.newStruct.append(u)
                         })
                         UIViewController.removeSpinner(spinner: sv)
                         self.performSegue(withIdentifier:"showWebView", sender: nil)

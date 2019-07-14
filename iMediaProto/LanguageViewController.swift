@@ -10,11 +10,15 @@ class LanguageViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "background.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+         navigationController?.isNavigationBarHidden = false
     }
     func checkAutoLogin(){
         
@@ -22,7 +26,6 @@ class LanguageViewController: UIViewController {
             
             networkConstants.session = UserDefaults.standard.string(forKey: "session")!
             loadChapters()
-          //   performSegue(withIdentifier: "toChaptersBoard", sender: self)
         }else{
             performSegue(withIdentifier: "toAuthBoard", sender: self)
         }
@@ -100,11 +103,19 @@ class LanguageViewController: UIViewController {
                     let decoder = JSONDecoder()
                     let gitData = try decoder.decode(arrayOfChapters.self, from: jsonData)
                     if(gitData.message != nil){
+                        if((gitData.message?.elementsEqual("session_inactive"))!){
+                            
+                            UserDefaults.standard.set(false, forKey: "ISUSERLOGGEDIN")
+                            UserDefaults.standard.removeObject(forKey: "session")
+                            self.performSegue(withIdentifier: "toAuthBoard", sender: self)
+                            
+                        }else{
                         UIViewController.removeSpinner(spinner: sv)
+                      
                         self.showOkAlert(tit: "EmptyLessonsListMessage", msg: "EmptyLessonsListMessage")
+                        }
                     }else{
                         UIViewController.removeSpinner(spinner: sv)
-                       // self.performSegue(withIdentifier: "showChaptersNow", sender: self)
                          self.performSegue(withIdentifier: "toChaptersBoard", sender: self)
                         gitData.chaptersList!.forEach({ (chapter) in
                             print(chapter.name)

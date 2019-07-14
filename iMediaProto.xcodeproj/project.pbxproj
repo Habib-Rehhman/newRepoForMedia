@@ -14,6 +14,27 @@
 		002E413522D0A0F6009B4809 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002E413422D0A0F6009B4809 /* Auth.storyboard */; };
 		002E413722D0A9B5009B4809 /* Chapters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 002E413622D0A9B5009B4809 /* Chapters.storyboard */; };
 		002F29C322D49565000D64CF /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F29C222D49565000D64CF /* LaunchScreenVC.swift */; };
+		0034556322D9C24A0026241D /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034554E22D9C24A0026241D /* AppBuilder.swift */; };
+		0034556422D9C24A0026241D /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034554F22D9C24A0026241D /* BlurViewController.swift */; };
+		0034556522D9C24A0026241D /* ImageProcessorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555022D9C24A0026241D /* ImageProcessorsViewController.swift */; };
+		0034556622D9C24A0026241D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555122D9C24A0026241D /* CollectionViewCell.swift */; };
+		0034556722D9C24A0026241D /* CollieGalleryTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555322D9C24A0026241D /* CollieGalleryTransitionType.swift */; };
+		0034556822D9C24A0026241D /* CollieGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555422D9C24A0026241D /* CollieGalleryView.swift */; };
+		0034556922D9C24A0026241D /* CollieGalleryTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555522D9C24A0026241D /* CollieGalleryTransitionManager.swift */; };
+		0034556A22D9C24A0026241D /* CollieGalleryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555622D9C24A0026241D /* CollieGalleryDelegate.swift */; };
+		0034556B22D9C24A0026241D /* CollieGalleryTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555722D9C24A0026241D /* CollieGalleryTransitionProtocol.swift */; };
+		0034556C22D9C24A0026241D /* CollieGalleryDefaultTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555822D9C24A0026241D /* CollieGalleryDefaultTransition.swift */; };
+		0034556D22D9C24A0026241D /* CollieGalleryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555922D9C24A0026241D /* CollieGalleryOptions.swift */; };
+		0034556E22D9C24A0026241D /* CollieGalleryPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555A22D9C24A0026241D /* CollieGalleryPicture.swift */; };
+		0034556F22D9C24A0026241D /* CollieGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555B22D9C24A0026241D /* CollieGallery.swift */; };
+		0034557022D9C24A0026241D /* CollieGalleryAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555C22D9C24A0026241D /* CollieGalleryAppearance.swift */; };
+		0034557122D9C24A0026241D /* CollieGalleryCustomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555D22D9C24A0026241D /* CollieGalleryCustomAction.swift */; };
+		0034557222D9C24A0026241D /* CollieGalleryCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555E22D9C24A0026241D /* CollieGalleryCaptionView.swift */; };
+		0034557322D9C24A0026241D /* CollieGalleryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034555F22D9C24A0026241D /* CollieGalleryViewDelegate.swift */; };
+		0034557422D9C24A0026241D /* CollieGalleryZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034556022D9C24A0026241D /* CollieGalleryZoomTransition.swift */; };
+		0034557522D9C24A0026241D /* CollieGalleryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034556122D9C24A0026241D /* CollieGalleryTheme.swift */; };
+		0034557622D9C24A0026241D /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0034556222D9C24A0026241D /* ModelService.swift */; };
+		004A947122DB311900F07492 /* gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004A947022DB311900F07492 /* gallery.storyboard */; };
 		006A119C22B9045D00237B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119A22B9045D00237B3F /* Main.storyboard */; };
 		006A119E22B9046000237B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A119D22B9046000237B3F /* Assets.xcassets */; };
 		006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006A119F22B9046000237B3F /* LaunchScreen.storyboard */; };
@@ -23,29 +44,16 @@
 		006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AE22B9064700237B3F /* SignUpViewController.swift */; };
 		006A11B722B9064700237B3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A11AF22B9064700237B3F /* LoginViewController.swift */; };
 		008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */; };
+		9D1E32E022DB8C090081904D /* CollectionViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2645722DB7CDC00213588 /* CollectionViewController copy.swift */; };
+		9D1E32E122DB8C090081904D /* ManagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2645622DB7CDC00213588 /* ManagePageViewController.swift */; };
+		9D1E32E222DB8C090081904D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2645922DB7CDC00213588 /* PhotoCell.swift */; };
+		9D1E32E322DB8C090081904D /* PhotoCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2645422DB7CDB00213588 /* PhotoCommentViewController.swift */; };
+		9D1E32E422DB8C090081904D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2645822DB7CDC00213588 /* UIImage.swift */; };
+		9D1E32E522DB8C090081904D /* ZoomedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2645522DB7CDB00213588 /* ZoomedPhotoViewController.swift */; };
 		9D201E2222C7B7E800074416 /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D201E2122C7B7E800074416 /* shared.swift */; };
 		9D35AECE22C902FB00B108BD /* ic_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D35AECB22C902FB00B108BD /* ic_menu@3x.png */; };
 		9D35AECF22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */; };
 		9D35AED022C902FB00B108BD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AECD22C902FB00B108BD /* MenuViewController.swift */; };
-		9D6F91D122CF760300DE4242 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91CD22CF760200DE4242 /* AppBuilder.swift */; };
-		9D6F91D222CF760300DE4242 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91CE22CF760200DE4242 /* CollectionViewCell.swift */; };
-		9D6F91D322CF760300DE4242 /* ImageProcessorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91CF22CF760300DE4242 /* ImageProcessorsViewController.swift */; };
-		9D6F91D422CF760300DE4242 /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91D022CF760300DE4242 /* BlurViewController.swift */; };
-		9D6F91E422CF763200DE4242 /* CollieGalleryPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91D522CF763000DE4242 /* CollieGalleryPicture.swift */; };
-		9D6F91E522CF763200DE4242 /* CollieGalleryTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91D622CF763000DE4242 /* CollieGalleryTransitionType.swift */; };
-		9D6F91E622CF763200DE4242 /* CollieGalleryAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91D722CF763000DE4242 /* CollieGalleryAppearance.swift */; };
-		9D6F91E722CF763200DE4242 /* CollieGalleryDefaultTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91D822CF763000DE4242 /* CollieGalleryDefaultTransition.swift */; };
-		9D6F91E822CF763200DE4242 /* CollieGalleryTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91D922CF763100DE4242 /* CollieGalleryTransitionManager.swift */; };
-		9D6F91E922CF763200DE4242 /* CollieGalleryZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91DA22CF763100DE4242 /* CollieGalleryZoomTransition.swift */; };
-		9D6F91EA22CF763200DE4242 /* CollieGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91DB22CF763100DE4242 /* CollieGalleryView.swift */; };
-		9D6F91EB22CF763200DE4242 /* CollieGalleryCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91DC22CF763100DE4242 /* CollieGalleryCaptionView.swift */; };
-		9D6F91EC22CF763200DE4242 /* CollieGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91DD22CF763100DE4242 /* CollieGallery.swift */; };
-		9D6F91ED22CF763200DE4242 /* CollieGalleryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91DE22CF763100DE4242 /* CollieGalleryOptions.swift */; };
-		9D6F91EE22CF763200DE4242 /* CollieGalleryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91DF22CF763100DE4242 /* CollieGalleryTheme.swift */; };
-		9D6F91EF22CF763200DE4242 /* CollieGalleryCustomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91E022CF763100DE4242 /* CollieGalleryCustomAction.swift */; };
-		9D6F91F022CF763200DE4242 /* CollieGalleryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91E122CF763100DE4242 /* CollieGalleryViewDelegate.swift */; };
-		9D6F91F122CF763200DE4242 /* CollieGalleryTransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91E222CF763200DE4242 /* CollieGalleryTransitionProtocol.swift */; };
-		9D6F91F222CF763200DE4242 /* CollieGalleryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91E322CF763200DE4242 /* CollieGalleryDelegate.swift */; };
 		9D6F91F522CF7A0200DE4242 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91F322CF7A0200DE4242 /* WebVC.swift */; };
 		9D6F91F622CF7A0200DE4242 /* ImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91F422CF7A0200DE4242 /* ImagesVC.swift */; };
 		9D6F91FD22CF7A3D00DE4242 /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91F722CF7A3D00DE4242 /* QuoteDeck.swift */; };
@@ -94,6 +102,27 @@
 		002E413422D0A0F6009B4809 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		002E413622D0A9B5009B4809 /* Chapters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapters.storyboard; sourceTree = "<group>"; };
 		002F29C222D49565000D64CF /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		0034554E22D9C24A0026241D /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
+		0034554F22D9C24A0026241D /* BlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
+		0034555022D9C24A0026241D /* ImageProcessorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessorsViewController.swift; sourceTree = "<group>"; };
+		0034555122D9C24A0026241D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0034555322D9C24A0026241D /* CollieGalleryTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTransitionType.swift; sourceTree = "<group>"; };
+		0034555422D9C24A0026241D /* CollieGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryView.swift; sourceTree = "<group>"; };
+		0034555522D9C24A0026241D /* CollieGalleryTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTransitionManager.swift; sourceTree = "<group>"; };
+		0034555622D9C24A0026241D /* CollieGalleryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryDelegate.swift; sourceTree = "<group>"; };
+		0034555722D9C24A0026241D /* CollieGalleryTransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTransitionProtocol.swift; sourceTree = "<group>"; };
+		0034555822D9C24A0026241D /* CollieGalleryDefaultTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryDefaultTransition.swift; sourceTree = "<group>"; };
+		0034555922D9C24A0026241D /* CollieGalleryOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryOptions.swift; sourceTree = "<group>"; };
+		0034555A22D9C24A0026241D /* CollieGalleryPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryPicture.swift; sourceTree = "<group>"; };
+		0034555B22D9C24A0026241D /* CollieGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGallery.swift; sourceTree = "<group>"; };
+		0034555C22D9C24A0026241D /* CollieGalleryAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryAppearance.swift; sourceTree = "<group>"; };
+		0034555D22D9C24A0026241D /* CollieGalleryCustomAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryCustomAction.swift; sourceTree = "<group>"; };
+		0034555E22D9C24A0026241D /* CollieGalleryCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryCaptionView.swift; sourceTree = "<group>"; };
+		0034555F22D9C24A0026241D /* CollieGalleryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryViewDelegate.swift; sourceTree = "<group>"; };
+		0034556022D9C24A0026241D /* CollieGalleryZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryZoomTransition.swift; sourceTree = "<group>"; };
+		0034556122D9C24A0026241D /* CollieGalleryTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTheme.swift; sourceTree = "<group>"; };
+		0034556222D9C24A0026241D /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
+		004A947022DB311900F07492 /* gallery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = gallery.storyboard; sourceTree = "<group>"; };
 		006A119322B9045D00237B3F /* iMediaProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMediaProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A119B22B9045D00237B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		006A119D22B9046000237B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +135,12 @@
 		006A11AF22B9064700237B3F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		006A11B022B9064700237B3F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		00D2645422DB7CDB00213588 /* PhotoCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCommentViewController.swift; sourceTree = "<group>"; };
+		00D2645522DB7CDB00213588 /* ZoomedPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomedPhotoViewController.swift; sourceTree = "<group>"; };
+		00D2645622DB7CDC00213588 /* ManagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageViewController.swift; sourceTree = "<group>"; };
+		00D2645722DB7CDC00213588 /* CollectionViewController copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController copy.swift"; sourceTree = "<group>"; };
+		00D2645822DB7CDC00213588 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		00D2645922DB7CDC00213588 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		1B171EC98ED4EF4608FDA3C2 /* Pods_iMediaProto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMediaProto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1450351C40EA655DD081A /* Pods-iMediaProto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.debug.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.debug.xcconfig"; sourceTree = "<group>"; };
 		713684BDB13589D530C338F1 /* Pods-iMediaProto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMediaProto.release.xcconfig"; path = "Target Support Files/Pods-iMediaProto/Pods-iMediaProto.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,25 +148,6 @@
 		9D35AECB22C902FB00B108BD /* ic_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu@3x.png"; sourceTree = "<group>"; };
 		9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
 		9D35AECD22C902FB00B108BD /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		9D6F91CD22CF760200DE4242 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
-		9D6F91CE22CF760200DE4242 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		9D6F91CF22CF760300DE4242 /* ImageProcessorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessorsViewController.swift; sourceTree = "<group>"; };
-		9D6F91D022CF760300DE4242 /* BlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
-		9D6F91D522CF763000DE4242 /* CollieGalleryPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryPicture.swift; sourceTree = "<group>"; };
-		9D6F91D622CF763000DE4242 /* CollieGalleryTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTransitionType.swift; sourceTree = "<group>"; };
-		9D6F91D722CF763000DE4242 /* CollieGalleryAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryAppearance.swift; sourceTree = "<group>"; };
-		9D6F91D822CF763000DE4242 /* CollieGalleryDefaultTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryDefaultTransition.swift; sourceTree = "<group>"; };
-		9D6F91D922CF763100DE4242 /* CollieGalleryTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTransitionManager.swift; sourceTree = "<group>"; };
-		9D6F91DA22CF763100DE4242 /* CollieGalleryZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryZoomTransition.swift; sourceTree = "<group>"; };
-		9D6F91DB22CF763100DE4242 /* CollieGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryView.swift; sourceTree = "<group>"; };
-		9D6F91DC22CF763100DE4242 /* CollieGalleryCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryCaptionView.swift; sourceTree = "<group>"; };
-		9D6F91DD22CF763100DE4242 /* CollieGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGallery.swift; sourceTree = "<group>"; };
-		9D6F91DE22CF763100DE4242 /* CollieGalleryOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryOptions.swift; sourceTree = "<group>"; };
-		9D6F91DF22CF763100DE4242 /* CollieGalleryTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTheme.swift; sourceTree = "<group>"; };
-		9D6F91E022CF763100DE4242 /* CollieGalleryCustomAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryCustomAction.swift; sourceTree = "<group>"; };
-		9D6F91E122CF763100DE4242 /* CollieGalleryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryViewDelegate.swift; sourceTree = "<group>"; };
-		9D6F91E222CF763200DE4242 /* CollieGalleryTransitionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryTransitionProtocol.swift; sourceTree = "<group>"; };
-		9D6F91E322CF763200DE4242 /* CollieGalleryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollieGalleryDelegate.swift; sourceTree = "<group>"; };
 		9D6F91F322CF7A0200DE4242 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		9D6F91F422CF7A0200DE4242 /* ImagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesVC.swift; sourceTree = "<group>"; };
 		9D6F91F722CF7A3D00DE4242 /* QuoteDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
@@ -161,12 +177,48 @@
 		002E413222D09CFA009B4809 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				004A947022DB311900F07492 /* gallery.storyboard */,
 				006A119A22B9045D00237B3F /* Main.storyboard */,
 				006A119F22B9046000237B3F /* LaunchScreen.storyboard */,
 				002E413422D0A0F6009B4809 /* Auth.storyboard */,
 				002E413622D0A9B5009B4809 /* Chapters.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		0034554D22D9C24A0026241D /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				0034554E22D9C24A0026241D /* AppBuilder.swift */,
+				0034554F22D9C24A0026241D /* BlurViewController.swift */,
+				0034555022D9C24A0026241D /* ImageProcessorsViewController.swift */,
+				0034555122D9C24A0026241D /* CollectionViewCell.swift */,
+				0034555222D9C24A0026241D /* Collie */,
+				0034556222D9C24A0026241D /* ModelService.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		0034555222D9C24A0026241D /* Collie */ = {
+			isa = PBXGroup;
+			children = (
+				0034555322D9C24A0026241D /* CollieGalleryTransitionType.swift */,
+				0034555422D9C24A0026241D /* CollieGalleryView.swift */,
+				0034555522D9C24A0026241D /* CollieGalleryTransitionManager.swift */,
+				0034555622D9C24A0026241D /* CollieGalleryDelegate.swift */,
+				0034555722D9C24A0026241D /* CollieGalleryTransitionProtocol.swift */,
+				0034555822D9C24A0026241D /* CollieGalleryDefaultTransition.swift */,
+				0034555922D9C24A0026241D /* CollieGalleryOptions.swift */,
+				0034555A22D9C24A0026241D /* CollieGalleryPicture.swift */,
+				0034555B22D9C24A0026241D /* CollieGallery.swift */,
+				0034555C22D9C24A0026241D /* CollieGalleryAppearance.swift */,
+				0034555D22D9C24A0026241D /* CollieGalleryCustomAction.swift */,
+				0034555E22D9C24A0026241D /* CollieGalleryCaptionView.swift */,
+				0034555F22D9C24A0026241D /* CollieGalleryViewDelegate.swift */,
+				0034556022D9C24A0026241D /* CollieGalleryZoomTransition.swift */,
+				0034556122D9C24A0026241D /* CollieGalleryTheme.swift */,
+			);
+			path = Collie;
 			sourceTree = "<group>";
 		};
 		006A118A22B9045D00237B3F = {
@@ -190,10 +242,11 @@
 		006A119522B9045D00237B3F /* iMediaProto */ = {
 			isa = PBXGroup;
 			children = (
+				00D2645322DB7CCF00213588 /* NewGallery */,
+				0034554D22D9C24A0026241D /* Gallery */,
 				9D9E3E1E22D636E000EDD50A /* gitIgnore */,
 				002E413222D09CFA009B4809 /* UI */,
 				008D4B9B22BB70EE00870F77 /* LanguageViewController.swift */,
-				9D6F91CC22CF75D800DE4242 /* Gallery */,
 				9D35AECA22C902FB00B108BD /* GuillotineMenu */,
 				9D20FA2E22C639DD00D80E42 /* chapters */,
 				006A11A922B9064600237B3F /* AppDelegate.swift */,
@@ -213,6 +266,19 @@
 				002F29C222D49565000D64CF /* LaunchScreenVC.swift */,
 			);
 			path = iMediaProto;
+			sourceTree = "<group>";
+		};
+		00D2645322DB7CCF00213588 /* NewGallery */ = {
+			isa = PBXGroup;
+			children = (
+				00D2645722DB7CDC00213588 /* CollectionViewController copy.swift */,
+				00D2645622DB7CDC00213588 /* ManagePageViewController.swift */,
+				00D2645922DB7CDC00213588 /* PhotoCell.swift */,
+				00D2645422DB7CDB00213588 /* PhotoCommentViewController.swift */,
+				00D2645822DB7CDC00213588 /* UIImage.swift */,
+				00D2645522DB7CDB00213588 /* ZoomedPhotoViewController.swift */,
+			);
+			path = NewGallery;
 			sourceTree = "<group>";
 		};
 		9D20FA2E22C639DD00D80E42 /* chapters */ = {
@@ -238,40 +304,6 @@
 				9D35AECD22C902FB00B108BD /* MenuViewController.swift */,
 			);
 			path = GuillotineMenu;
-			sourceTree = "<group>";
-		};
-		9D6F91CB22CF75A800DE4242 /* Collie */ = {
-			isa = PBXGroup;
-			children = (
-				9D6F91DD22CF763100DE4242 /* CollieGallery.swift */,
-				9D6F91D722CF763000DE4242 /* CollieGalleryAppearance.swift */,
-				9D6F91DC22CF763100DE4242 /* CollieGalleryCaptionView.swift */,
-				9D6F91E022CF763100DE4242 /* CollieGalleryCustomAction.swift */,
-				9D6F91D822CF763000DE4242 /* CollieGalleryDefaultTransition.swift */,
-				9D6F91E322CF763200DE4242 /* CollieGalleryDelegate.swift */,
-				9D6F91DE22CF763100DE4242 /* CollieGalleryOptions.swift */,
-				9D6F91D522CF763000DE4242 /* CollieGalleryPicture.swift */,
-				9D6F91DF22CF763100DE4242 /* CollieGalleryTheme.swift */,
-				9D6F91D922CF763100DE4242 /* CollieGalleryTransitionManager.swift */,
-				9D6F91E222CF763200DE4242 /* CollieGalleryTransitionProtocol.swift */,
-				9D6F91D622CF763000DE4242 /* CollieGalleryTransitionType.swift */,
-				9D6F91DB22CF763100DE4242 /* CollieGalleryView.swift */,
-				9D6F91E122CF763100DE4242 /* CollieGalleryViewDelegate.swift */,
-				9D6F91DA22CF763100DE4242 /* CollieGalleryZoomTransition.swift */,
-			);
-			path = Collie;
-			sourceTree = "<group>";
-		};
-		9D6F91CC22CF75D800DE4242 /* Gallery */ = {
-			isa = PBXGroup;
-			children = (
-				9D6F91CD22CF760200DE4242 /* AppBuilder.swift */,
-				9D6F91D022CF760300DE4242 /* BlurViewController.swift */,
-				9D6F91CE22CF760200DE4242 /* CollectionViewCell.swift */,
-				9D6F91CF22CF760300DE4242 /* ImageProcessorsViewController.swift */,
-				9D6F91CB22CF75A800DE4242 /* Collie */,
-			);
-			path = Gallery;
 			sourceTree = "<group>";
 		};
 		9D9E3E1E22D636E000EDD50A /* gitIgnore */ = {
@@ -373,6 +405,7 @@
 				0023A28622C1F28D007BEB2D /* Localizable.strings in Resources */,
 				006A11A122B9046000237B3F /* LaunchScreen.storyboard in Resources */,
 				002E413722D0A9B5009B4809 /* Chapters.storyboard in Resources */,
+				004A947122DB311900F07492 /* gallery.storyboard in Resources */,
 				006A119E22B9046000237B3F /* Assets.xcassets in Resources */,
 				006A119C22B9045D00237B3F /* Main.storyboard in Resources */,
 				9D35AECE22C902FB00B108BD /* ic_menu@3x.png in Resources */,
@@ -428,48 +461,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0034557222D9C24A0026241D /* CollieGalleryCaptionView.swift in Sources */,
+				0034557422D9C24A0026241D /* CollieGalleryZoomTransition.swift in Sources */,
 				9D35AECF22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
-				9D6F91D122CF760300DE4242 /* AppBuilder.swift in Sources */,
-				9D6F91ED22CF763200DE4242 /* CollieGalleryOptions.swift in Sources */,
+				9D1E32E122DB8C090081904D /* ManagePageViewController.swift in Sources */,
+				9D1E32E022DB8C090081904D /* CollectionViewController copy.swift in Sources */,
 				000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */,
+				0034556822D9C24A0026241D /* CollieGalleryView.swift in Sources */,
+				0034556322D9C24A0026241D /* AppBuilder.swift in Sources */,
+				9D1E32E422DB8C090081904D /* UIImage.swift in Sources */,
+				0034556B22D9C24A0026241D /* CollieGalleryTransitionProtocol.swift in Sources */,
 				9D84D5C022D2044A004E0025 /* CredentialsEdit.swift in Sources */,
 				9D6F91F522CF7A0200DE4242 /* WebVC.swift in Sources */,
+				9D1E32E222DB8C090081904D /* PhotoCell.swift in Sources */,
 				002F29C322D49565000D64CF /* LaunchScreenVC.swift in Sources */,
+				9D1E32E522DB8C090081904D /* ZoomedPhotoViewController.swift in Sources */,
+				9D1E32E322DB8C090081904D /* PhotoCommentViewController.swift in Sources */,
+				0034556A22D9C24A0026241D /* CollieGalleryDelegate.swift in Sources */,
+				0034556F22D9C24A0026241D /* CollieGallery.swift in Sources */,
 				9D6F91FD22CF7A3D00DE4242 /* QuoteDeck.swift in Sources */,
+				0034556422D9C24A0026241D /* BlurViewController.swift in Sources */,
 				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
-				9D6F91F222CF763200DE4242 /* CollieGalleryDelegate.swift in Sources */,
+				0034556C22D9C24A0026241D /* CollieGalleryDefaultTransition.swift in Sources */,
+				0034557322D9C24A0026241D /* CollieGalleryViewDelegate.swift in Sources */,
 				006A11B622B9064700237B3F /* SignUpViewController.swift in Sources */,
 				006A11B122B9064700237B3F /* AppDelegate.swift in Sources */,
 				006A11B222B9064700237B3F /* StartViewController.swift in Sources */,
-				9D6F91E622CF763200DE4242 /* CollieGalleryAppearance.swift in Sources */,
 				9D6F920022CF7A3D00DE4242 /* SubLessonsVC.swift in Sources */,
-				9D6F91D322CF760300DE4242 /* ImageProcessorsViewController.swift in Sources */,
 				9D6F91FF22CF7A3D00DE4242 /* lessonsViewController.swift in Sources */,
 				9D9E3E2022D6373D00EDD50A /* serverInfo.swift in Sources */,
-				9D6F91EF22CF763200DE4242 /* CollieGalleryCustomAction.swift in Sources */,
-				9D6F91F022CF763200DE4242 /* CollieGalleryViewDelegate.swift in Sources */,
 				9D201E2222C7B7E800074416 /* shared.swift in Sources */,
+				0034556D22D9C24A0026241D /* CollieGalleryOptions.swift in Sources */,
 				000E0D2022C498FE0080DFC7 /* ModelStructures.swift in Sources */,
-				9D6F91F122CF763200DE4242 /* CollieGalleryTransitionProtocol.swift in Sources */,
+				0034557622D9C24A0026241D /* ModelService.swift in Sources */,
 				9D35AED022C902FB00B108BD /* MenuViewController.swift in Sources */,
+				0034556722D9C24A0026241D /* CollieGalleryTransitionType.swift in Sources */,
+				0034556922D9C24A0026241D /* CollieGalleryTransitionManager.swift in Sources */,
 				9D6F91FE22CF7A3D00DE4242 /* QuoteViewController.swift in Sources */,
+				0034556622D9C24A0026241D /* CollectionViewCell.swift in Sources */,
+				0034557022D9C24A0026241D /* CollieGalleryAppearance.swift in Sources */,
 				9D6F91F622CF7A0200DE4242 /* ImagesVC.swift in Sources */,
-				9D6F91E422CF763200DE4242 /* CollieGalleryPicture.swift in Sources */,
 				001BCF6422C0DEF300419E00 /* PasswordRecovery.swift in Sources */,
-				9D6F91D222CF760300DE4242 /* CollectionViewCell.swift in Sources */,
-				9D6F91EC22CF763200DE4242 /* CollieGallery.swift in Sources */,
-				9D6F91EE22CF763200DE4242 /* CollieGalleryTheme.swift in Sources */,
-				9D6F91E522CF763200DE4242 /* CollieGalleryTransitionType.swift in Sources */,
 				9D6F920122CF7A3D00DE4242 /* Quote.swift in Sources */,
-				9D6F91EB22CF763200DE4242 /* CollieGalleryCaptionView.swift in Sources */,
-				9D6F91E922CF763200DE4242 /* CollieGalleryZoomTransition.swift in Sources */,
-				9D6F91D422CF760300DE4242 /* BlurViewController.swift in Sources */,
-				9D6F91EA22CF763200DE4242 /* CollieGalleryView.swift in Sources */,
+				0034556E22D9C24A0026241D /* CollieGalleryPicture.swift in Sources */,
 				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
-				9D6F91E822CF763200DE4242 /* CollieGalleryTransitionManager.swift in Sources */,
 				9D6F920222CF7A3D00DE4242 /* TopicsViewController.swift in Sources */,
-				9D6F91E722CF763200DE4242 /* CollieGalleryDefaultTransition.swift in Sources */,
+				0034556522D9C24A0026241D /* ImageProcessorsViewController.swift in Sources */,
+				0034557522D9C24A0026241D /* CollieGalleryTheme.swift in Sources */,
+				0034557122D9C24A0026241D /* CollieGalleryCustomAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

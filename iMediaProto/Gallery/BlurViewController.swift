@@ -40,11 +40,11 @@ extension BlurViewController: UICollectionViewDataSource, UICollectionViewDelega
             let processor = BlurImageProcessor(blurRadius: 0) // Blur with a radius
             cell.imageView.kf.setImage(with: jsonURLs[indexPath.row], placeholder: placeholderImage, options: [.transition(.fade(5.0)), .processor(processor)], progressBlock: nil, completionHandler: { (image, error, cachType, url) in
                 if(image != nil){
-                let picture = CollieGalleryPicture(image: image!)
+                let picture = CollieGalleryPicture(image: image!, fake: nil, lab: nil)//(image: image!)
                 self.pictures.append(picture)
                 }else{
                 cell.setErrorImageIfNeeded(error: error)
-                let pic = CollieGalleryPicture(image: UIImage(named: "NoImage")!)
+                let pic = CollieGalleryPicture(image: UIImage(named: "NoImage")!, fake: nil, lab: nil)
                 self.pictures.append(pic)
                 }
                 

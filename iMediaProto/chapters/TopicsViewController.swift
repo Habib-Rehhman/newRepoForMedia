@@ -59,9 +59,8 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
         
         cell.textLabel?.text = QuoteDeck.sharedInstance.tagSet[indexPath.row].capitalized
         
-        //.gray
-        cell.layer.cornerRadius = 8
-        cell.layer.borderWidth = CGFloat(12)
+        cell.layer.cornerRadius = 50
+       cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
         
         return cell

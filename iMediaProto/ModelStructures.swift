@@ -51,16 +51,7 @@ struct change_Password: Codable{
     
     let message: String
 }
-//
-//struct generalResponseHandling {
-//    let isSuccessful: Bool?
-//    let failureReason: String?
-//
-//    init(success: Bool?, failure: String?) {
-//        isSuccessful = success
-//        failureReason = failure
-//    }
-//}
+
 struct chapter: Codable{
     
     let id: String

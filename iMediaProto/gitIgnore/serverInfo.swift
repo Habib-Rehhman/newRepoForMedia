@@ -17,5 +17,6 @@ struct networkConstants{
     static let content = "content.php"
     static var session = "2@0dce734ac2afe191af9713270632966e@EC:8C:9A:F3:55:4F"
     static let settings = "settings.php"
+    static let recoverPassword = "reset_password.php"
 }
 
