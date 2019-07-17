@@ -89,14 +89,23 @@ struct sublesson: Codable{
     let id: String
     let name: String
 }
+struct brands: Codable{
 
+    let id: String?
+    let name: String
+}
+struct arrayOfBrands: Codable {
+     let message: String?
+    let brandsList: [brands]?
+    let compositionsList: [brands]?
+}
 struct arrayOfSubLessons: Codable{
     let message: String?
     let sublessonsList: [sublesson]?
 }
 struct imagesStruct: Codable{
     
-    let image: URL?
+    let image: String?
     let labTesting: String?
     let fakeOriginal: String?
     

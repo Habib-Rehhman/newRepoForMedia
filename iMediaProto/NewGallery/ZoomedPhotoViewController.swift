@@ -1,5 +1,6 @@
 
 import UIKit
+import Kingfisher
 
 class ZoomedPhotoViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
@@ -9,14 +10,80 @@ class ZoomedPhotoViewController: UIViewController {
   @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
   open var photoIndex: Int!
-  var photoName: String?
+  var photo: UIImage?
   
-  override func viewDidLoad() {
-   // if let photoName = photoName {
-      imageView.image = ImagesVC.picz[photoIndex]//UIImage(named: photoName)
-    //}
-  }
-  
+    override func viewDidLoad() {
+        addNavBarImage()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        imageView.image = ImagesVC.picz[photoIndex]
+        updateConstraintsForSize(view.bounds.size)
+        centerImageViewToSuperView()
+       
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        imageView.image = ImagesVC.picz[photoIndex]
+        updateConstraintsForSize(view.bounds.size)
+        centerImageViewToSuperView()
+    }
+    
+    
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+           updateMinZoomScaleForSize(size)
+             updateConstraintsForSize(size)
+        } else {
+            print("Portrait")
+             updateMinZoomScaleForSize(size)
+             updateConstraintsForSize(size)
+        }
+    }
+
+   
+    @objc func button1Touched(_ sender: UIBarButtonItem) {
+//        if(ImagesVC.isSentByMainGallery){
+//             self.performSegue(withIdentifier: "associatedPicz", sender: sender)
+//        }else{
+            self.performSegue(withIdentifier: "associatedPicz", sender: sender)
+       // }
+    }
+    
+    @objc func button2Touched(_ sender: UIBarButtonItem) {
+        
+//        if(ImagesVC.isSentByMainGallery){
+//             self.performSegue(withIdentifier: "associatedPicz", sender: sender)
+//        }else{
+            self.performSegue(withIdentifier: "associatedPicz", sender: sender)
+    //    }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier,
+            let associated = segue.destination as? AssociatedPhotos,
+            id == "associatedPicz" {
+            associated.tag = (sender as! UIBarButtonItem).tag
+            
+            associated.photo = photoIndex
+        }
+        
+    }
+
+    
+    fileprivate func addNavBarImage() {
+        
+        let lab = UIBarButtonItem(title: "labTest", style: .plain, target: self, action: #selector(button1Touched))
+        lab.tag = 1
+       // lab.tintColor = UIColor(hexString: "#6AA9FF")
+        let fake = UIBarButtonItem(title: "fake&original", style: .plain, target: self, action: #selector(button2Touched))
+       // fake.tintColor = UIColor(hexString: "#6AA9FF")
+        fake.tag = 2
+        self.navigationItem.setRightBarButtonItems([lab, fake], animated: true)
+
+    }
+    
+    
   fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
     let widthScale = size.width / imageView.bounds.width
     let heightScale = size.height / imageView.bounds.height
@@ -30,7 +97,7 @@ class ZoomedPhotoViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     updateMinZoomScaleForSize(view.bounds.size)
-    centerImageViewToSuperView()
+   centerImageViewToSuperView()
   }
     fileprivate func centerImageViewToSuperView() {
         var zoomFrame = imageView.frame

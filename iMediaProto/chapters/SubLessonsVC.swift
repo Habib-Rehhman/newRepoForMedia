@@ -137,12 +137,16 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
                     else{
                         print(gitData.content!)
                         ImagesVC.newStruct.removeAll()
+                        //ImagesVC.dealWithIt = []
+                        ImagesVC.picz.removeAll()
                         self.content = gitData.content!
                         gitData.images?.forEach({u in
                             ImagesVC.newStruct.append(u)
                         })
                         UIViewController.removeSpinner(spinner: sv)
                         self.performSegue(withIdentifier:"showWebView", sender: nil)
+                         ImagesVC.dealWithIt = ImagesVC.newStruct
+                        ImagesVC.whoSent = "contentVC"
                     }
                     
                 } catch let err {
@@ -159,8 +163,6 @@ class SubLessonsVC : UITableViewController, UIDataSourceModelAssociation {
             
         })
         
-        
-        //  self.performSegue(withIdentifier:"showWebView", sender: nil)
     }
         
     

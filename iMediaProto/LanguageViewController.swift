@@ -119,8 +119,9 @@ class LanguageViewController: UIViewController {
                          self.performSegue(withIdentifier: "toChaptersBoard", sender: self)
                         gitData.chaptersList!.forEach({ (chapter) in
                             print(chapter.name)
-                            QuoteDeck.sharedInstance.quotes.append( Quote(text: chapter.name,tags: [chapter.part]))
+                            QuoteDeck.sharedInstance.quotes.append( Quote(text: chapter.part,tags: [chapter.name]))
                         })
+                          QuoteDeck.sharedInstance.quotes.append( Quote(text: "Gallery",tags: ["Gallery"]))
                         QuoteDeck.sharedInstance.update()
                         //    self.performSegue(withIdentifier: "showChaptersNow", sender: self)
                         

@@ -28,14 +28,10 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
 //        //presentationAnimator.presentButton = sender
        present(menuViewController, animated: true, completion: nil)
     }
-    var selectedTopic: String?
     
-    // MARK: - View controller lifecycle
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? QuoteViewController {
-            destinationVC.topic = selectedTopic
-        }
-    }
+   // var selectedTopic: String?
+    
+
     
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
@@ -55,24 +51,95 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.TopicCellIdentifier)!
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.TopicCellIdentifier)! 
         
         cell.textLabel?.text = QuoteDeck.sharedInstance.tagSet[indexPath.row].capitalized
         
         cell.layer.cornerRadius = 50
-       cell.layer.borderWidth = CGFloat(12)
+        cell.layer.borderWidth = CGFloat(12)
         cell.layer.borderColor = tableView.backgroundColor?.cgColor
         
         return cell
     }
     
+    func callGallery(){
+        
+        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.gallery)!
+        let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        let parametersChapter:Parameters = [
+            "app_id":"com.wikibolics.com",
+            "appstore_id":"com.wikibolics.com",
+            "session":networkConstants.session
+        ]
+        let sv = UIViewController.displaySpinner(onView: self.view)
+        AF.request(urlChapter, method:.post, parameters: parametersChapter, encoding:URLEncoding.default, headers:header).responseJSON(completionHandler:{ response in
+            switch response.result {
+            case .success(let json):
+                print(json)
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                    let decoder = JSONDecoder()
+                    let gitData = try decoder.decode(contentStruct.self, from: jsonData)
+                    
+                    if(gitData.message != nil){
+                        UIViewController.removeSpinner(spinner: sv)
+                        switch gitData.message!{
+                            
+                        case "content_empty":
+                            print("this sublesson contain")
+                            self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
+                            break
+                        default:
+                            print("no point in making this request")
+                        }
+                    }
+//                    }else if gitData.content == nil{
+//                        print("Empty Respons   \(gitData)")
+//                        UIViewController.removeSpinner(spinner: sv)
+//                    }
+                    else{
+                        print(gitData)
+                        ImagesVC.imagesForNewGallery.removeAll()
+                        ImagesVC.picz.removeAll()
+                        gitData.images?.forEach({u in
+                            ImagesVC.imagesForNewGallery.append(u)
+                        })
+                        UIViewController.removeSpinner(spinner: sv)
+                        self.performSegue(withIdentifier:"galleryFromChapters", sender: nil)
+                         ImagesVC.dealWithIt = ImagesVC.imagesForNewGallery
+                        ImagesVC.whoSent = "mainGallery"
+                    }
+                    
+                } catch let err {
+                    print("Err", err)
+                }
+                break
+                
+            case .failure(let error):
+                UIViewController.removeSpinner(spinner: sv)
+                self.showOkAlert(tit: "NetworkAlertTitle", msg: "NetworkAlertMessage")
+                print(error.localizedDescription)
+                break
+            }
+            
+        })
+
+    }
+    
+    
+    
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if(indexPath.row == 3){
+            callGallery()
+         return
+        }
 
-        selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
+        //selectedTopic = QuoteDeck.sharedInstance.tagSet[indexPath.row]
         lesonsViewController.lessons.removeAll()
-        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.lessons)!//"https://reqres.in/api/login")!
+        let urlChapter = URL(string: networkConstants.baseURL+networkConstants.lessons)!
         let header : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
         let parametersChapter:Parameters = [
             "app_id":"com.wikibolics.com",
@@ -96,7 +163,7 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
 
                         case "lessons_list_empty":
                             print("this lesson contains nothing")
-                            // self.navigationController?.popViewController(animated: true)
+
                             self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
 
                             break
@@ -111,7 +178,6 @@ class TopicsViewController : UITableViewController, UIDataSourceModelAssociation
                             lesonsViewController.lessons.append(lesn)
                         })
                         self.performSegue(withIdentifier:"showLessons", sender: nil)
-                        //  QuoteDeck.sharedInstance.quotes[indexPath.row].text =
                     }
 
                 } catch let err {

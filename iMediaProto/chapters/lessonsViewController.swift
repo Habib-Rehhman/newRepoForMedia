@@ -40,12 +40,8 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
     }
     var selectedTopic: String?
     
-    // MARK: - View controller lifecycle
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if let destinationVC = segue.destination as? QuoteViewController {
-    //            destinationVC.topic = selectedTopic
-    //        }
-    //    }
+     //MARK: - View controller lifecycle
+    
     
     
     func indexPathForElement(withModelIdentifier identifier: String, in view: UIView) -> IndexPath? {
@@ -204,6 +200,7 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
                     else{
                         print(gitData.content!)
                         ImagesVC.newStruct.removeAll()
+                        ImagesVC.picz.removeAll()
                         self.content = gitData.content!
                         print(gitData.images!)
                         gitData.images?.forEach({u in
@@ -211,6 +208,8 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
                         })
                         UIViewController.removeSpinner(spinner: sv)
                         self.performSegue(withIdentifier:"webVCcalledBylesonsVC", sender: nil)
+                        ImagesVC.dealWithIt = ImagesVC.newStruct
+                        ImagesVC.whoSent = "contentVC"
                     }
                     
                 } catch let err {
