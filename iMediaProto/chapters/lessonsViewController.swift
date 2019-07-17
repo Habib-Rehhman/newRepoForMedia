@@ -189,6 +189,18 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
                             print("this sublesson contain")
                             self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
                             break
+                             case "subscription_required":
+                            let alert = UIAlertController(title: "Subscription Required!", message: " Purchase the QRCode and scan it to proceed further.", preferredStyle: .actionSheet)
+                            let buy = UIAlertAction(title: "Buy Now", style: .default, handler: {_ in
+                                print("will buy")
+                            })
+                            let scan = UIAlertAction(title: "Scan Now", style: .default, handler: {_ in
+                               self.performSegue(withIdentifier: "scanQRNow", sender: nil)
+                            })
+                            alert.addAction(buy)
+                            alert.addAction(scan)
+                            self.present(alert, animated: true, completion: nil)
+                            break
                         default:
                             print("no point in making this request")
                         }
@@ -259,7 +271,18 @@ class lesonsViewController : UITableViewController, UIDataSourceModelAssociation
                                         case "lessons_list_empty":
                                             print("this sublesson contain")
                                             self.showOkAlert(tit: "EmptyLessonsListTitle", msg: "EmptyLessonsListMessage")
-                
+                                            break
+                                        case "subscription_required":
+                                            let alert = UIAlertController(title: "Subscription Required!", message: " Purchase the QRCode and scan it to proceed further.", preferredStyle: .actionSheet)
+                                            let buy = UIAlertAction(title: "Buy Now", style: .default, handler: {_ in
+                                                print("will buy")
+                                            })
+                                            let scan = UIAlertAction(title: "Scan Now", style: .default, handler: {_ in
+                                                self.performSegue(withIdentifier: "scanQRNow", sender: nil)
+                                            })
+                                            alert.addAction(buy)
+                                            alert.addAction(scan)
+                                            self.present(alert, animated: true, completion: nil)
                                             break
                                         default:
                 

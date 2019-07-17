@@ -118,7 +118,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="MTV-v3-Wqz" userLabel="Activity">
+                    <navigationItem key="navigationItem" title="Chapters" id="MTV-v3-Wqz" userLabel="Activity">
                         <barButtonItem key="rightBarButtonItem" image="ic_menu" width="38" style="plain" id="c7O-hI-zaN">
                             <connections>
                                 <action selector="showMenuAction:" destination="GJH-45-lCf" id="tIO-A5-FsE"/>
@@ -181,7 +181,7 @@
                             <outlet property="delegate" destination="JJe-VK-pCI" id="NmF-KF-NlW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="TOT-Uu-mVk" userLabel="Activity">
+                    <navigationItem key="navigationItem" title="Lessons" id="TOT-Uu-mVk" userLabel="Activity">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ic_menu" landscapeImage="ic_menu" id="sig-4X-1Gw">
                             <connections>
                                 <action selector="showMenuAction:" destination="JJe-VK-pCI" id="nYd-2D-ivf"/>
@@ -192,6 +192,7 @@
                         <outlet property="barButton" destination="sig-4X-1Gw" id="pRz-Ge-Lig"/>
                         <segue destination="FqB-CI-HjU" kind="show" identifier="showSubLessons" id="cFf-uG-dHh"/>
                         <segue destination="53a-C0-L9c" kind="show" identifier="webVCcalledBylesonsVC" id="B21-0H-RxP"/>
+                        <segue destination="H25-zl-RxD" kind="show" identifier="scanQRNow" id="dIS-dd-He3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOr-vP-l4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,17 +236,18 @@
                             <outlet property="delegate" destination="FqB-CI-HjU" id="QeG-VD-qDp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="kRU-mf-key" userLabel="Activity">
+                    <navigationItem key="navigationItem" title="Sublessons" id="kRU-mf-key" userLabel="Activity">
                         <barButtonItem key="rightBarButtonItem" image="ic_menu" id="rdo-zV-VWL"/>
                     </navigationItem>
                     <connections>
                         <segue destination="53a-C0-L9c" kind="show" identifier="showWebView" id="I0j-Rz-IJz"/>
+                        <segue destination="H25-zl-RxD" kind="show" identifier="scanQRNow" id="sK1-y8-s4j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edk-Sv-Ymi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FAV-Qf-BTE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1510" y="123"/>
+            <point key="canvasLocation" x="833" y="39"/>
         </scene>
         <!--ImagesVC-->
         <scene sceneID="ujx-Jh-7bJ">
@@ -307,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfC-18-Njb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="123"/>
+            <point key="canvasLocation" x="4165" y="-648"/>
         </scene>
         <!--Zoomed Photo View Controller-->
         <scene sceneID="U8X-f3-Dko">
@@ -360,7 +362,116 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHi-sl-GAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="-607"/>
+            <point key="canvasLocation" x="3412" y="-633"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="Cvf-3x-F4a">
+            <objects>
+                <viewController id="H25-zl-RxD" customClass="QRScannerViewController" customModule="QRScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V0B-JP-TYe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XE4-7b-fqV" customClass="QRScannerView" customModule="QRScanner" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XE4-7b-fqV" secondAttribute="height" multiplier="1:1" id="1ER-wf-fkd"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrS-uN-Heh">
+                                <rect key="frame" x="107" y="490" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.79458792099999997" green="0.27550812429999999" blue="0.20028522970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MkV-bg-elz"/>
+                                    <constraint firstAttribute="height" constant="50" id="Npe-yt-uLe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Scan again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="scanButtonAction:" destination="H25-zl-RxD" eventType="touchUpInside" id="9Qx-gx-BYx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HrS-uN-Heh" firstAttribute="centerX" secondItem="V0B-JP-TYe" secondAttribute="centerX" id="K9e-mF-nHO"/>
+                            <constraint firstItem="HrS-uN-Heh" firstAttribute="top" secondItem="XE4-7b-fqV" secondAttribute="bottom" constant="8" id="eNj-85-ad8"/>
+                            <constraint firstItem="zBQ-di-ObW" firstAttribute="trailing" secondItem="XE4-7b-fqV" secondAttribute="trailing" constant="20" id="flG-Qd-DGA"/>
+                            <constraint firstItem="XE4-7b-fqV" firstAttribute="leading" secondItem="zBQ-di-ObW" secondAttribute="leading" constant="20" id="tpa-Gh-8KG"/>
+                            <constraint firstItem="XE4-7b-fqV" firstAttribute="top" secondItem="zBQ-di-ObW" secondAttribute="top" constant="20" id="zZl-jC-ZhU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zBQ-di-ObW"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="jPs-AG-IHv"/>
+                    <connections>
+                        <outlet property="scanButton" destination="HrS-uN-Heh" id="UEg-SD-dmm"/>
+                        <outlet property="scannerView" destination="XE4-7b-fqV" id="vT0-bU-cdA"/>
+                        <segue destination="8Wx-h9-nwZ" kind="show" identifier="detailSeuge" id="IV5-kC-gfC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk6-UU-MzD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1835" y="-16"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="0D6-MW-2ED">
+            <objects>
+                <viewController id="8Wx-h9-nwZ" customClass="DetailViewController" customModule="QRScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tm5-6z-JQS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56T-bF-ow3">
+                                <rect key="frame" x="20" y="108" width="374" height="23"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMW-wg-ZWL" customClass="CopyLabel" customModule="QRScanner" customModuleProvider="target">
+                                <rect key="frame" x="20" y="141" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2I-hH-cwP">
+                                <rect key="frame" x="156.5" y="760" width="101" height="33"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
+                                <state key="normal" title="Open in web"/>
+                                <connections>
+                                    <action selector="openInWebAction:" destination="8Wx-h9-nwZ" eventType="touchUpInside" id="yal-O0-K5W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rMW-wg-ZWL" firstAttribute="leading" secondItem="f3F-Uy-tVw" secondAttribute="leading" constant="20" id="0yt-zE-lic"/>
+                            <constraint firstItem="56T-bF-ow3" firstAttribute="leading" secondItem="f3F-Uy-tVw" secondAttribute="leading" constant="20" id="40A-rW-0y5"/>
+                            <constraint firstItem="f3F-Uy-tVw" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rMW-wg-ZWL" secondAttribute="bottom" constant="60" id="DJj-Ck-W9L"/>
+                            <constraint firstItem="f3F-Uy-tVw" firstAttribute="trailing" secondItem="56T-bF-ow3" secondAttribute="trailing" constant="20" id="HJu-qg-tHp"/>
+                            <constraint firstItem="m2I-hH-cwP" firstAttribute="centerX" secondItem="tm5-6z-JQS" secondAttribute="centerX" id="HYf-lV-e3G"/>
+                            <constraint firstItem="56T-bF-ow3" firstAttribute="top" secondItem="f3F-Uy-tVw" secondAttribute="top" constant="20" id="a64-iQ-Ryg"/>
+                            <constraint firstItem="f3F-Uy-tVw" firstAttribute="bottom" secondItem="m2I-hH-cwP" secondAttribute="bottom" constant="20" id="bPb-7I-lWt"/>
+                            <constraint firstItem="f3F-Uy-tVw" firstAttribute="trailing" secondItem="rMW-wg-ZWL" secondAttribute="trailing" constant="20" id="caP-CE-JSw"/>
+                            <constraint firstItem="rMW-wg-ZWL" firstAttribute="top" secondItem="56T-bF-ow3" secondAttribute="bottom" constant="10" id="yR3-KF-eNh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f3F-Uy-tVw"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="rMW-wg-ZWL" id="OiL-hI-KfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2e4-n2-OMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="-25"/>
         </scene>
     </scenes>
     <resources>
@@ -368,7 +479,8 @@
         <image name="photo1" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dIS-dd-He3"/>
         <segue reference="B21-0H-RxP"/>
-        <segue reference="Pz2-cL-jPj"/>
+        <segue reference="0Kq-sW-yik"/>
     </inferredMetricsTieBreakers>
 </document>

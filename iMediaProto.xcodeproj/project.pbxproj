@@ -53,6 +53,12 @@
 		9D35AECE22C902FB00B108BD /* ic_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D35AECB22C902FB00B108BD /* ic_menu@3x.png */; };
 		9D35AECF22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */; };
 		9D35AED022C902FB00B108BD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35AECD22C902FB00B108BD /* MenuViewController.swift */; };
+		9D5F7F6522DF84B2003B7328 /* QRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F7F5F22DF84B1003B7328 /* QRData.swift */; };
+		9D5F7F6622DF84B2003B7328 /* CopyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F7F6022DF84B1003B7328 /* CopyLabel.swift */; };
+		9D5F7F6722DF84B2003B7328 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F7F6122DF84B2003B7328 /* UIViewController+Alert.swift */; };
+		9D5F7F6822DF84B2003B7328 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F7F6222DF84B2003B7328 /* DetailViewController.swift */; };
+		9D5F7F6922DF84B2003B7328 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F7F6322DF84B2003B7328 /* QRScannerView.swift */; };
+		9D5F7F6A22DF84B2003B7328 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F7F6422DF84B2003B7328 /* QRScannerViewController.swift */; };
 		9D6F91F522CF7A0200DE4242 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91F322CF7A0200DE4242 /* WebVC.swift */; };
 		9D6F91F622CF7A0200DE4242 /* ImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91F422CF7A0200DE4242 /* ImagesVC.swift */; };
 		9D6F91FD22CF7A3D00DE4242 /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F91F722CF7A3D00DE4242 /* QuoteDeck.swift */; };
@@ -146,6 +152,12 @@
 		9D35AECB22C902FB00B108BD /* ic_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu@3x.png"; sourceTree = "<group>"; };
 		9D35AECC22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
 		9D35AECD22C902FB00B108BD /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9D5F7F5F22DF84B1003B7328 /* QRData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRData.swift; sourceTree = "<group>"; };
+		9D5F7F6022DF84B1003B7328 /* CopyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyLabel.swift; sourceTree = "<group>"; };
+		9D5F7F6122DF84B2003B7328 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		9D5F7F6222DF84B2003B7328 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9D5F7F6322DF84B2003B7328 /* QRScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		9D5F7F6422DF84B2003B7328 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		9D6F91F322CF7A0200DE4242 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		9D6F91F422CF7A0200DE4242 /* ImagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesVC.swift; sourceTree = "<group>"; };
 		9D6F91F722CF7A3D00DE4242 /* QuoteDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
@@ -240,6 +252,7 @@
 		006A119522B9045D00237B3F /* iMediaProto */ = {
 			isa = PBXGroup;
 			children = (
+				9D5F7F5E22DF848B003B7328 /* QRScanner */,
 				00D2645322DB7CCF00213588 /* NewGallery */,
 				0034554D22D9C24A0026241D /* Gallery */,
 				9D9E3E1E22D636E000EDD50A /* gitIgnore */,
@@ -301,6 +314,19 @@
 				9D35AECD22C902FB00B108BD /* MenuViewController.swift */,
 			);
 			path = GuillotineMenu;
+			sourceTree = "<group>";
+		};
+		9D5F7F5E22DF848B003B7328 /* QRScanner */ = {
+			isa = PBXGroup;
+			children = (
+				9D5F7F6022DF84B1003B7328 /* CopyLabel.swift */,
+				9D5F7F6222DF84B2003B7328 /* DetailViewController.swift */,
+				9D5F7F5F22DF84B1003B7328 /* QRData.swift */,
+				9D5F7F6322DF84B2003B7328 /* QRScannerView.swift */,
+				9D5F7F6422DF84B2003B7328 /* QRScannerViewController.swift */,
+				9D5F7F6122DF84B2003B7328 /* UIViewController+Alert.swift */,
+			);
+			path = QRScanner;
 			sourceTree = "<group>";
 		};
 		9D9E3E1E22D636E000EDD50A /* gitIgnore */ = {
@@ -461,6 +487,7 @@
 				0034557222D9C24A0026241D /* CollieGalleryCaptionView.swift in Sources */,
 				0034557422D9C24A0026241D /* CollieGalleryZoomTransition.swift in Sources */,
 				9D35AECF22C902FB00B108BD /* GuillotineMenuTransitionAnimation.swift in Sources */,
+				9D5F7F6722DF84B2003B7328 /* UIViewController+Alert.swift in Sources */,
 				006A11B722B9064700237B3F /* LoginViewController.swift in Sources */,
 				9D0F628E22DE56C300D6DF10 /* SortedTableVC.swift in Sources */,
 				000E0D2222C4C6300080DFC7 /* Extensions.swift in Sources */,
@@ -475,7 +502,9 @@
 				9D1E32E522DB8C090081904D /* ZoomedPhotoViewController.swift in Sources */,
 				0034556A22D9C24A0026241D /* CollieGalleryDelegate.swift in Sources */,
 				0034556F22D9C24A0026241D /* CollieGallery.swift in Sources */,
+				9D5F7F6622DF84B2003B7328 /* CopyLabel.swift in Sources */,
 				9D6F91FD22CF7A3D00DE4242 /* QuoteDeck.swift in Sources */,
+				9D5F7F6522DF84B2003B7328 /* QRData.swift in Sources */,
 				0034556422D9C24A0026241D /* BlurViewController.swift in Sources */,
 				008D4B9C22BB70EE00870F77 /* LanguageViewController.swift in Sources */,
 				0034556C22D9C24A0026241D /* CollieGalleryDefaultTransition.swift in Sources */,
@@ -486,6 +515,7 @@
 				9D6F920022CF7A3D00DE4242 /* SubLessonsVC.swift in Sources */,
 				9D6F91FF22CF7A3D00DE4242 /* lessonsViewController.swift in Sources */,
 				9D9E3E2022D6373D00EDD50A /* serverInfo.swift in Sources */,
+				9D5F7F6922DF84B2003B7328 /* QRScannerView.swift in Sources */,
 				9D201E2222C7B7E800074416 /* shared.swift in Sources */,
 				0034556D22D9C24A0026241D /* CollieGalleryOptions.swift in Sources */,
 				9D1FAA8722DBC64A00B49B84 /* AssociatedPhotos.swift in Sources */,
@@ -494,6 +524,7 @@
 				9D35AED022C902FB00B108BD /* MenuViewController.swift in Sources */,
 				0034556722D9C24A0026241D /* CollieGalleryTransitionType.swift in Sources */,
 				0034556922D9C24A0026241D /* CollieGalleryTransitionManager.swift in Sources */,
+				9D5F7F6822DF84B2003B7328 /* DetailViewController.swift in Sources */,
 				9D6F91FE22CF7A3D00DE4242 /* QuoteViewController.swift in Sources */,
 				0034556622D9C24A0026241D /* CollectionViewCell.swift in Sources */,
 				0034557022D9C24A0026241D /* CollieGalleryAppearance.swift in Sources */,
@@ -503,6 +534,7 @@
 				0034556E22D9C24A0026241D /* CollieGalleryPicture.swift in Sources */,
 				006A11B322B9064700237B3F /* HomeViewController.swift in Sources */,
 				9D6F920222CF7A3D00DE4242 /* TopicsViewController.swift in Sources */,
+				9D5F7F6A22DF84B2003B7328 /* QRScannerViewController.swift in Sources */,
 				0034556522D9C24A0026241D /* ImageProcessorsViewController.swift in Sources */,
 				0034557522D9C24A0026241D /* CollieGalleryTheme.swift in Sources */,
 				0034557122D9C24A0026241D /* CollieGalleryCustomAction.swift in Sources */,
